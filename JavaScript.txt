@@ -49,8 +49,6 @@
 	>> O valor é o dado real atribuído a uma variável
 
 	>> Uma variável é um nome simbólico que aponta para um valor armazenado na memória
-		>> São declaradas usando a palavra-chave var
-		>> Variáveis declaradas fora de uma função são as variáveis globais, e as declaradas dentro têm escopo de função
 
 	>> Números
 		>> Não distingue entre valor inteiro e valor flutuante, todos são representados como ponto flutuante
@@ -69,11 +67,14 @@
 		>> Usada para representar texto
 		>> É uma array de caracteres
 			>> Utilizam indexação com base 0
+			>> Pode utilizar os métodos da array
 		>> Para incluir em uma variável, deve-se colocar seus caracteres dentro de aspas simples ou aspas duplas
 		>> Pode-se dividir uma string em várias linhas utilizando (\n)
 		>> Para concatenar string, utiliza-se o operador +
 			>> Em números ele soma, em string ele une
-		* Consultar métodos disponíveis que podem ser aplicados em strings
+
+		>> Métodos
+			>> 
 
 	>> Booleanos
 		>> Representa verdadeiro ou falso
@@ -89,14 +90,16 @@
 		>> undefined indica que uma variável foi declarada, mas ainda não foi atribuída a um valor
 
 	>> Objeto Global 
-		>> Refere-se a um objeto que está disponível em todo o ambiente JavaScript, ou seja, ele pode ser acessado de qualquer lugar do código
+		>> Refere-se a um objeto que está disponível em todo o ambiente JavaScript, ou seja, ele pode ser acessado de qualquer lugar do 
+		   código
 
 	>> Objeto Wrapper 
-		>> É uma forma de converter valores primitivos (como números, strings, ou booleanos) em objetos temporários para que possam ter métodos e 
-		   propriedades associados a eles.
+		>> É uma forma de converter valores primitivos (como números, strings, ou booleanos) em objetos temporários para que possam ter 
+		   métodos e propriedades associados a eles.
 		>> Não existem objetos wrapper para null e undefined. 
 		>> Qualquer tentativa de acessar uma propriedade nesses valores resulta em um TypeError
-		>> É possível criar explicitamente objetos wrapper usando new String(), new Number(), ou new Boolean(), mas raramente é necessário ou útil
+		>> É possível criar explicitamente objetos wrapper usando new String(), new Number(), ou new Boolean(), mas raramente é 
+		   necessário ou útil
 		>> JavaScript converte quando necessário
 
 		>> == trata um valor primitivo e seu objeto wrapper como iguais.
@@ -128,7 +131,8 @@
 						>> Em arrays, converte os elementos em uma string e os separa por vírgulas
 						>> É mais abrangente
 					>> .toString():
-						>> É um método que existe na maioria dos objetos, mas não funciona em null e undefined gerando um erro
+						>> É um método que existe na maioria dos objetos, mas não funciona em null e undefined gerando 
+						   um erro
 						>> É mais específico
 
 				>> Conversão para Número
@@ -156,10 +160,9 @@
 
 				>> Booleano
 					>> Converte qualquer valor para um booleano
-					>> Valores como 0, null, undefined, NaN, "" (string vazia), e false são convertidos para false	
-					>> Todos os outros valores são convertidos para true
+					>> Valores como 0, null, undefined, NaN, "" (string vazia), e false são convertidos para false,
+					   todos os outros valores são convertidos para true
 						
-
 			>> Conversão Implícita: Ocorre automaticamente pelo JavaScript em certas operações
 
 	>> Declaração de Variável
@@ -173,18 +176,785 @@
 		>> Região do código onde a variável foi definida
 
 			>> A variável global é declarada fora de qualquer função, bloco, ou objeto
-			   Ela está disponível em qualquer lugar do código, tanto dentro de funções quanto fora delas
-				>> Pode levar a efeitos colaterais indesejados se não forem usadas com cuidado
+				>> Está disponível em qualquer lugar do código, tanto dentro de funções quanto fora delas
+				>> Pode levar a efeitos colaterais indesejados se não forem usadas com cuidado	
+				>> Usa-se a palavra-chave var
 
 			>> A variável local é declarada dentro de uma função ou bloco de código
-			   Ela só está disponível no escopo onde foi declarada
+				>> Só está disponível no escopo onde foi declarada
 				>> Evitam poluir o escopo global e ajudam a prevenir conflitos de nomes de variáveis
 				>> São destruídas automaticamente quando a função ou bloco em que foram definidas termina sua execução,
 				   liberando a memória usada
+				>> Usa-se as palavras-chaves let e const
 
-	>> Escopo de Função
+	>> Regras de Nomenclatura de Variáveis
 		>> 
+
+	>> Içamento
+		>> Declarações de variáveis e funções são "içadas" para o topo do seu escopo
+		   durante a fase de compilação, antes da execução do código
+
+		>> Pode usar variáveis e funções em seu código antes de realmente declará-las
+			>> Comportamento pode variar dependendo de como são definidas
+
+		>> Somente a declaração da variável é içada, não a inicialização
+			>> Içada com undefined
+
+		>> A declaração e a definição da função são içadas para o topo do escopo
+			>> Podem ser chamadas antes de declaradas
+
+		* Declarar variáveis e funções no topo do código para evitar erros
+
+>> Expressões
+	>> Uma expressão é qualquer unidade de código que o interpretador pode avaliar para produzir um valor
+
+	>> Expressões Primárias
+		>> São as formas mais simples de expressões, autônomas, que não incluem outras expressões
+			>> Números, strings, palavras-chave, etc.
+
+	>> Expressões de Acesso a Propriedades
+		>> Forma de acessar o valor da uma propriedade de um objeto ou de um elemento em um array
+
+			>> Notação de Ponto: Acessa uma propriedade pelo seu nome
+				>> objeto.propriedade
+
+			>> Notação de Colchetes: Acessa uma propriedade usando uma chave
+				>> objeto["propriedade"]
+
+	>> Expressão de Invocação
+		>> Maneira de chamar ou executar uma função
+
+>> Operadores
+	>> São símbolos que realizam operações sobre operandos
+	>> Usados para combinar valores de expressões e produzir um novo valor
+	>> Convertem o tipo de seus operandos conforme o necessário
+	>> Operadores com precedência mais alta são executados antes dos que tem precedência baixa
+		>> Segue princípios matemáticos
+
+	>> Operadores Aritméticos
+		>> Usados para realizar operações matemáticas básicas
+		>> + (soma), - (subtração), * (multiplicação), / (divisão), % (módulo), ** (exponenciação)
+
+	>> Operadores Unários
+		>> Operam em apenas um operando
+			>> typeof (retornar o tipo de dado do operando), ++ (incrementa 1 da variável), --(decrementa 1 da variável)
+
+	>> Operadores Ternários
+		>> Forma curta de expressar uma condição
+			>> condição ? valor1 : valor2
+
+	>> Operadores de Comparação
+		>> Comparam dois valores e retornam um valor booleano
+			>> == (igualdade com conversão de tipos), === (igualdade sem conversão de tipos)
+			>> != (diferente com conversão de tipos), !== (diferente sem conversão de tipos)
+			>> > (verifica se o primeiro valor é maior que o segundo), < (verifica de o primeiro valor é menor que o segundo)
+			>> >= e <= (verificam maior ou igual e menor ou igual)
+
+	>> Operadores Lógicos
+		>> Combinam expressões booleanas
+			>> && (retorna true se ambas as expressões forem verdadeiras)
+			>> || (retorna true se uma das expressões for verdadeira)
+			>> ! (inverte o valor booleano da expressão)
+
+	>> Operador in
+		>> Usado para verificar se uma propriedade existe em um objeto ou se um índice existe em um array
+		>> É true se o valor do lado esquerdo é o nome de uma propriedade do lado direito
+			>> "nome-da-propriedade" in "nome-do-objeto/array"
+
+	>> Operador instanceof
+		>> Usado para verificar se um objeto é uma instância de uma classe ou de uma função construtora específica
+			>> "nome-do-objeto" instanceof "nome-do-construtor"
+
+	>> Atribuição com Operação
+		>> Combina uma operação com atribuição de valor em uma única expressão
+		>> "variável" operador= "outra-variavel/expressão"
+			>> Equivalente a: "variável" = "variável" operador "outra-variável/expressão"
+		>> +=, -+, *+, /+, %=
+
+>> Instruções
+	>> São unidades de código que realizam ações específicas
+
+>> Condicionais
+	>> Permitem que o programa tome decisões e executem diferentes blocos de código com base em determinadas condições
+	>> As expressões são avaliadas como true ou false, determinando qual bloco de código será executado
+	
+	>> if, else e else if
+		>> A expressão é avaliada, se o valor resultante é verdadeiro a instrução é executada. Caso contrário, nada é executado
+			if (expressão) {
+				instrução
+		 	}
 		
+		>> A instrução executa a instrução1 se a expressão é verdadeira e executa a instrução2 se a expressão é falsa
+			if (expressão) {
+				instrução1
+			} else { 
+				instrução2
+		 	}
+
+		>> Testa múltiplas condições, se todas forem falsas, o else final, se presente, é executado
+			if (n == 1) {
+				Executa o bloco de código #1
+			}
+			else if (n == 2) {
+				Executa o bloco de código #2
+			}
+			else if (n == 3) {
+				Executa o bloco de código #3
+			}
+			else {
+				Se tudo falhar, executa o bloco #4
+			}
+
+	>> switch
+		>> Quando várias condições dependem do valor de uma única expressão
+		>> Compara a expressão com vários case e executa o código correspondente ao primeiro case que coincidir
+			switch(n) {
+				case 1:  -->  Começa aqui se n === 1
+					Executa o bloco de código #1
+					break; --> Para aqui
+
+				case 2:  -->  Começa aqui se n === 2
+					Executa o bloco de código #2
+					break; --> Para aqui
+
+				default: -->  Se tudo falhar...
+					Executa o bloco de código #3
+					break;   -->  Para aqui
+			}
+		>> Pode ser adicionado quantos case forem necessários
+		>> Se não colocar o break em um case o código continuará a executar os casos subsequentes, 
+		   mesmo que esses casos não correspondam à expressão do switch
+
+>> Laços
+	>> Usados para executar repetidamente um bloco de código enquanto uma condição é verdadeira ou para iterar sobre elementos de uma coleção
+
+	>> while
+		>> Executa o bloco de código enquanto a condição for verdadeira, e ela é avaliada antes de cada iteração
+			while (condição) { código }
+
+	>> do/while
+		>> Semelhante ao while, mas o bloco de código é executado pelo menos uma vez, pois ele avalia se a condição é verdadeira no final
+			do { código } while (condição)
+
+	>> for
+		>> Utilizado quando se sabe o número exato de iterações que deseja realizar
+		>> Cada parte é executada em sequência antes de cada iteração
+			for (inicialização; condição; incremento) { código }
+
+	>> for...in
+		>> Usado para iterar sobre propriedades enumeráveis de um objeto
+		>> Percorre as chaves de um objeto, permitindo acessar os valores das propriedades
+			for (propriedade in objeto) { código }
+
+>> Saltos
+	>> Instruções que alteram o fluxo de execução do programa, movendo-o para um ponto diferente no código
+
+	>> break: Interrompe a execução de um laço ou de um bloco, encerrando-o
+
+	>> continue: Usado dentro de laços para interromper a iteração atual e passar diretamente para a próxima
+
+	>> return: Usado em funções para interromper a execução ou retornar um valor na chamada
+
+	>> throw: Lança uma exceção manualmente, interrompendo imediatamente a execução normal do programa e passando
+		  o controle para o bloco catch mais próximo
+		  Usado dentro do bloco try
+
+	>> try: Contém o código que pode potencialmente lançar uma exceção, se um erro acontecer a execução é desviada 
+		para o bloco catch mais próximo
+
+	>> catch: Captura e trata a exceção lançada no bloco try
+		  Permite lidar com o erro, em vez de deixar que o programa falhar
+
+	>> finally: Contém o código que será executado após a execução do bloco try e catch
+		    É executado independente de um exceção ter sido lançada ou não 
+
+>> Objetos
+	>> É um valor composto
+		>> Agrega diversos valores e permite armazenar e recuperar esses valores pelo nome
+	>> Os nomes de propriedade são strings
+	>> Uma propriedade tem um nome e um valor (qualquer tipo)
+	
+	>> Criando Objetos
+		>> Objetos Literais
+			>> Forma mais comum e direta de criar objetos
+			>> Define-se suas propriedades e valores diretamente
+				let objeto = {chave1: valor1, chave2: valor2, chave3: valor3};
+
+		>> Criando objetos com o operador new
+			>> Cria e inicializa um novo objeto
+			>> Deve ser seguida de uma chamada de função
+				>> Chamada de construtora e serve para iniciar o objeto
+				>> É comum definir as próprias funções construtoras
+			>> Permite criar vários objetos que compartilham a mesma estrutura e comportamento
+			>> Permite criar objetos com propriedades e métodos específicos, usando o operador new 
+			
+			>> Utilizando o Object() (construtor padrão do JavaScript)
+				const nome-do-objeto = new Object();
+				nome-do-objeto.propriedade1 = valor1;
+				nome-do-objeto.propriedade2 = valor2;
+
+			>> Utilizando a função construtora
+				function Nome-do-Objeto (propriedade1, propriedade2) {
+					this.propriedade1 = propriedade1;
+					this.propriedade2 = propriedade2;
+				}
+		
+				const a = new Nome-do-Objeto(valor1, valor2)
+				const b = new Nome-do-Objeto(valor1, valor2)
+
+		>> Protótipos
+			>> Cada objeto em JavaScript possui um protótipo, que é outro objeto do qual o primeiro herda propriedades e métodos
+				>> Herança Prototípica
+
+			>> Utiliza-se o método Object.getPrototypeOf() quando deseja saber de qual protótipo ele está sendo herdando 
+
+			>> Todos os objetos herdam métodos e propriedades de Object.prototype
+
+			>> hasOwnProperty() verifica se uma propriedade especifica de um objeto é dele ou se é herdado
+
+			>> prototype é usado em funções construtoras para definir propriedades e métodos compartilhados por todas as instâncias
+
+		>> Utilizando Object.create
+			>> Cria um novo objeto com base em um objeto previamente especificado (protótipo)
+			>> Permite a criação de objetos que herdam propriedades e métodos de outros objetos (protótipo)
+			>> Não precisa passar uma função construtora
+				const novoObjeto = Object.create(protótipo);
+
+	>> Acessar Propriedade
+		>> Podem ser acessadas por meio da notação de ponto (objeto.propriedade) ou por notação de colchetes 'objeto["propriedade"]'
+		>> Se uma propriedade não é encontrada, é avaliada como undefined
+
+	>> Modificar Propriedade
+		>> objeto.propriedade = valor;
+
+	>> Adicionar Propriedade
+		>> objeto.nome-da-nova-propriedade = valor;
+
+	>> Deletar Propriedade
+		>> delete objeto.propriedade;
+		>> Exclui apenas as propriedades próprias, não as herdadas
+
+	>> Métodos get e set
+		>> São propriedades de acesso
+		>> Usados para controlar o acesso e a manipulação de propriedades de objetos
+		>> Permite definir funções que serão chamadas quando uma propriedade for acessada ou modificada
+
+		>> get controla como os valores das propriedades são acessados
+			>> Transformam os dados antes de retorná-los
+		>> set controla como os valores das propriedades são definidos
+			>> Permite realizar validações e operações antes de atribuir um valor
+
+	>> Atributos de Propriedades
+		>> São configurações que controlam características específicas de cada propriedade do objeto
+		>> Possuem o valor true ou false
+
+		>> Para definir esses atributos, pode usado o método Object.defineProperty() (modifica uma única propriedade de um objeto) ou 
+		   Object.defineProperties() (modifica múltiplas propriedades de uma vez só)
+			>> value: Retorna valor da propriedade
+			>> writable: Se o valor pode ser modificado
+			>> enumerable: Se a propriedade pode aparecer em laços
+			>> configurable: Se a propriedade pode ser deletada ou modificada
+
+	>> Atributos de Objeto
+		>> Referem-se a características internas dos objetos que definem como eles se comportam e como suas propriedades são manipuladas
+		>> Controlam o comportamento do objeto como um todo
+
+		>> Prototype
+			>> Referência a outro objeto
+
+		>> Extensible
+			>> Indica se novas propriedades podem ser adicionadas ao objeto
+			>> É possível verificar se um objeto é extensível usando Object.isExtensible(obj)
+			>> Tornar um objeto não extensível impede a adição de novas propriedades
+				>> Usa-se Object.preventExtensions(obj)
+
+		>> Sealed
+			>> Indica se as propriedades do objeto não podem ser adicionadas, removidas ou reconfiguradas, mas podem ser 
+			   modificadas se forem graváveis
+			>> Pode verificar se um objeto é selado usando Object.isSealed(obj)
+			>> Não permite adicionar ou remover propriedades, mas permite modificar valores existentes
+				>> Usa-se Object.seal(obj)
+
+		>> Frozen
+			>> Não pode ser modificado de forma alguma
+				>> Usa-se Object.freeze(obj)
+			>> Verificar se um objeto é congelado usando Object.isFrozen(obj)
+
+>> Array
+	>> Conjunto ordenado de valores, onde armazena múltiplos valores em uma única variável
+	>> Cada valor é chamado de elemento
+	>> Cada elemento tem uma posição numérica no array
+		>> Índice, onde o primeiro elemento é zero
+	>> Crescem e diminuem conforme necessário (dinâmicos)
+	>> Eles podem armazenar elementos de diferentes tipos de dados
+
+	>> Criando arrays
+		>> Array Literal
+			>> var array = []; --> cria uma array vazia
+
+			>> var array = [1, 2, 3]; --> cria uma array com valores
+
+		>> Utilizando o construtor Array()
+			>> var array = new Array();  --> chamada sem argumentos
+
+			>> var array = new Array(10);  --> especifica o comprimento
+	
+			>> var array = new Array (1, 2, 3);  --> passa os valores nos argumentos
+
+	>> Acessando os Elementos
+		>> Os elementos podem ser acessados pelo índice, por meio do operador []
+			>> array[índice]
+
+	>> Modificando os Elementos
+		>> Altera o valor de um índice específico
+			>> array[índice] = valor
+
+	>> Comprimento da Array
+		>> Toda array tem um propriedade que retorna o número de elementos contidos nela
+			>> array.lenght
+		>> A propriedade será atualizada conforme os elementos forem sendo adicionados ou deletados
+		>> Se definir a lenght para um comprimento maior que o existente, os novos elementos serão undefined
+		>> Se definir a lenght para um comprimento menor que o existente, a array será cortada e os elementos excluídos
+
+	>> Métodos de Array
+		>> join(): Converte todos os elementos em strings e as concatena
+			>> Pode-se especificar uma string para separar os elementos
+			>> Se nada for especificado, serão utilizados vírgulas
+
+		>> reverse(): Inverte a ordem dos elementos 
+
+		>> sort(): Ordena os elementos 
+
+		>> push(): Adiciona um elemento no final 
+			>> array.push(elemento1, ..., elementoN)
+
+		>> pop(): Remove o último elemento
+			>> array.pop()
+
+		>> shift(): Remove o primeiro elemento
+			>> array.shift()
+
+		>> unshift(): Adiciona um elemento no inicio
+			>> array.unshift(elemento1, ..., elementoN)
+
+		>> concat(): Combina duas ou mais arrays
+			>> Retorna uma nova array, mas não modifica o original
+
+		>> slice(): Extrai uma parte da array sem modificar a array original
+			>> array.slice(inicio, fim)
+				>> inicio: index de onde a extração começa
+				>> fim: index de onde a extração termina, e não incluído no retorno. 
+				   Se não for especificado, será extraído até o último index
+
+		>> splice(): Exclui ou insere novos elementos em uma array, modificando a array original
+			>> array.splice(índice, quantidadeRemovida, item)
+				>> índice: onde as mudanças começam
+				>> quantidade removida:  se for zero, não removerá nenhum
+				>> item: elementos que serão adicionados
+
+		>> forEach(): Executa uma função em cada elemento da array
+			>> array.forEach(function(argumento) { código que utiliza o argumento }
+
+		>> map(): Cria um novo array com os resultados de um função que foi aplicada em cada elemento
+			>> var novaArray = array.map(x => x * 2);
+
+		>> filter(): Cria um novo array com todos os elementos que passam em um teste implementado por uma função
+			>> var filtered = arr.filter(x => x > 1);
+
+		>> reduce(): Executa uma função "reduzindo" o array para um único valor
+			>> array.reduce(callback(acumulador, valorAtual, índice, array), valorInicial) 
+
+		>> indexOf(): Procura o index do primeiro elemento na array que é igual ao especificado
+			>> array.indexOf(elemento)
+
+		>> lastIndexOf(): Procura o index do último elemento na array que é igual ao especificado
+			>> array.lastIndexOf(elemento)
+
+		>> find(): Retorna o primeiro elemento do array que satisfaz a função de teste fornecida
+			>> arr.find(function(elemento) { código })
+
+		>> findIndex(): Retorna o index elemento do array que satisfaz a função de teste fornecida
+			>> arr.findIndex(function(elemento) { código })
+
+		>> findLastIndex(): Retorna o índice do último elemento no array que satisfaz a função de teste
+			>> arr.findLastIndex(function(elemento) { código })
+
+		>> includes(): Determina se um array contém um determinado elemento
+			>> array.includes(elemento)
+
+		>> every(): Testa se todos os elementos do array passam por uma função de teste
+			>> arr.every(function(elemento) { codigo })
+
+		>> some(): Testa se ao menos um dos elementos do array passa por uma função de teste
+			>> arr.some(function(elemento) { codigo })
+
+		>> fill(): Preenche todos os elementos de um array com um valor estático
+			>> array.fill(valor, inicio, fim)
+				>> Se o inicio e fim for especificado, somente esse intervalo de index serão alterados
+
+>> Map
+	>> Coleção de pares chave-valor, onde qualquer tipo de valor pode ser usado como chave ou valor
+		--> Diferentemente, as chaves de um objeto são convertidas para strings
+	>> Mantém a ordem de inserção dos pares chave-valor
+	>> Pode ser iterado
+
+	>> Inicializando um map:
+		>> let map = new Map()
+
+	>> Métodos:
+		>> set(chave, valor): Adiciona ou atualiza um par chave-valor.
+		>> get(chave): Retorna o valor associado à chave especificada.
+		>> has(chave): Verifica se uma chave existe no Map.
+		>> delete(chave): Remove o par chave-valor da chave fornecida.
+		>> clear(): Remove todos os pares chave-valor do Map.
+		>> size: Retorna o número de elementos no Map.
+
+>> Weak Map
+	>> Coleção de pares chave-valor, onde as chaves devem ser objetos e os valores podem ser de qualquer tipo
+	>> Se não houver mais referências ao objeto chave em qualquer lugar do código, o coletor de lixo pode removê-lo, 
+	   junto com seu valor associado, automaticamente
+	>> Não pode ser iterado porque a coleta de lixo pode remover pares chave-valor de forma imprevisível
+
+	>> Métodos:
+		>> weakMap.set(chave, valor): Adiciona ou atualiza o par chave-valor.
+		>> weakMap.get(chave): Retorna o valor associado à chave ou undefined se a chave não existir.
+		>> weakMap.has(chave): Retorna true se a chave existir, e false caso contrário.
+		>> weakMap.delete(chave): Remove o par chave-valor.
+	 
+>> Set
+	>> Coleção de valores únicos de qualquer tipo
+	>> Não permite valores duplicados
+	>> Não mantém índices
+	>> A ordem de inserção é mantida
+	>> Não usa chaves
+
+	>> Inicializando um set:
+		>> let set = new Set()
+
+	>> Métodos
+		>> add(valor): Adiciona um valor ao Set (se o valor já existir, ele não será adicionado)
+		>> has(valor): Verifica se um valor está presente no Set
+		>> delete(valor): Remove um valor do Set
+		>> clear(): Remove todos os valores do Set
+		>> size: Retorna o número de elementos no Set
+
+>> Weak Set
+	>> Coleção de objetos únicos
+	>> Só objetos podem ser adicionados
+	>> Se não houver mais referências a um objeto fora do WeakSet, ele pode ser coletado pelo coletor de lixo
+	>> Não é iterável
+
+	>> Métodos
+		>> weakSet.add(valor): Adiciona um objeto ao conjunto.
+		>> weakSet.has(valor): Retorna true se o objeto estiver no conjunto, e false caso contrário.
+		>> weakSet.delete(valor): Remove o objeto do conjunto
+
+>> Funções
+	>> São blocos que permitem a reutilização de código
+	>> Encapsulam um conjunto de instruções que podem ser executadas quando a função é chamada
+	>> Se uma função é atribuída à propriedade de um objeto, ela é conhecida como método desse objeto (o que o objeto faz)
+	>> O valor retornado por uma função é especificado usando a palavra-chave return
+		>> Após isso, a função é encerrada e i fluxo continua de onde parou
+
+	>> Parâmetros
+		>> Parâmetros são variáveis que você passa para a função para que ela possa operar sobre eles
+		>> Dentro da função, atuam como variáveis locais
+
+		>> Não precisam ser obrigatoriamente fornecidos
+			>> Se um parâmetro não for passado, seu valor será undefined
+
+		>> Parâmetros Rest permitem que uma função receba um número indefinido de argumentos
+			>> Definidos usando ... seguido pelo nome do parâmetro
+			>> function somar(...numeros) { codigo }
+
+		>> Ao chamar a função, os argumentos devem ser atribuídos na mesma ordem em que os parâmetros foram definidos
+
+		>> O arguments é um objeto do tipo array que contém os valores dos argumentos passados para essa função
+			>> Não é disponível para funções flecha
+
+	>> Declarando Funções
+		>> function nomeDaFuncao(param1, param2) {
+  			// bloco de código
+  			return resultado;
+		   }
+
+	>> Chamada
+		>> nome-da-função(param1, param2);
+
+	>> Funções Anônimas
+		>> São funções sem nome, frequentemente usadas em expressões e atribuídas a variáveis ou passadas como argumentos 
+		   para outras funções
+			>> let variavel = function(parametro) { codigo };
+			   console.log(variavel(paramentro)
+
+	>> Funções de Flecha
+		>> É uma sintaxe mais curta para escrever funções
+		>> Não podem ser usadas como construtores
+		>> Podem ter um corpo de expressão ou o corpo de bloco usual
+
+		>> const variável = (parametro1, parametro2) => parametro1 + parametro2;
+
+	>> Funções Imediatamente Invocadas (IIFE)
+		>> É definida e executada imediatamente após sua criação
+
+		>> (function() { console.log("Esta função é invocada imediatamente!"); } )();
+
+	>> Closures
+		>> É uma função que lembra e acessa variáveis do escopo externo mesmo após o escopo original ter sido finalizado
+
+	>> Funções Construtoras
+		>> São usadas para criar novos objetos, usando a palavra-chave new
+
+>> Classes
+	>> São uma forma sintática de definir funções construtoras e a cadeia de protótipos de uma maneira mais intuitiva
+		>> É um modelo para objetos
+
+	>> Usa-se a palavra-chave class
+		>> Sempre deve ser adicionado o método constructor()
+			>> É chamado automaticamente quando um novo objeto é criado
+			>> É usado para inicializar propriedades de objetos
+
+	>> Herança
+		>> Classes pordem ser aumentadas utilizando a palavra-chave extends
+		>> Permite que uma classe (subclasse) herde métodos e propriedades de outra classe (superclasse), estendendo e 
+		   modificando seu comportamento
+
+	>> Polimorfismo	
+		>> Refere-se à capacidade de diferentes classes tratarem os mesmos métodos de maneiras diferentes
+		>> Métodos com o mesmo nome podem ter implementações diferentes em diferentes classes
+
+	>> Encapsulamento
+		>> Conceito de agrupar propriedades e métodos que operam sobre esses dados em uma única unidade ou classe
+		>> Envolve ocultar detalhes internos da implementação, expondo apenas uma interface pública controlada
+			>> Ajuda a proteger o estado interno do objeto contra alterações externas
+
+		>> Propriedades Públicas
+			>> Podem ser acessadas e modificadas diretamente de fora da classe
+			>> Qualquer propriedade de um objeto é pública por padrão
+
+		>> Propriedades Privadas
+			>> São acessíveis apenas dentro da própria classe
+			>> Não podem ser acessadas ou modificadas diretamente fora da classe
+			>> São definidas usando o símbolo # antes do nome da propriedade
+
+		>> Propriedades Protegidas
+			>> Acessíveis dentro da classe e nas subclasses
+			>> JavaScript não tem suporte para esse tipo, mas existe a convenção de usar um _ antes 
+			   do nome para indicar que ela deve ser tratada dessa forma
+
+>> Módulos
+	>> São uma forma de organizar e reutilizar o código
+	>> Cada módulo pode exportar valores que podem ser importados em outros arquivos
+	>> Usa-se export e import para definir e utilizar módulos
+
+>> Expressões Regulares
+	>> São padrões utilizados para corresponder e manipular cadeias de caracteres
+	>> Ferramenta para busca, substituição e validação de padrões de texto
+	>> Utilizado em validações de formulário, para verificar se os dados inseridos estão corretos
+	>> Encontra e substitui padrões de texto, formatando números de telefone ou removendo espaços extras
+	>> Extrai informações específicas de grandes blocos de texto
+
+	>> Utiliza os métodos do RegExp
+		>> exec(): Verifica se há correspondência entre a expressão regular e a string, retornando true ou false
+
+		>> test(): Executa uma busca na string e retorna detalhes sobre a correspondência encontrada
+		 
+	>> Utiliza os métodos match(), matchAll(), replace(), replaceAll(), search() e split() das Strings que aceitam expressões regulares
+
+	>> Podem corresponder exatamente ao texto que foi digitado
+		>> /abc/ -> busca a sequência
+
+	>> O sufixo g faz a busca continuar em toda a string
+	>> O sufixo i torna a busca insensível a maiúsculas e minúsculas
+
+	>> Pode ter caracteres especias com funções específicas
+		>> . -> qualquer caractere
+		>> \d -> qualquer dígito
+		>> \w -> qualquer caractere alfanumérico
+		>> \s -> qualquer espaço em branco
+
+		>> Alguns precisam ser escapados se for preciso usá-los como literais
+
+	>> Pode definir um conjunto de caracteres possíveis
+		>> [aeiou] -> corresponde a qualquer vogal
+
+	>> Pode especificar intervalos de caracteres
+		>> [a-z] -> corresponde a qualquer letra minúscula entre esse intervalo
+
+	>> Pode definir o número de repetições do padrão
+		>> *, +, ?, {n} (extamanete n), {n,} (pelo menos n), {n,m} (entre n e m)
+
+	>> Podem definir a posição padrão na string
+		>> ^ (inicio) ou $ (fim)
+
+	>> Pode agrupar padrões e definir alternativas
+		>> /(abc | def)
+
+>> Objeto Window
+	>> Objeto global de programas JavaScript do lado do cliente
+
+	>> Possui duas funções usadas para executar códigos:
+		>> setTimeout(): Executa uma função ou um trecho de código após um atraso especificado em milissegundos
+			>> Útil quando quer que algo aconteça uma vez após um período de tempo
+
+		>> setInterval(): Executa uma função ou código repetidamente com um atraso fixo entre cada execução
+			>> Útil para ações repetitivas que precisam ocorrer em intervalos regulares
+
+>> DOM (Document Object Model)
+	>> O objeto Document representa a página web
+		>> Principal objeto do DOM
+
+	>> Representação do documento HTML ou XML como uma árvore de nós
+		>> Cada parte do documento é um nó que pode ser manipulado
+		>> Element Nodes: Representam tags HTML
+		>> Text Nodes: Contêm o texto dentro de um elemento
+		>> Attribute Nodes: Representam atributos de elementos HTML
+		>> Comment Nodes: Representam comentários no código
+
+	>> Permite acessar e modificar a estrutura, conteúdo e estilo do documento por meio do JavaScript
+
+	>> Selecionando Elementos
+		>> Por meio do atributo id
+			>> Retorna o primeiro elemento HTML que tem o valor do atributo id especificado
+			>> const elemento = document.getElementById("nome-do-id")
+
+		>> Por meio do atributo name
+			>> document.getElementsByName("valor-do-name")
+
+		>> Por meio das tags
+			>> Retorna uma coleção de elementos que têm o nome da tag especificada
+			>> const elementos = document.getElementsByTagName("elemento")
+		
+		>> Por meio do atributo class
+			>> Retorna uma coleção de elementos que têm uma ou mais classes especificadas
+			>> const elementos = document.getElementsByClassName("nome-da-classe")
+
+		>> Por meio dos seletores CSS
+			>> Retorna o primeiro elemento que corresponde a um seletor CSS fornecido
+			>> const elemento = document.querySelector('nome-do-seletor-css')
+
+			>> Retorna todos os elementos que correspondem ao seletor CSS fornecido
+			>> const elementos = document.querySelectorAll('nome-do-seletor-css')
+
+	>> Modificando Conteúdo
+		>> textContent 
+			>> Define ou retorna o conteúdo textual de um elemento e de todos os seus descendentes
+			>> Usado quando se deseja trabalhar apenas com texto
+	
+		>> innerHTML
+			>> Define ou retorna o conteúdo HTML (elementos e texto) de um elemento
+			>> Permite inserir tags HTML dentro de outro elemento
+			>> Usado quando se deseja adicionar ou modificar elementos HTML além do texto
+
+		>> value
+			>> Define ou retorna o valor de um campo de formulário
+			>> Usado quando é preciso alterar o valor de um campo de formulário
+
+	>> Alterando Atributos
+		>> setAttribute()
+			>> Adiciona ou modifica o valor de um atributo específico em um elemento HTML
+			>> Opera sobre os atributos class, id, src, href
+
+		>> removeAttribute()
+			>> Remove um atributo específico de um elemento
+
+	>> Eventos DOM
+		>> São ações que ocorrem no navegador
+		>> Permite "ouvir" esses eventos e executar funções em resposta a eles
+
+		>> Eventos de Mouse
+			>> click: Ocorre quando um elemento é clicado
+			>> dblclick: Ocorre quando um elemento é clicado duas vezes
+			>> mouseover: Ocorre quando o ponteiro do mouse passa sobre um elemento
+			>> mouseout: Ocorre quando o ponteiro do mouse sai de um elemento
+
+		>> Eventos de Teclado
+			>> keydown: Ocorre quando uma tecla é pressionada
+			>> keyup: Ocorre quando uma tecla é liberada
+			>> keypress: Ocorre quando uma tecla é pressionada (inclui apenas teclas que produzem caracteres)
+
+		>> Eventos de Formulário
+			>> submit: Ocorre quando um formulário é enviado
+			>> input: Ocorre quando um valor de um campo de formulário é alterado
+			>> change: Ocorre quando o valor de um campo de formulário muda (e o campo perde o foco)
+
+		>> Eventos de Janela
+			>> load: Ocorre quando o conteúdo da página foi totalmente carregado
+			>> resize: Ocorre quando a janela do navegador é redimensionada
+			>> scroll: Ocorre quando o usuário rola a página
+
+	>> Ouvintes
+		>> addEventListener(): adiciona eventos a elementos no DOM
+			elemento.addEventListener(evento, função);
+				>> elemento: O elemento ao qual você quer adicionar o ouvinte de evento.
+				>> evento: O tipo de evento, como 'click', 'keydown', etc.
+				>> funcão: A função de callback a ser executada quando o evento ocorre.
+
+		>> removeEventListener(): remove um ouvinte de evento
+			element.removeEventListener(event, function, useCapture);
+				>> É importante que a função passada para removeEventListener() seja exatamente a mesma utilizada em addEventListener()
+
+	>> Prevenção de Comportamento Padrão
+		>> preventDefault(): Alguns eventos têm comportamentos padrão e podem ser prevenidos com esse método
+
+	>> Parar a Propagação de Eventos
+		>> stopPropagation(): impede que um evento se propague para elementos pai 
+		   Útil quando eventos em elementos filhos não devem afetar eventos configurados em elementos pais
+
+		>> Fase de Captura: O evento é propagado de cima (elemento mais externo) para baixo s árvore DOM até atingir o alvo.
+		>> Fase de alvo: O evento atinge o elemento alvo, onde o ouvinte de eventos diretamente ligado a este elemento é executado
+		>> Fase de Bolha:  O evento é propagado de volta do elemento alvo, subindo a árvore DOM passando pelos elementos pais até o mais externo
+
+	>> Resumo das Propriedades de Eventos Comuns
+		>> event.type: O tipo do evento que ocorreu.
+		>> event.target: O elemento onde o evento ocorreu.
+		>> event.currentTarget: O elemento ao qual o ouvinte de evento está anexado.
+		>> event.preventDefault(): Previne o comportamento padrão de um evento.
+		>> event.stopPropagation(): Impede que o evento se propague para elementos pais.
+		>> event.bubbles: Indica se o evento pode se propagar para os pais.
+		>> event.key: Indica qual tecla foi pressionada em um evento de teclado.
+
+>> Strict Mode
+	>> Recurso que permite uma forma mais rigorosa de escrever o código
+	>> Ajuda a identificar e prevenir erros, impondo restrições e comportamentos mais seguros
+
+	>> Para ativar, é necessário adicionar a string "use strict" no inicio do script
+	
+	>> Variáveis devem ser declaradas antes de usar, caso contrário será gerado um erro
+	>> Parâmetro duplicados não são permitidos
+	>> Não é permitido usar o operador delete em variáveis, funções ou argumentos
+	>> A palavra-chave this no contexto global será undefined
+	>> Algumas palavras reservadas não podem ser usadas como identificadores
+	>> Proibe a atribuição a propriedades somente leitura
+	>> Propriedades duplicadas em objetos literais não são permitidas
+
+>> this
+	>> É uma palavra-chave
+	>> Quando usado em um método de objeto, this refere-se ao objeto
+	>> Quando usado sozinho refere-se ao objeto global (window)
+		>> Também equivale quando usado no modo estrito
+	>> Em funções normais, pode referir-se ao objeto global ou a outro contexto dependendo de como a função é chamada
+	>> Em construtores usam this para referenciar o novo objeto sendo criado
+	>> Quando usada em um manipulador de eventos, refere-se ao elemento que recebeu o evento
+	>> Quando usada em uma função de seta, refere-se ao objeto pai
+
+	>> Empréstimo de Função
+		>> Permite que um objeto use um método de outro objeto sem herdar dele diretamente
+		>> É possível utilizando os métodos como call() e apply(), que permitem definir explicitamente o valor de this dentro de uma função
+	
+	
+
+
+
+
+
+
+
+
+
+
+ 
+
 
 
 
