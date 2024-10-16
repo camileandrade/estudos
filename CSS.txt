@@ -1,0 +1,869 @@
+CSS - Cascading Style Sheets
+
+>> Linguagem utilizada para estilizar páginas web
+	>> Descreve como os elementos HTML devem ser exibidos 
+
+>> Pode controlar o layout de várias páginas de uma vez só
+
+>> Como inserir CSS?
+	>> CSS Externo
+		>> Utiliza-se apenas um arquivo externo, incluindo uma referência dentro do elemento <link> do head do HTML
+			>> <link rel="stylesheet" href="nome-do-arquivo.css">
+	>> CSS Interno
+		>> Utiliza-se a tag <style> dentro do head do HTML, especificando todas as estilizações ali
+	>> CSS Embutido
+		>> Utiliza-se o atributo style dentro da tag
+
+>> Comentários
+	>> /* Isso é um comentário de linha única */
+
+>> Box Model
+	>> Tudo o que é exibido pelo CSS é uma caixa
+	>> São compostas por áreas de modelo de caixas distintas
+
+	>> Podemos fazer uma analogia com quadros pendurados em uma parede:
+		>> A Caixa de Conteúdo seria a pintura
+
+		>> A Caixa de Preenchimento seria o espaço branco entre a pintura e moldura
+			>> É o espaço interno de um elemento
+			>> É definido pela propriedade padding
+
+		>> A Caixa de Borda seria a moldura do quadro
+			>> É definido pela propriedade border
+
+		>> A Caixa de Margem seria o espaçamento entre os quadros
+			>> É o espaço externo de um elemento
+			>> É definido pela propriedade margin
+			>> Quando há diferença de valor entre a margem de dois elementos, prevalece o maior
+				>> Ex: Se um elemento tem margem 20px e outro 100px, a distância entre os dois será 100px
+
+>> Seletores
+	>> Composto por um:
+		>> Seletor, que aponta para o elemento HTML que será estilizado
+		>> Bloco de Decoração, que define como os elementos selecionados devem ser estilizados
+			>> Cada declaração é composta por um nome da propriedade e o valor
+
+	>> seletor { nome-da-propriedade: valor;}
+
+	>> Tipos de Seletores: 
+		>> Seletor Universal:
+			>> Têm como alvo todos os elementos em um documento HTML
+			>> Representado por um asterisco (*)
+				>> Ex: * {}
+
+		>> Seletor de Tipo:
+			>> Selecionam o elemento com base no nome da tag
+			>> Todos os elementos do documento iguais ao declarado no seletor receberão a mesma estilização
+				>> Ex: p {}
+
+		>> Seletor de Classe:
+			>> Tem como alvo elementos HTML que tenha um atributo de classe específica em comum aplicada a eles
+			>> São indicados por um ponto (.) seguidos do nome da classe
+				>> Ex: .nome-da-classe {}
+
+		>> Seletor de ID:
+			>> Tem como alvo o elemento com atributo único no HTML, o id
+			>> São indicados com um hash (#) seguidos do nome do id
+				>> Ex: #nome-do-id {}
+
+		>> Seletor de Agrupamento:
+			>> Escolhe-se elementos diferentes que receberão a mesma estilização e os agrupam
+			>> São separados por vírgulas (,)
+				>> Ex: a, p, span {}
+
+		>> Seletor de Atributo:
+			>> [atributo]: Seleciona os elementos com um atributo especificado
+			>> [atributo = "valor"]: Seleciona elementos com um atributo e valor especificado
+			>> [attribute~="value"]: Seleciona elementos com um valor de atributo contendo uma palavra especificada
+
+		>> Seletor Descendente:
+			>> Tem como alvo os elementos que estão dentro de outro elemento, abrangendo todos os níveis de aninhamento
+			>> São indicados na declaração com espaços em branco entre os elementos, na ordem em que estão declarados no documento
+				>> Ex: div a {}
+
+		>> Seletor Filho:
+			>> Tem como alvo os elementos que estão dentro de outro elemento, abrangendo apenas o primeiro nível de aninhamento
+			>> São indicados na declaração com um sinal de maior (>) entre os elementos, na ordem em que estão declarados no documento
+				>> Ex: div > a {}
+
+		>> Seletor de Irmãos Adjacentes:
+			>> Tem como alvo o elemento que está diretamente após outro elemento específico
+			>> São indicados na declaração com um sinal de adição (+) entre os elementos
+				>> Ex: div + a {}
+
+		>> Seletor Geral de Irmãos:
+			>> Tem como alvo todos os elementos que estão próximos do especificado
+			>> São indicados na declaração com caractere (~) entre os elementos
+				>> Ex: div ~ a {}
+
+	>> Pseudo-Elementos
+		>> Usados para especificar partes especificadas de um elemento
+
+		>> seletor::pseudo-elemento { nome-da-propriedade: valor; }
+
+			>> ::after: Insere algo após o conteúdo de cada elemento selecionado
+				>> Usar a propriedade content para especificar o conteúdo a ser inserido
+			
+			>> ::before: Insere algo antes do conteúdo de cada elemento selecionado
+				>> Usar a propriedade content para especificar o conteúdo a ser inserido
+			
+			>> ::first-letter:  Adiciona um estilo à primeira letra do seletor especificado
+				>> Só pode ser aplicado a elementos de nível bloco
+				>> Podem ser usadas propriedades de cor, fonte, fundo, espaçamento, decoração, alinhamento, transformação, altura e luz
+
+			>> ::first-line: Estiliza a primeira linha de um texto
+				>> Só pode ser aplicado a elementos de nível bloco
+				>> Podem ser usadas propriedades de cor, fonte, fundo, margem, preenchimento, fronteira, decoração, alinhamento, 					   transformação, altura, flutuador e luz
+
+			>> ::maker: Seleciona o marcador de um item da lista
+			
+			>> ::selection: Corresponde à parte de um elemento selecionado por um usuário
+				>> Podem ser usadas propriedades de cor, background, cursor e contorno
+
+	>> Pseudo-Classes
+		>> Define um estado especial de um elemento
+			
+		>> selector:pseudo-class { property: value; } 
+			>> :active: Seleciona um elemento quando é interagido ou clicado
+				    Pode ser usado em todos os elementos
+				    Deve ser colocado depois do :hover no CSS
+	
+			>> :checked: Representa um elemento radio, checkbox ou option que está marcado
+
+			>> :disabled: Seleciona os elementos desabilitados
+
+			>> :empty: Seleciona elementos que não possuem filhos e nós de texto
+
+			>> :enabled: Seleciona qualquer elemento que pode ser selecionado, clicado, digitado, etc.
+
+			>> :first-child: Representa qualquer elemento que seja o primeiro filho de seus pais
+
+			>> :first-of-type: Seleciona o primeiro do seu tipo entre os irmãos
+
+			>> :focus: Seleciona um elemento quando ele é clicado
+
+			>> :hover: Seleciona um elemento quando o usuário passa o mouse sobre ele
+
+			>> :in-range: Seleciona todos os elementos com um valor que esteja dentro de um intervalo especificado
+				      Só funciona se o input tem atributos min/max
+
+			>> :invalid: Seleciona elementos do formulário com um valor inválido de acordo com as configurações do elemento
+
+			>> :last-child: Corresponde a cada elemento que é último filho do seu pai
+
+			>> :last-of-type: Corresponde a cada elemento que é último de seu tipo entre os irmão
+
+			>> :link: Seleciona links não visitados
+
+			>> :optional: Seleciona elementos do formulário que são opcionais
+				>> Não possuem o atributo required
+
+			>> :out-of-range: Seleciona todos os elementos com um valor fora do intervalo especificado
+
+			>> :required: Seleciona os elementos do formulário que são obrigatórios
+				>> Possuem o required
+
+			>> :valid: Seleciona qualquer input cujo o conteúdo foi validado com sucesso
+
+			>> :visited: Usado para selecinar links visitados
+
+>> Colors
+	>> São especificadas usando nomes de cores predefinidas ou com valores RGB, HEX, HSL, RGBA, HSLA
+	
+	>> RGB
+		>> Vermelho, verde e azul
+		>> Cada parâmetro define a intensidade da cor entre 0 (mais baixo) e 255 (mais alto)
+
+	>> RGBA
+		>> Extensão dos valores de cores RGB com um canal alfa (especifica a opacidade de uma cor)
+		>> Vermelho, verde, azul e alfa
+		>> O alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente)
+
+	>> HEX
+		>> Formato rrggbb
+		>> São valores hexadecimais entre 00 (mais baixo) e ff (mais alto)
+
+	>> HSL
+		>> Matiz, saturação e luminosidade
+
+		>> Matiz é um grau na roda de cores de 0 a 360
+			>> 0 é vermelho, 120 é verde e 240 é azul
+
+		>> Saturação é um valor percentual, descrita como a intensidade da cor
+			>> 0% significa tom de cinza e 100% é a cor completa
+
+		>> Luminosidade é um valor percentual, descrita como a quantidade de luz que deseja dar a cor
+			>>  0% é preto, 50% é neutro e 100% é branco
+
+	>> HSLA
+		>> Extensão dos valores de cores HSL com um canal alfa que funciona da mesma forma que o RGBA
+
+>> Unidades
+	>> Comprimentos Absolutos
+		>> São fixas e irão aparece exatamente com aquele tamanho
+		>> Não são recomendadas para uso em tela
+		>> cm, mm, in, px, pt, pc
+
+	>> Comprimentos Relativos
+		>> Relativo a outra propriedade de comprimento
+		>> Escalam melhor entre diferentes mídias de renderização
+		>> O tamanho padrão do texto em navegadores é 16px
+
+		>> em: Relativa ao tamanho da fonte do elemento pai, usada para fontes
+			>> Se o tamanho do elemento pai for de 16px, 2em é 32px
+
+		>> rem: Relativa ao tamanho da fonte do elemento raiz, usada para fontes
+
+		>> %: Relativa ao elemento pai, muito usada para larguras e alturas de elementos
+
+		>> vw: Unidade de largura da viewport 	
+			>> 1vw é igual a 1% da largura da viewport
+
+		>> vh: Unidade de altura da viewport
+			>> 1vh é igual a 1% da altura da viewport
+
+>> Backgrounds
+	>> Adiciona efeitos ao fundo dos elementos
+
+	>> background-color: Especifica a cor de fundo
+		>> background-color: red;
+
+	>> background-image: Especifica uma imagem a ser usada como plano de fundo
+			     É repetida para cobrir todo o elemento
+			     É possível várias imagens, separando-as por vírgulas. Elas serão apresentadas em camadas, na mesma ordem que forem declaradas
+		>> background-image: url("paper.gif");
+
+	>> background-size: Especifica o tamanho das imagens de fundo
+		>> contain: Dimensiona a imagem de fundo para ser a maior possível
+		>> cover:  dimensiona a imagem de fundo para que a área de conteúdo seja completamente coberta pela imagem de fundo
+		>> Também aceita como valores unidades de medidas
+
+	>> background-repeat: Define como uma imagem de fundo será repetida. Por padrão é repetida vertical e horizontalmente 
+		>> repeat: Repetido tanto verticalmente quanto horizontalmente
+		>> repeat-x: Repetido apenas horizontalmente
+		>> repeat-y: Repetido apenas verticalmente
+		>> no-repeat: A imagem não é repetida
+		>> space: A iamgem é repetida tanto quanto possível
+		>> round: A imagem é comprimida ou esticada para caber no espaço
+
+	>> background-attachment: Define se a imagem de fundo deve rolar ou ser fixa 
+		>> scroll: A imagem irá rolar com a página. É a configuração padrão
+		>> fixed: A imagem não irá rolar com a página
+		>> local: Irá rolar com o conteúdo do elemento
+
+	>> background-clip: Define até que ponto o fundo deve se estender dentro do elemento
+		>> border-box: Se estende até a borda. É o valor padrão
+		>> padding-box: Se estende até a borda interna da borda
+		>> content-box: Se estende até o limite do conteúdo em si
+
+	>> background-origin: Especifica a posição de origem de uma imagem de plano de fundo
+		>> border-box: Começa no canto superior esquerdo da borda
+		>> padding-box: Começa no canto superior esquerdo da borda de preenchimento
+		>> content-box: Começa no canto superior esquerdo do conteúdo
+
+	>> background-position: Define a posição inicial de uma imagem de fundo
+		>> left top, left center, left bottom, right top, right center, right bottom, center top, center center, center bottom
+
+>> Bordas
+	>> Especifica o estilo, a largura e a cor da borda de um elemento
+	>> Todos as propriedades da borda podem receber de 1 a 4 valores
+		>> 1: Todos os lados receberão o mesmo valor
+		>> 2: top e bottom receberão o primeiro valor, right e left o segundo
+		>> 3: top receberá o primeiro valor, right e left o segundo, bottom o terceiro
+		>> 4: top receberá o primeiro valor, right o segundo, bottom o terceiro, left o quarto
+		
+		>> Não se aplica a propriedades de borda individuais
+
+	>> border-style: Especifica o tipo de borda
+		>> dotted: Borda pontilhada
+		>> dashed: Borda tracejada
+		>> solid: Borda sólida
+		>> double: Borda dupla
+		>> groove: Borda ranhurada 3D
+		>> ridge: Borda estriada 3D
+		>> inset: Borda inserida 3D
+		>> outset: Borda inicial 3D
+		>> none: Não define fronteira
+		>> hidden: Define uma borda oculta
+
+		>> Propriedades Individuais:	
+			>> border-top-style, border-bottom-style, border-right-style, border-left-style
+
+	>> border-width: Propriedade especifica a largura das quatro bordas
+			 A largura pode ser definida como um tamanho específico 
+
+		>> Propriedades Individuais:	
+			>> border-top-width, border-bottom-width, border-right-width, border-left-width
+
+	>> border-color: Especifica a cor da borda
+
+		>> Propriedades Individuais:	
+			>>  border-top-color, border-bottom-color, border-right-color, border-left-color
+
+	>> border: Propriedade abreviada onde pode ser inseridas o estilo, largura e cor de uma vez
+		   Pode especificar todas as propriedades individuais da borda para apenas um lado
+			>> border-top, border-bottom, border-left, border-right
+
+	>> border-radius: Adiciona borda arredondadas
+	
+	>> border-image: Especifica uma imagem como a borda ao redor de um elemento
+			 É a forma abreviada, sendo composta pelas propriedades:
+		>> border-image-source: Define a imagem a ser usada como borda
+
+		>> border-image-slice: Divide a imagem em nove partes -> quatro cantos, quatro bordas e a área central
+
+		>> border-image-width: Define a largura da borda
+
+		>> border-image-outset: Define a quantidade pela qual a borda da imagem se estende além da borda do elemento
+
+		>> border-image-repeat: Define como a imagem da borda deve ser repetida
+			>> stretch (padrão): A imagem é esticada para preencher a área
+
+			>> repeat: Repete a imagem de borda para preencher o espaço disponível
+				   Se a imagem não preencher perfeitamente o espaço, ela será cortada
+
+			>> round: Repete a imagem de borda para preencher o espaço disponível, mas redimensiona 
+				   a imagem para garantir que ela se encaixe perfeitamente no espaço disponível, sem corte
+
+			>> space: Repete a imagem de borda para preencher o espaço disponível e adiciona espaço entre as cópias
+				  da imagem, se necessário, para garantir que elas se encaixem perfeitamente no espaço disponível, sem redimensionamento
+
+>> Margens
+	>> Usadas para criar espaço ao redor dos elementos, a partir da borda externa
+
+	>> maring: Propriedade abreviada que pode receber de 1 a 4 valores
+		>> 1: Todos os lados receberão o mesmo valor
+		>> 2: top e bottom receberão o primeiro valor, right e left o segundo
+		>> 3: top receberá o primeiro valor, right e left o segundo, bottom o terceiro
+		>> 4: top receberá o primeiro valor, right o segundo, bottom o terceiro, left o quarto
+
+	>> Margens Individuais:	
+		>>  margin-top, margin-bottom, margin-right, margin-left
+
+>> Preenchimento
+	>> Cria espaço ao redor do conteúdo de um elemento, dentro de quaisquer bordas definidas
+
+	>> padding: Propriedade abreviada que pode receber de 1 a 4 valores
+		>> 1: Todos os lados receberão o mesmo valor
+		>> 2: top e bottom receberão o primeiro valor, right e left o segundo
+		>> 3: top receberá o primeiro valor, right e left o segundo, bottom o terceiro
+		>> 4: top receberá o primeiro valor, right o segundo, bottom o terceiro, left o quarto
+
+	>> Preenchimentos Individuais:	
+		>> padding-top, padding-bottom, padding-right, padding-left
+
+>> Altura e Largura
+	>> height: Define a altura do elemento
+	>> width: Define a largura do elemento
+
+	>> max-width e min-width: Definem a largura máxima e mínima respectivamente
+	>> max-height e min-height: Definem a altura máxima e mínima respectivamente
+		>> Ideal para manuseio de telas pequenas
+
+	>> Não incluem preenchimentos, bordas e margens
+	>> Se uma largura for especificada, o preenchimento adicionado a esse elemento será adicionado à largura total
+
+>> Texto
+	>> Cor
+		>> color: Define a cor do texto
+
+	>> Alinhamento
+		>> text-align: Alinha o texto horizontalmente: 
+			>> center (centro), left (esquerda), right (direita) e justify (justificado)
+
+		>> text-align-last: Especifica como alinhar a última linha de um texto
+			>> center (centro), left (esquerda), right (direita), justify (justificado), start (começo) e end (final)
+
+		>> direction: Altera a direção do texto de um elemento
+			>> ltr: Esquerda para direita
+			>> rtl: Direita para esquerda
+		
+		>> unicode-bidi: Controla como o texto de diferentes direções é exibido na página. Usado em conjunto com a propriedade direction
+			>> normal: Padrão
+			>> embed: Cria um novo contexto de direção para o texto dentro do elemento.
+			>> bidi-override: Força todos os caracteres a seguir a direção especificada, ignorando suas direções naturais.
+			>> isolate: Isola o texto dentro do elemento, sem influenciar ou ser influenciado pelo texto fora dele.
+			>> isolate-override: Combina isolate e bidi-override.
+			>> plaintext: Aplica regras bidi a todo o texto dentro do elemento.
+
+		>> vertical-align: Define o alinhamento vertical de um elemento
+			>> baseline: Alinha o elemento à linha de base do elemento pai (valor padrão)
+			>> sub: Alinha o elemento como texto subscrito
+			>> super: Alinha o elemento como texto sobrescrito
+			>> top: Alinha o topo do elemento com o topo da linha mais alta
+			>> text-top: Alinha o topo do elemento com o topo da fonte do pai
+			>> middle: Alinha o meio do elemento com o meio da linha pai
+			>> bottom: Alinha a parte inferior do elemento com a parte inferior da linha mais baixa
+			>> text-bottom: Alinha a parte inferior do elemento com a parte inferior da fonte do pai
+
+	>> Decoração
+		>> text-decoration-line: Adiciona uma linha de decoração ao texto
+			>> none: Remove qualquer decoração do texto
+			>> underline: Adiciona uma linha abaixo do texto
+			>> overline: Adiciona uma linha acima do texto
+			>> line-through: Adiciona uma linha através do texto (risco)
+
+		>> text-decoration-color: Define a cor da linha de decoração
+
+		>> text-decoration-style: Define o estilo da linha de decoração
+			>> solid: Linha contínua (valor padrão)
+			>> double: Linha dupla
+			>> dotted: Linha pontilhada
+			>> dashed: Linha tracejada
+			>> wavy: Linha ondulada
+
+		>> text-decoration-thickness: Define a espessura da linha de decoração
+
+		>> text-decoration: É uma propriedade abreviada que inclui todas as propriedades anteriores
+
+	>> Transformação
+		>> text-transform: Especifica letras maiúsculas e minúsculas em um texto
+			>> capitalize: Transforma a primeira letra de cada palavra em maiúscula
+			>> uppercase: Transforma todas as letras em maiúsculas
+			>> lowercase: Transforma todas as letras em minúsculas
+	
+	>> Espaçamento
+		>> text-indent: Especifica o recuo da primeira linha de um texto
+
+		>> letter-spacing: Especifica o espaço entre os caracteres em um texto
+		
+		>> line-height: Especifica o espaço entre as linhas
+
+		>> word-spacing: Especifica o espaço entre as palavras em um texto
+
+		>> white-space: Especifica como o espaço em branco dentro de um elemento é tratado
+			normal: O espaço em branco é colapsado, e o texto é quebrado conforme necessário para preencher a largura do contêiner
+			nowrap: O espaço em branco é colapsado, mas o texto não é quebrado para preencher a largura do contêiner
+			pre: O espaço em branco é preservado, e o texto é quebrado apenas onde ocorrem caracteres de quebra de linha
+			pre-wrap: O espaço em branco é preservado, e o texto é quebrado conforme necessário para preencher a largura do contêiner
+			pre-line: O espaço em branco é colapsado, mas o texto é quebrado onde ocorrem caracteres de quebra de linha
+
+	>> Sombra
+		>> text-shadow: Adiciona sombra ao texto
+			>> Especificar a posição horizontal (px), a posição vertical (px), o desfoque (px), e a cor
+			>> Para adicionar mais de uma sobra em um mesmo elemento, separar os conjuntos de valores por vírgulas
+
+	>> Efeitos
+		>> text-overflow: Especifica como o conteúdo excedente que não é exibido deve ser sinalizado ao usuário
+			>> clip: O texto é recortado
+			>> ellipsis: O texto é renderizado com reticências
+
+		>> word-wrap: Permite que palavras longas sejam quebradas e colocadas na próxima linha
+			>> keep-all: Se uma palavra for muito longa para caber em uma área, ela se expande para fora
+			>> break-all: Força o texto a quebrar, mesmo que isso signifique dividi-lo no meio de uma palavra
+
+		>> writing-mode: Especifica se as linhas de texto são dispostas horizontalmente ou verticalmente
+			>> horizontal-tb
+			>> vertical-rl
+
+>> Fontes
+	>> Famílias de Fontes Genéricas:
+		>> Serif: Têm um pequeno traço nas bordas de cada letra
+		>> Sem-Serif: Têm linhas limpas (sem pequenos traços anexados)
+		>> Monospace: Todas as letras têm a mesma largura fixa
+		>> Cursive: Imitam a caligrafia humana
+		>> Fantasy: Fontes decorativas/lúdicas
+
+	>> font-family: Define a família de fontes a ser usada para um elemento
+		>> Deve adicionar uma lista de "fontes de backup" semelhantes
+
+	>> Fontes Web Seguras:
+		>> São instaladas universalmente em todos os navegadores e dispositivos
+			>> Arial, Verdana, Tahoma, Times New Roman, Geórgia, etc.
+
+	>> font-style: Define a estilização da fonte
+		>> normal: O texto é exibido normalmente
+		>> italic: O texto é mostrado em itálico
+
+	>> font-weight: Especifica o peso da fonte
+		>> normal: O texto é exibido normalmente
+		>> bold: O texto é exibido em negrito
+
+	>> font-variant: Especifica se um texto deve ou não ser exibido em fonte de caixa baixa
+		>> normal: O texto é exibido normalmente
+		>> small-caps: As letras minúsculas são convertidas em letras maiúsculas, mas aparecem em um tamanho de 
+			       fonte menor do que as letras maiúsculas originais
+
+	>> font-size: Define o tamanho do texto
+
+	>> Como usar as fontes do Google
+		>> Adicionar o link no head do HTML
+			>> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=nome-da-fonte">
+
+	>> font: Propriedade abreviada para font-style, font-variant, font-weight, font-size, font-family
+
+	>> Formatos de fontes: 
+		>> Fontes TrueType (TTF): Formato de fonte mais comum para os sistemas operacionais Mac OS e Microsoft Windows
+		>> Fontes OpenType (OTF): Formato para fontes de computador escaláveis, registrada da Microsoft
+		>> Formato de Fonte Aberta da Web (WOFF): Formato de fonte para uso em páginas da web
+		>> Fontes/Formas SVG: Permitem que SVG seja usado como glifos ao exibir texto
+
+		@font-face: Permite inserir no CSS arquivos de fontes
+			>> Primeiro, deve-se definir um nome para a fonte
+			>> E depois, apontar para o arquivo da fonte
+				@font-face {
+  					font-family: myFirstFont;
+  					src: url(sansation_light.woff);
+				}
+
+				div {
+  					font-family: myFirstFont;
+				}
+
+>> Icones
+	>> Podem ser facilmente adicionados à sua página HTML usando uma biblioteca
+		>> Adicionar link no head do HTML
+			>> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+>> Listas
+	>> list-style-type: Especifica o tipo de marcador de item da lista
+		>> none: Não exibe marcadores
+		>> disc: Utiliza um círculo sólido como marcador
+		>> circle: Utiliza um círculo vazio como marcador
+		>> square: Utiliza um quadrado como marcador
+		>> decimal: Utiliza numeração decimal (1, 2, 3, ...)
+		>> decimal-leading-zero: Utiliza numeração decimal com zero à esquerda (01, 02, 03, ...)
+		>> upper-roman: Utiliza numeração romana maiúscula (I, II, III, ...)
+		>> lower-alpha: Utiliza numeração alfabética minúscula (a, b, c, ...)
+		>> upper-alpha: Utiliza numeração alfabética maiúscula (A, B, C, ...)
+
+	>> list-style-image: Substitui o marcador do item da lista por uma imagem
+		>> url + caminho da imagem
+
+	>> list-style-position: Especifica a posição dos marcadores de item da lista
+		>> inside: São posicionados dentro da área do bloco de conteúdo, em relação ao texto
+		>> outside: São posicionados fora da área do bloco de conteúdo, no espaço reservado para margem
+
+	>> list-style: Forma abreviada para as propriedades anteriores
+
+>> Tabelas
+	>> border-collapse: Faz com que as bordas da tabela se fundam em uma única borda
+
+>> Exibição
+	>> display: Define como um elemento é exibido na página
+		>> block: O elemento ocupa toda a largura disponivel e começa em uma nova linha
+		>> inline: O elemento ocupa apenas o espaço necessário e não quebra a linha
+		>> inline-block: O elemento ocupa apenas o espaço necessário (como inline), mas permite definir altura e largura (como block)
+		>> none: O elemento não é exibido na página e não ocupa espaço.  Usado para esconder elementos
+		>> flex: Define o container flexível
+		>> grid: Define um container de grade
+			
+>> Flexbox
+	>> A ideia principal é dar ao contêiner a capacidade de alterar o tamanho de seus itens para melhor preencher o espaço disponível 
+	   Expande itens para preencher o espaço livre disponível ou os encolhe para evitar transbordamento
+
+	>> Propriedades do Container (pai): É o elemento pai que contém os itens flexíveis, definido por display: flex;
+		>> flex-direction: Define a direção dos itens flexíveis dentro do contêiner, e assim o eixo principal
+			>> row(padrão): Esquerda para a direita 
+				-> o eixo principal é horizontal, eixo transversal é vertical
+
+			>> row-reverse: Direita para a esquerda 
+				-> o eixo principal é horizontal, eixo transversal é vertical
+
+			>> column: Cima para baixo 
+				-> o eixo principal é vertical, eixo transversal é horizontal
+
+			>> column-reverse: Baixo para cima 
+				-> o eixo principal é vertical, eixo transversal é horizontal
+
+		>> flex-wrap: Define se os itens devem ou não quebrar para uma nova linha
+			>> nowrap(padrão):  Todos os itens ficam em uma única linha
+			>> wrap: Os itens quebram para uma nova linha
+			>> wrap-reverse: Os itens quebram para uma nova linha em ordem reversa
+
+		>> flex-flow: Abreviação para as propriedades flex-direction e flex-wrap
+ 
+		>> justify-content: Alinha os itens flexíveis ao longo do eixo principal, ajudando a 
+				    distribuir o espaço restante que não é ocupado pelos itens
+
+			>> flex-start(padrão): Alinha os itens ao início do contêiner
+			>> flex-end: Alinha os itens ao final do contêiner
+			>> center: Centraliza os itens no contêiner
+			>> space-between: Os itens são distribuídos uniformemente na linha
+			>> space-around: Os itens são distribuídos uniformemente na linha com espaço igual ao redor deles.
+					 Visualmente os espaços não são iguais, já que todos os itens têm espaço igual em ambos os lados
+			>> space-evenly: Os itens são distribuídos de modo que o espaçamento entre dois itens (e o espaço até as bordas) seja igual
+
+		>> align-items:  Alinha os itens flexíveis ao longo do eixo transversal 
+			>> stretch(padrão): Estica os itens para preencher o contêiner
+			>> flex-start: Alinha os itens ao início do contêiner
+			>> flex-end: Alinha os itens ao final do contêiner
+			>> center: Centraliza os itens no contêiner
+			>> baseline: Alinha os itens na linha de base
+
+		>> align-content: Alinha as linhas de um contêiner flexível quando há espaço extra no eixo transversal
+				  Relevante apenas quando o contêiner tem várias linhas de itens flexíveis (flex-wrap)
+			>> stretch (padrão): As linhas são esticadas para preencher o contêiner 
+			>> flex-start: As linhas são agrupadas no início do contêiner
+			>> flex-end: As linhas são agrupadas no final do contêiner
+			>> center: As linhas são agrupadas no centro do contêiner 
+			>> space-between: As linhas são distribuídas igualmente, com o primeiro item no início e o último item no final.
+			>> space-around: As linhas são distribuídas com espaço igual ao redor de cada linha
+
+		>> gap: Cria um espaçamento uniforme entre todos os itens filhos
+		
+	>> Propriedades dos Itens (filhos): São os elementos filhos diretos do contêiner flexível, cada item se torna um item flexível
+		>> order: Define a ordem dos itens flexíveis
+
+		>> flex-grow: Define a capacidade de um item de crescer para ocupar espaço disponível
+
+		>> flex-shrink: Define a capacidade de um item de encolher para liberar espaço
+		
+		>> flex-basis: Define o tamanho inicial de um item flexível
+
+		>> flex: Abreviação das três propriedades anteriores
+
+		>> align-self: Permite sobrescrever o alinhamento de um único item flexível 
+
+>> Posição
+	>> position: Define o tipo de método de posicionamento usado para um elemento
+		     São posicionados usando as propriedades de deslocamento top, bottom, left e right
+			>> Não funcionarão a menos que a position propriedade seja definida primeiro
+
+		>> static (padrão):  O elemento segue o fluxo normal do documento e não pode ser posicionado com as propriedades de deslocamento
+
+		>> relative: Posiciona o elemento em relação à sua posição original no fluxo do documento
+				>> As propriedades de deslocamento ajustam a posição do elemento a partir de onde ele estaria normalmente
+
+		>> fixed: Posiciona o elemento em relação à viewport, e ele permanece fixo na posição especificada, mesmo quando a página é rolada
+
+		>> absolute: Posiciona o elemento em relação ao seu contêiner pai mais próximo que tenha uma posição diferente de static 
+				>> Se não houver um contêiner pai posicionado, o elemento será posicionado em relação ao documento
+
+		>> sticky: Alterna entre relative e fixed, dependendo da posição de rolagem
+				>> É tratado como relative até que o atinja um determinado ponto de rolagem, se tornando fixed 
+
+>> Índice Z 
+	>> z-index: Especifica qual elemento deve ser colocado na frente ou atrás dos outros, pois quando eles são posicionados podem se sobrepor
+		    Um elemento pode ter uma ordem de pilha positiva ou negativa
+		    Funciona somente em elementos posicionados e itens flexíveis
+		    Um elemento com o maior número na ordem de pilha está sempre acima de um elemento com menor ordem de pilha
+
+>> Estouro
+	>> overflow: Controla o que acontece com conteúdo que é muito grande para caber em uma área
+	* overflow-x: Controla o comportamento do overflow no eixo horizontal
+	* overflow-y: Controla o comportamento do overflow no eixo vertical
+		>> visible (padrão): O conteúdo que excede o contêiner é visível fora do contêiner
+		>> hidden: O conteúdo que excede o contêiner é cortado e não é visível
+		>> scroll: Barras de rolagem são adicionadas ao contêiner, permitindo a rolagem para ver o conteúdo que excede
+			   Adicionará uma barra de rolagem horizontal e verticalmente mesmo que não seja preciso
+		>> auto: Barras de rolagem são adicionadas automaticamente somente se o conteúdo exceder o contêiner
+
+>> Flutuante
+	>> float: Usada para posicionar e formatar conteúdo, como um texto ao redor de uma imagem
+		>> left: O elemento flutua à esquerda do contêiner
+		>> right: O elemento flutua à direita do contêiner
+		>> none (padrão): O elemento não flutua
+		>> inherit: O elemento herda o valor float do seu elemento pai
+
+	>> clear: Usada para controlar o comportamento de elementos em relação a elementos flutuantes anteriores
+		>> none (padrão): O elemento não é empurrado abaixo dos elementos flutuantes esquerdo ou direito
+		>> left: O elemento é empurrado para baixo dos elementos flutuantes à esquerda
+		>> right: O elemento é empurrado abaixo dos elementos flutuantes à direita
+		>> both: O elemento é empurrado para baixo dos elementos flutuantes esquerdo e direito
+		>> inherit: O elemento herda o valor clear do seu pai
+
+	>> Técnica clearfix
+		>> Usada para forçar o contêiner a reconhecer os elementos flutuantes
+		>> Aplica-se essa classe ao contêiner que precisa reconhecer os elementos flutuantes:
+			.clearfix::after {
+  				content: "";
+  				display: table;
+ 				clear: both;
+			}
+
+>> Opacidade
+	>> opacity: Especifica a transparência de um elemento
+		    Pode assumir um valor de 0,0 - 1,0 (padrão)
+		    Quanto menor o valor, mais transparente
+		    Todos os seus elementos filhos herdam a mesma transparência
+				>> Utilizar RGBA para isso não acontecer
+
+>> Gradientes
+	>> Gradientes Lineares
+		>> Deve-se definir duas cores para realizar a transição e a direção 
+			>> background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+
+>> Box Shadow
+	>> box-shadow: Aplica uma ou mais sombras a um elemento
+		>> Especificar a posição horizontal (px), a posição vertical (px), o desfoque (px), a cor e a dispersão
+		>> inset: Altera a sombra externa (início) para uma sombra interna
+			>> Para adicionar mais de uma sobra em um mesmo elemento, separar os conjuntos de valores por vírgulas
+
+>> Transformações
+	>> transform: Permite que você mova, gire, dimensione e incline elementos
+		>> translate(): Move um elemento de sua posição atual, deve-se fornecer valores para o eixo X e Y
+
+		>> rotate(): Gira um elemento de acordo com o grau fornecido
+				>> valores positivos, gira o elemento no sentido horário
+				>> valores negativos, gira o elemento no sentido anti-horário
+
+		>> scaleX(): Aumenta ou diminui a largura de um elemento
+
+		>> scaleY(): Aumenta ou diminui a altura de um elemento
+
+		>> scale(): Aumenta ou diminui o tamanho de um elemento, deve-se fornecer os valores de altura e largura
+
+		>> skewX(): Inclina um elemento ao longo do eixo X pelo ângulo fornecido
+
+		>> skewY(): Inclina um elemento ao longo do eixo Y pelo ângulo fornecido
+
+		>> skew(): Inclina um elemento ao longo dos eixos X e Y pelos ângulos fornecidos
+
+		>> matrix(): Combina todos os métodos de transformação 2D em um
+				>> matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+		>> rotateX(): Gira um elemento em torno de seu eixo X em um determinado grau
+
+		>> rotateY(): Gira um elemento em torno de seu eixo Y em um determinado grau
+
+		>> rotateZ(): Gira um elemento em torno de seu eixo Z em um determinado grau
+
+>> Transições
+	>> transition: Permite que altere valores de propriedades suavemente, ao longo de um determinado período
+		>> É preciso especificar a propriedade quer quer atribuir o efeito, e o tempo de duração
+
+	>> transition-timing-function: Especifica a curva de velocidade do efeito de transição
+		>> ease: Especifica um efeito de transição com um início lento, depois rápido e, por fim, lento (este é o padrão)
+		>> linear: Especifica um efeito de transição com a mesma velocidade do início ao fim
+		>> ease-in: Especifica um efeito de transição com um início lento
+		>> ease-out: Especifica um efeito de transição com um final lento
+		>> ease-in-out: Especifica um efeito de transição com início e fim lentos
+		>> cubic-bezier(n,n,n,n): Permite que você defina seus próprios valores em uma função cúbica-bezier
+
+	>> transition-delay: Especifica um atraso (em segundos) para o efeito de transição
+
+	>> É possível combinar a transition com a transform
+
+>> Animações
+	>> Permite que um elemento mude gradualmente de um estilo para outro
+	>> @keyframes "nome-da-animação": Especifica os novos estilos que serão atribuido ao elemento que tiver o animatio-name vinculado a essa regra
+		>> Usando as palavras-chave "from" e "to" (que representam 0% (início) e 100% (concluído)).
+
+	>> animation-duration: Define quanto tempo uma animação deve levar para ser concluída
+		>> Se não for especificada, nenhuma animação ocorrerá
+
+	>> animation-delay: Especifica um atraso para o início de uma animação
+
+	>> animation-iteration-count: Especifica o número de vezes que uma animação deve ser executada
+		>> O valor infinite faz a animação continuar para sempre
+
+	>> animation-direction: Especifica como uma animação deve ser reproduzida 
+		>> normal: Para frente, este é o padrão
+		>> reverse: Direção reversa (para trás)
+		>> alternate: Primeiro para a frente e depois para trás
+		>> alternate-reverse: Primeiro para trás e depois para frente
+
+	>> animation-timing-function: Especifica a curva de velocidade da animação
+		>> ease: Especifica um efeito de transição com um início lento, depois rápido e, por fim, lento (este é o padrão)
+		>> linear: Especifica um efeito de transição com a mesma velocidade do início ao fim
+		>> ease-in: Especifica um efeito de transição com um início lento
+		>> ease-out: Especifica um efeito de transição com um final lento
+		>> ease-in-out: Especifica um efeito de transição com início e fim lentos
+		>> cubic-bezier(n,n,n,n): Permite que você defina seus próprios valores em uma função cúbica-bezier
+
+	>> animation-fill-mode: Especifica um estilo para o elemento de destino quando a animação não está sendo reproduzida
+		>> none: A animação não aplicará nenhum estilo ao elemento antes ou depois de sua execução, é o valor padrão
+
+		>> forwards: Manterá os valores de estilo definidos pelo último quadro-chave 
+			>> Depende de animation-direction e animation-iteration-count)
+
+		>> backwards: Obterá os valores de estilo definidos pelo primeiro quadro-chavee os manterá durante o período de atraso da animação
+			>> Depende da direção da animação) 
+
+		>> both: A animação seguirá as regras para frente e para trás, estendendo as propriedades da animação em ambas as direções
+
+	>> animation: Propriedade abreviada que combina todas as propriedades anteriores em uma só
+
+>> Reflexão de Imagem		
+	>> box-reflect: Cria um reflexo de imagem
+		>> below: Abaixo
+		>> above: Acima
+		>> right: Direita
+		>> left: Esquerda
+
+	>> Para especificar o espaço entre a imagem e o reflexo, adicione o valor junto com a direção
+
+>> Ajuste de Objeto
+	>> object-fit: Especifica como um <img> ou <video> deve ser redimensionado para caber em seu contêiner
+			>> fill: Padrão, a imagem é redimensionada para preencher a dimensão fornecida
+				>> Se necessário, será esticada ou comprimida para caber
+
+			>> contain: A imagem mantém sua proporção, mas é redimensionada para caber na dimensão fornecida
+
+			>> cover: A imagem mantém sua proporção e preenche a dimensão fornecida
+				>> A imagem será recortada para caber
+
+			>> none: A imagem não é redimensionada
+
+			>> scale-down: a imagem é reduzida para a menor versão none ou contain
+
+>> Posição do Objeto
+	>> object-position: Especifica como um <img> ou <video> deve ser posicionado dentro de seu contêiner com 
+			    coordenadas x/y dentro de sua "própria caixa de conteúdo"
+		>> O valor deve ser fornecido em porcentagem
+
+>> Mascaramento
+	>> Uso de uma máscara para controlar a visibilidade de partes de um elemento
+	>> Funciona como uma camada transparente que revela ou esconde partes do elemento subjacente, dependendo da transparência da máscara
+		>> mask-image: Especifica a imagem a ser usada como camada de máscara para um elemento
+			>> Gradientes também podem ser definidos como valor da máscara
+
+		>> mask-repeat: Especifica se ou como uma imagem de máscara será repetida
+
+>> Colunas Múltiplas
+	>> column-count: Especifica o número de colunas em que um elemento deve ser dividido
+	>> column-gap: Especifica o espaço entre as colunas
+	>> column-rule-style: Especifica o estilo da linha entre colunas
+	>> column-rule-width: Especifica a largura da linha entre colunas
+	>> column-rule-color: Especifica a cor da linha entre colunas
+	>> column-rule: Propriedade abreviada para definir todas as propriedades
+
+	>> column-span: Especifica quantas colunas um elemento deve abranger
+		>> none: O elemento irá abranger uma coluna
+		>> all: O elemento irá abranger todas as colunas
+		
+	>> column-width: Especifica uma largura ideal sugerida para as colunas
+
+>> Interface de Usuário
+	>> resize: Especifica se (e como) um elemento deve ser redimensionável pelo usuário
+		>> horizontal: Permite ao usuário apenas aumentar ou diminuir a largura
+		>> vertical: Permite ao usuário apenas aumentar ou diminuir a altura
+		>> both: Permite que o usuário redimensione a altura e a largura de um elemento
+
+>> Variáveis
+	>> Usada para inserir o valor de uma variável CSS
+	>> Têm acesso ao DOM
+		>> Pode criar variáveis ​​com escopo local ou global, alterá-las com JavaScript e alterá-las com base em consultas de mídia
+			>> Variáveis locais sobreescrevem variáveis globais
+	>> Usar quando se trata das cores do seu design, para não ter que trocar os códigos de todos os lugares quando necessário
+
+	>> Para criar uma variável global, deve-se declarar ela dentro do seletor :root
+		>> Quando utilizá-la no elemento: var(nome-da-variável)
+
+>> Box Sizing
+
+
+>> Media Queries
+	>> Podem ser usadas para verificar a largura e altura da janela de visualização, orientação da janela de visualização e resolução
+	>> @media: Técnica popular para fornecer uma folha de estilo personalizada para desktops, laptops, tablets e celulares
+
+>> CSS Responsivo
+	>> Faz com que sua página tenha uma boa aparência em todos os dispositivos
+	>> Usa apenas HTML e CSS
+	>> A página da Web deve ter uma boa aparência e ser fácil de usar, independentemente do dispositivo
+		>> Devem adaptar seu conteúdo para caber em qualquer dispositivo
+
+	>> Viewport (Janela de Visualização)
+		>> Área visível do usuário em uma página da web
+		>> Varia de acordo com o dispositivo
+		>> Não usar elementos grandes de largura fixa, isso pode fazer com que a viewport role horizontalmente
+			>> Lembrar de ajustar esse conteúdo para caber na largura da viewport
+
+	>> Grid-View (Visualização em Grade)
+		>> A página é dividida em colunas
+		>> Útil ao projetar páginas da web, pois facilita a colocação de elementos na página
+
+
+
+	
