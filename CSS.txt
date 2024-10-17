@@ -502,12 +502,12 @@ CSS - Cascading Style Sheets
 			>> Primeiro, deve-se definir um nome para a fonte
 			>> E depois, apontar para o arquivo da fonte
 				@font-face {
-  					font-family: myFirstFont;
-  					src: url(sansation_light.woff);
+  					font-family: nomear-a-fonte;
+  					src: url(caminho-da-fonte);
 				}
 
 				div {
-  					font-family: myFirstFont;
+  					font-family: fonte-nomeada;
 				}
 
 >> Icones
@@ -839,7 +839,9 @@ CSS - Cascading Style Sheets
 	>> Usar quando se trata das cores do seu design, para não ter que trocar os códigos de todos os lugares quando necessário
 
 	>> Para criar uma variável global, deve-se declarar ela dentro do seletor :root
-		>> Quando utilizá-la no elemento: var(nome-da-variável)
+		>> --nome-da-variavel: valor
+	
+	>> Quando utilizá-la no elemento seguir a sintaxe: var(nome-da-variável)
 
 >> Box Sizing
 

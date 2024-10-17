@@ -715,7 +715,7 @@
 			>> É usado para inicializar propriedades de objetos
 
 	>> Herança
-		>> Classes pordem ser aumentadas utilizando a palavra-chave extends
+		>> Classes podem ser aumentadas utilizando a palavra-chave extends
 		>> Permite que uma classe (subclasse) herde métodos e propriedades de outra classe (superclasse), estendendo e 
 		   modificando seu comportamento
 
@@ -815,7 +815,7 @@
 
 	>> Selecionando Elementos
 		>> Por meio do atributo id
-			>> Retorna o primeiro elemento HTML que tem o valor do atributo id especificado
+			>> Seleciona o elemento com o ID especificado
 			>> const elemento = document.getElementById("nome-do-id")
 
 		>> Por meio do atributo name
@@ -836,27 +836,38 @@
 			>> Retorna todos os elementos que correspondem ao seletor CSS fornecido
 			>> const elementos = document.querySelectorAll('nome-do-seletor-css')
 
-	>> Modificando Conteúdo
-		>> textContent 
-			>> Define ou retorna o conteúdo textual de um elemento e de todos os seus descendentes
-			>> Usado quando se deseja trabalhar apenas com texto
-	
-		>> innerHTML
-			>> Define ou retorna o conteúdo HTML (elementos e texto) de um elemento
-			>> Permite inserir tags HTML dentro de outro elemento
-			>> Usado quando se deseja adicionar ou modificar elementos HTML além do texto
+	>> Criar e Inserir Elementos 
+		>> document.createElement('tagName'): Cria um novo elemento
+		>> element.appendChild(child): Adiciona um novo elemento filho ao final de um pai
+		>> element.insertBefore(newElement, referenceElement): Insere um novo elemento antes de outro
+		>> element.removeChild(child): Remove um filho de um elemento
+		>> element.replaceChild(child): Substitui um nó filho por outro nó
 
-		>> value
-			>> Define ou retorna o valor de um campo de formulário
-			>> Usado quando é preciso alterar o valor de um campo de formulário
+	>> Acessando Elementos pelo Document Root
+		>> document.documentElement: Retorna o elemento raiz (<html>)
+		>> document.body: Retorna o elemento <body>
+		>> document.head: Retorna o elemento <head>
+
+	>> Percorrendo Nós do DOM
+		>> Cada nó no DOM tem várias propriedades que permitem navegar entre nós pai e nós filhos
+			>> parentNode: Retorna o nó pai de um elemento
+			>> childNodes: Retorna uma lista de nós contendo todos os filhos, incluindo nós de texto e elementos
+			>> firstChild e lastChild: Retorna o primeiro ou último filho de um nó
+			>> nextSibling e previousSibling: Permite navegar entre nós no mesmo nível (irmãos)
+			>> children: Retorna uma coleção de apenas os elementos filhos (ignora nós de texto)
+
+	>> Modificando Conteúdo
+		>> textContent: Altera o texto dentro de um elemento
+	
+		>> innerHTML: Permite inserir tags HTML dentro de outro elemento
+
+		>> value: Define ou retorna o valor de um campo de formulário
 
 	>> Alterando Atributos
-		>> setAttribute()
-			>> Adiciona ou modifica o valor de um atributo específico em um elemento HTML
-			>> Opera sobre os atributos class, id, src, href
+		>> setAttribute(): Adiciona ou modifica o valor de um atributo específico em um elemento HTML
+				   Opera sobre os atributos class, id, src, href
 
-		>> removeAttribute()
-			>> Remove um atributo específico de um elemento
+		>> removeAttribute(): Remove um atributo específico de um elemento
 
 	>> Eventos DOM
 		>> São ações que ocorrem no navegador
@@ -928,19 +939,31 @@
 	>> Proibe a atribuição a propriedades somente leitura
 	>> Propriedades duplicadas em objetos literais não são permitidas
 
->> this
+this
 	>> É uma palavra-chave
 	>> Quando usado em um método de objeto, this refere-se ao objeto
 	>> Quando usado sozinho refere-se ao objeto global (window)
 		>> Também equivale quando usado no modo estrito
 	>> Em funções normais, pode referir-se ao objeto global ou a outro contexto dependendo de como a função é chamada
 	>> Em construtores usam this para referenciar o novo objeto sendo criado
-	>> Quando usada em um manipulador de eventos, refere-se ao elemento que recebeu o evento
-	>> Quando usada em uma função de seta, refere-se ao objeto pai
+	>> quando usada em um manipulador de eventos, refere-se ao elemento que recebeu o evento
+	>> quando usada em uma função de seta, refere-se ao objeto pai
+
+	>> Ligação Explícita
+		>> Processo de definir explicitamente o valor de this dentro de uma função
+
+		>> Usa-se os métodos:
+			>> call(): Invoca a função imediatamente, passando this explicitamente e argumentos como uma lista
+				>> apply(): Invoca a função imediatamente, passando this explicitamente e argumentos como um array
+		>> bind(): Retorna uma nova função com this explicitamente definido, que pode ser chamada mais tarde
 
 	>> Empréstimo de Função
 		>> Permite que um objeto use um método de outro objeto sem herdar dele diretamente
-		>> É possível utilizando os métodos como call() e apply(), que permitem definir explicitamente o valor de this dentro de uma função
+		>> É usado para evitar duplicação de código, onde existem objetos semelhantes que compartilham
+		   funcionalidade mas não quer criar uma hierarquia de herança
+
+		>> É possível utilizando os métodos como call() e apply()
+			>> console.log(obj1.nome-da-função.call(obj2));
 	
 	
 
