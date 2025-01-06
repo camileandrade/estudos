@@ -3,6 +3,9 @@
 
 	>> Orientada a objetos
 
+	>> single-threaded
+		>> Executa um comando por vez
+
 	>> Linguagem de alto nível, interpretada e não tipada
 		* Linguagem de alto nível é projetada para ser fácil de ler e escrever para humanos
 		* Linguagem interpretada executa o código linha por linha
@@ -67,14 +70,51 @@
 		>> Usada para representar texto
 		>> É uma array de caracteres
 			>> Utilizam indexação com base 0
-			>> Pode utilizar os métodos da array
+			>> Pode utilizar os métodos de arrays
 		>> Para incluir em uma variável, deve-se colocar seus caracteres dentro de aspas simples ou aspas duplas
 		>> Pode-se dividir uma string em várias linhas utilizando (\n)
 		>> Para concatenar string, utiliza-se o operador +
 			>> Em números ele soma, em string ele une
 
 		>> Métodos
-			>> 
+			>> charAt(): Retorna o caractere em um índice específico
+				>> const caractere = string.charAt(index);
+
+			>> charCodeAt(): Retorna o código Unicode do caractere no índice especificado
+				>> const unicode = string.charCodeAt(index);
+
+			>> split(): Divide a string em um array de substrings com base em um delimitador
+				>> const array = string.split(delimitador, limit);
+
+			>> toLowerCase(): Converte todos os caracteres para minúsculas
+				>> const minuscula = string.toLowerCase();
+
+			>> toUpperCase(): Converte todos os caracteres para maiúsculas
+				>> const maiuscula = string.toUpperCase();
+
+			>> trim(): Remove espaços em branco do início e do final da string
+				>> const remover = string.trim();
+
+				>> trimStart ou trimLeft remove os espaços em branco do inicio da string
+				>> trimEnd ou trimRight remove os espaços em branco do final da string
+
+			>> repeat(): Repete a string o número de vezes especificado
+				>> const repetir = string.repeat(quantidade);
+
+			>> replace(): Substitui parte da string por outra, usando uma substring ou expressão regular
+				>> const resultado = string.replace(procurarValor, substituirValor);
+
+			>> replaceAll(): Substitui todas as ocorrências de uma substring ou expressão regular
+				>> const resultado = string.replaceAll(procurarValor, substituirValor);
+
+			>> match(): Retorna as correspondências de uma expressão regular
+				>> const iguais = string.match(regexp);
+
+			>> matchAll(): Retorna todas as correspondências de uma expressão regular como um iterável
+				>> const iguais = string.matchAll(regexp);
+
+			>> search(): Retorna o índice da primeira correspondência com uma expressão regular
+				>> const index = string.search(regexp);
 
 	>> Booleanos
 		>> Representa verdadeiro ou falso
@@ -130,6 +170,7 @@
 						   incluindo null e undefined.
 						>> Em arrays, converte os elementos em uma string e os separa por vírgulas
 						>> É mais abrangente
+
 					>> .toString():
 						>> É um método que existe na maioria dos objetos, mas não funciona em null e undefined gerando 
 						   um erro
@@ -186,9 +227,6 @@
 				>> São destruídas automaticamente quando a função ou bloco em que foram definidas termina sua execução,
 				   liberando a memória usada
 				>> Usa-se as palavras-chaves let e const
-
-	>> Regras de Nomenclatura de Variáveis
-		>> 
 
 	>> Içamento
 		>> Declarações de variáveis e funções são "içadas" para o topo do seu escopo
@@ -517,28 +555,42 @@
 		>> Se definir a lenght para um comprimento menor que o existente, a array será cortada e os elementos excluídos
 
 	>> Métodos de Array
-		>> join(): Converte todos os elementos em strings e as concatena
-			>> Pode-se especificar uma string para separar os elementos
-			>> Se nada for especificado, serão utilizados vírgulas
+		>> forEach(): Executa uma função em cada elemento da array
+			>> array.forEach(callback(elemento, index, array));
 
-		>> reverse(): Inverte a ordem dos elementos 
+		>> map(): Cria um novo array com os resultados de um função que foi aplicada em cada elemento
+			>> const novaArray = array.map(callback(elemento, index, array));
 
-		>> sort(): Ordena os elementos 
+		>> filter(): Cria um novo array com todos os elementos que passam em um teste implementado por uma função
+			>> const arrayFiltrada = array.filter(callback(elemento, index, array));
 
-		>> push(): Adiciona um elemento no final 
-			>> array.push(elemento1, ..., elementoN)
+		>> reduce(): Executa uma função "reduzindo" o array para um único valor
+			>> const resultado = array.reduce(callback(acumulador, elemento, index, array), valorInicial);
 
-		>> pop(): Remove o último elemento
-			>> array.pop()
+		>> find(): Retorna o primeiro elemento do array que satisfaz a função de teste fornecida
+			>> const elementoEncontrado = array.find(callback(elemento, index, array));
 
-		>> shift(): Remove o primeiro elemento
-			>> array.shift()
+		>> findIndex(): Retorna o index elemento do array que satisfaz a função de teste fornecida
+			>> const index = array.findIndex(callback(elemento, index, array));
 
-		>> unshift(): Adiciona um elemento no inicio
-			>> array.unshift(elemento1, ..., elementoN)
+		>> findLastIndex(): Retorna o índice do último elemento no array que satisfaz a função de teste
+			>> const index = array.findLastIndex(callback(elemento, index, array));
+
+		>> some(): Testa se ao menos um dos elementos do array passa por uma função de teste
+			>> const resultado = array.some(callback(elemento, index, array));
+
+		>> every(): Testa se todos os elementos do array passam por uma função de teste
+			>> const resultado = array.every(callback(elemento, index, array));
 
 		>> concat(): Combina duas ou mais arrays
 			>> Retorna uma nova array, mas não modifica o original
+			>> const novaArray = array.concat(array2, valor, ...);
+
+		>> reverse(): Inverte a ordem dos elementos 
+			>> array.reverse();
+
+		>> sort(): Ordena os elementos 
+			>> array.sort();
 
 		>> slice(): Extrai uma parte da array sem modificar a array original
 			>> array.slice(inicio, fim)
@@ -552,41 +604,32 @@
 				>> quantidade removida:  se for zero, não removerá nenhum
 				>> item: elementos que serão adicionados
 
-		>> forEach(): Executa uma função em cada elemento da array
-			>> array.forEach(function(argumento) { código que utiliza o argumento }
+		>> indexOf(): Procura o index do primeiro elemento encontrado que é igual ao especificado
+			>> const index = array.indexOf(elemento);
 
-		>> map(): Cria um novo array com os resultados de um função que foi aplicada em cada elemento
-			>> var novaArray = array.map(x => x * 2);
-
-		>> filter(): Cria um novo array com todos os elementos que passam em um teste implementado por uma função
-			>> var filtered = arr.filter(x => x > 1);
-
-		>> reduce(): Executa uma função "reduzindo" o array para um único valor
-			>> array.reduce(callback(acumulador, valorAtual, índice, array), valorInicial) 
-
-		>> indexOf(): Procura o index do primeiro elemento na array que é igual ao especificado
-			>> array.indexOf(elemento)
-
-		>> lastIndexOf(): Procura o index do último elemento na array que é igual ao especificado
-			>> array.lastIndexOf(elemento)
-
-		>> find(): Retorna o primeiro elemento do array que satisfaz a função de teste fornecida
-			>> arr.find(function(elemento) { código })
-
-		>> findIndex(): Retorna o index elemento do array que satisfaz a função de teste fornecida
-			>> arr.findIndex(function(elemento) { código })
-
-		>> findLastIndex(): Retorna o índice do último elemento no array que satisfaz a função de teste
-			>> arr.findLastIndex(function(elemento) { código })
+		>> lastIndexOf(): Procura o index do último elemento encontrado que é igual ao especificado
+			>> const index = array.lastIndexOf(elemento);
 
 		>> includes(): Determina se um array contém um determinado elemento
-			>> array.includes(elemento)
+			>> const resultado = array.includes(elemento);
 
-		>> every(): Testa se todos os elementos do array passam por uma função de teste
-			>> arr.every(function(elemento) { codigo })
+		>> join(): Converte todos os elementos em strings e as concatena
+			>> Pode-se especificar uma string para separar os elementos
+			>> Se nada for especificado, serão utilizados vírgulas
 
-		>> some(): Testa se ao menos um dos elementos do array passa por uma função de teste
-			>> arr.some(function(elemento) { codigo })
+			>> const string = array.join(delimitador);
+
+		>> push(): Adiciona um elemento no final 
+			>> array.push(elemento1, ..., elementoN)
+
+		>> pop(): Remove o último elemento
+			>> array.pop()
+
+		>> shift(): Remove o primeiro elemento
+			>> array.shift()
+
+		>> unshift(): Adiciona um elemento no inicio
+			>> array.unshift(elemento1, ..., elementoN)
 
 		>> fill(): Preenche todos os elementos de um array com um valor estático
 			>> array.fill(valor, inicio, fim)
@@ -869,6 +912,8 @@
 
 		>> removeAttribute(): Remove um atributo específico de um elemento
 
+	>> Manipulando CSS 
+
 	>> Eventos DOM
 		>> São ações que ocorrem no navegador
 		>> Permite "ouvir" esses eventos e executar funções em resposta a eles
@@ -939,7 +984,7 @@
 	>> Proibe a atribuição a propriedades somente leitura
 	>> Propriedades duplicadas em objetos literais não são permitidas
 
-this
+>> this
 	>> É uma palavra-chave
 	>> Quando usado em um método de objeto, this refere-se ao objeto
 	>> Quando usado sozinho refere-se ao objeto global (window)
@@ -954,8 +999,14 @@ this
 
 		>> Usa-se os métodos:
 			>> call(): Invoca a função imediatamente, passando this explicitamente e argumentos como uma lista
-				>> apply(): Invoca a função imediatamente, passando this explicitamente e argumentos como um array
-		>> bind(): Retorna uma nova função com this explicitamente definido, que pode ser chamada mais tarde
+				>> nome-da-função.call(objeto, parametro1, parametro2);
+
+			>> apply(): Invoca a função imediatamente, passando this explicitamente e argumentos como um array
+				>> nome-da-função.apply(objeto, [parametro1, parametro2]);
+
+			>> bind(): Retorna uma nova função com this explicitamente definido, que pode ser chamada mais tarde
+				>> const novo-valor = nome-da-função.bind(objeto);
+				   novo-valor(parametro);
 
 	>> Empréstimo de Função
 		>> Permite que um objeto use um método de outro objeto sem herdar dele diretamente
@@ -963,19 +1014,38 @@ this
 		   funcionalidade mas não quer criar uma hierarquia de herança
 
 		>> É possível utilizando os métodos como call() e apply()
-			>> console.log(obj1.nome-da-função.call(obj2));
-	
-	
+			>> console.log(objeto1.nome-da-função.call(objeto2));
 
+>> JavaScript Assíncrono
+	>> Quando uma tarefa é executada de forma assíncrona, ela é iniciada e o programa continua 
+	   funcionando sem esperar a conclusão dessa tarefa. Quando a tarefa termina, ela notifica o programa para executar o próximo passo
 
+	>> Callbacks
+		>> Uma função é passada como argumento para outra função e chamada após a conclusão de uma operação
+		>> Pode levar ao “callback hell” quando vários callbacks são aninhados, dificultando a leitura e manutenção do código
+			>> As soluções para isso são primises e async/await
+		>> Utilizar em tarefas simples
 
+	>> Promises
+		>> Objeto que representa a eventual conclusão ou falha de uma operação assíncrona
+		
+		>> Possui três estados:
+			>> Pending (Pendente): A operação ainda não foi completada
+			>> Fulfilled (Concluída): A operação foi completada com sucesso
+			>> Rejected (Rejeitada): A operação falhou
 
+	>> async/await
+		>> Simplificam o uso de Promises, tornando o código mais legível e fácil de manter
+		
+		>> async: Define uma função assíncrona que sempre retorna uma Promise
+		>> await: Pausa a execução até que a Promise seja resolvida
 
-
-
-
-
-
+	>> Quando usar JavaScript assíncrono?
+		>> Acessar APIs externas ou servidores
+		>> Carregar arquivos grandes ou imagens
+		>> Executar tarefas demoradas sem bloquear o fluxo principal
+		>> Manter a interface do usuário responsiva, como quando você tem
+		   longas esperas por resultados (carregamento de dados, animações)
  
 
 
