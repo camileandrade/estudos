@@ -1,28 +1,17 @@
 >> Transformações:
 	>> transform: Permite que você mova, gire, dimensione e incline elementos
 		>> translate(): Move um elemento de sua posição atual, deve-se fornecer valores para o eixo X e Y
-
 		>> rotate(): Gira um elemento de acordo com o grau fornecido
 				>> valores positivos, gira o elemento no sentido horário
 				>> valores negativos, gira o elemento no sentido anti-horário
-
 		>> scaleX(): Aumenta ou diminui a largura de um elemento
-
 		>> scaleY(): Aumenta ou diminui a altura de um elemento
-
 		>> scale(): Aumenta ou diminui o tamanho de um elemento, deve-se fornecer os valores de altura e largura
-
 		>> skewX(): Inclina um elemento ao longo do eixo X pelo ângulo fornecido
-
 		>> skewY(): Inclina um elemento ao longo do eixo Y pelo ângulo fornecido
-
 		>> skew(): Inclina um elemento ao longo dos eixos X e Y pelos ângulos fornecidos
-
 		>> matrix(): Combina todos os métodos de transformação 2D em um
 				>> matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
-
 		>> rotateX(): Gira um elemento em torno de seu eixo X em um determinado grau
-
 		>> rotateY(): Gira um elemento em torno de seu eixo Y em um determinado grau
-
 		>> rotateZ(): Gira um elemento em torno de seu eixo Z em um determinado grau

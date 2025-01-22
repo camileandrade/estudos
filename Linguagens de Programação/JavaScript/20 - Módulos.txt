@@ -1,4 +1,40 @@
 >> Módulos:
-	>> São uma forma de organizar e reutilizar o código
-	>> Cada módulo pode exportar valores que podem ser importados em outros arquivos
-	>> Usa-se export e import para definir e utilizar módulos
+	>> São partes reutilizáveis de código que podem ser exportadas de um arquivo e importadas em outro
+	>> Ajudam a organizar e estruturar o código, tornando-o mais legível, escalável e fácil de manter
+
+	>> Existem dois tipos principais de módulos:
+
+		>> Módulos Nativos (ES Modules - ECMAScript Modules)
+			>> São os módulos padrão definidos pela linguagem e amplamente 
+			   suportados em navegadores modernos e no Node.js
+
+			>> São suportados nativamente nos navegadores modernos
+				>> São carregados de forma assíncrona
+
+			>> Utilizam as palavras-chave export e import
+				>> export const nome-da-variável;
+				>> import { nome-da-variável } from './nome-do-arquivo.js';
+
+			>> Exige configuração extra no arquivo package.json do projeto Node.js,
+			   caso contrário o padrão é CommonJs
+				>> { "type": "module" }
+
+			>> Também suportam exportações padrão e importações dinâmicas:
+				>> export default function nome() { ... };
+
+				>> const modulo = await import('./arquivo.js');
+				   module.default('parâmetro');
+
+			>> Compatíveis com tree shaking em ferramentas de bundling
+				>> Tree shaking: Remover código não usado durante a construção do projeto
+
+		>> Módulos CommonJS (Node.js)
+			>> Usam module.exports e require
+				>> module.exports = { add, subtract };
+				>> const { add } = require('./mathUtils');
+
+			>> É exclusivo do Node.js e não funciona diretamente nos navegadores
+				>> É carregado de forma síncrona, o que pode ser mais lento em certos cenários
+
+	>> >> Caminhos absolutos e aliases ajudam na organização do código
+
