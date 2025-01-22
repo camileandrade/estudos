@@ -1,0 +1,4 @@
+>> Gradientes:
+	>> Gradientes Lineares:
+		>> Deve-se definir duas cores para realizar a transição e a direção 
+			>> background-image: linear-gradient(direction, color-stop1, color-stop2, ...);

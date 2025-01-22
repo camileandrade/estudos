@@ -1,0 +1,22 @@
+>> Flutuante:
+	>> float: Usada para posicionar e formatar conteúdo, como um texto ao redor de uma imagem
+		>> left: O elemento flutua à esquerda do contêiner
+		>> right: O elemento flutua à direita do contêiner
+		>> none (padrão): O elemento não flutua
+		>> inherit: O elemento herda o valor float do seu elemento pai
+
+	>> clear: Usada para controlar o comportamento de elementos em relação a elementos flutuantes anteriores
+		>> none (padrão): O elemento não é empurrado abaixo dos elementos flutuantes esquerdo ou direito
+		>> left: O elemento é empurrado para baixo dos elementos flutuantes à esquerda
+		>> right: O elemento é empurrado abaixo dos elementos flutuantes à direita
+		>> both: O elemento é empurrado para baixo dos elementos flutuantes esquerdo e direito
+		>> inherit: O elemento herda o valor clear do seu pai
+
+	>> Técnica clearfix:
+		>> Usada para forçar o contêiner a reconhecer os elementos flutuantes
+		>> Aplica-se essa classe ao contêiner que precisa reconhecer os elementos flutuantes:
+			.clearfix::after {
+  				content: "";
+  				display: table;
+ 				clear: both;
+			}

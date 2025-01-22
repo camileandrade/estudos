@@ -1,0 +1,23 @@
+>> Unidades:
+	>> Comprimentos Absolutos:
+		>> São fixas e irão aparece exatamente com aquele tamanho
+		>> Não são recomendadas para uso em tela
+		>> cm, mm, in, px, pt, pc
+
+	>> Comprimentos Relativos:
+		>> Relativo a outra propriedade de comprimento
+		>> Escalam melhor entre diferentes mídias de renderização
+		>> O tamanho padrão do texto em navegadores é 16px
+
+		>> em: Relativa ao tamanho da fonte do elemento pai, usada para fontes
+			>> Se o tamanho do elemento pai for de 16px, 2em é 32px
+
+		>> rem: Relativa ao tamanho da fonte do elemento raiz, usada para fontes
+
+		>> %: Relativa ao elemento pai, muito usada para larguras e alturas de elementos
+
+		>> vw: Unidade de largura da viewport 	
+			>> 1vw é igual a 1% da largura da viewport
+
+		>> vh: Unidade de altura da viewport
+			>> 1vh é igual a 1% da altura da viewport

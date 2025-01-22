@@ -1,0 +1,138 @@
+>> Elementos Gerais:
+	>> Formam a base da construção de páginas web, permitindo a organização, exibição e interatividade do conteúdo
+		>> Incluem títulos, parágrafos, links, imagens, tabelas, listas, etc.
+
+	>> <h1> a <h6>: Usado para definir títulos, do mais importante para o menos importante em ordem crescente
+			Mecanismos de buscas normalmente exibem a página baseado nessa tag
+
+	>> <p>: Define um parágrafo
+		Navegadores adicionam automaticamente uma única linha em branco antes e depois de cada parágrafo
+			>> Então não é necessário definir uma quebra de linha <br>
+
+	>> <a>: Define um hiperlink, que é usado para vincular de uma página a outra
+
+		>> Possui os seguintes atributos:
+			>> download: Baixa um arquivo quando o usuário clicar sobre ele
+			>> href: Especifica a URL do link, é um atributo obrigatório para o hiperlink funcionar
+			>> target: Especifica onde abrir o link 
+				"_blank": Abre em uma nova janela ou guia
+				"_self": Abre o link na mesma janela ou guia
+			
+		>> Marcadores: Quando o link é clicado, a página rola para baixo ou para cima até o local com o marcador
+			>> Primeiro, use o id atributo para criar um marcador
+				>> <h2 id="C4">Chapter 4</h2>
+			>> Em seguida, adicione um link para o marcador
+				>> <a href="#C4">Jump to Chapter 4</a>
+					
+	>> <img>: Usado para inserir uma imagem
+
+		>> Possui os seguintes atributos:
+			>> src: Atributo obrigatório que especifica o caminho da imagem
+			>> alt: Define um texto alternativo para a imagem caso ela não carregue no navegador
+			>> loading: Especifica quando o navegador deve carregar as imagens na página
+				>> "eager": Padrão. Carrega as imagens imediatamente
+				>> "lazy": Carrega as imagens até que uma condição seja atendida 
+
+	>> <iframe>: Permite que um elemento seja exibido dentro de outro elemento
+		     É possível exibir uma página web dentro de outra
+
+		>> Possui os seguintes atributos:
+			>> height: Especifica a altura do frame, o valor padrão é 150 pixels
+			>> loading: Especifica quando o navegador deve carregar o frame na página
+				>> "eager": Padrão. Carrega as imagens imediatamente
+				>> "lazy": Carrega as imagens até que uma condição seja atendida 
+			>> name: Especifica um nome para o iframe
+			>> src: Especifica a URL do documento a ser incorporado no frame
+			>> width: Especifica a largura do frame, o valor padrão é 300 pixels
+
+	>> <audio>: Usado para incorporar conteúdo sonoro em um documento
+		    Contém uma ou mais tags <source> com diferentes fontes de áudio
+
+		>> Possui os seguintes atributos:
+			>> autoplay: O áudio começará a ser reproduzido automaticamente assim que puder, sem parar
+			>> controls: Quando presente, especifica que os controles de áudio devem ser exibidos (play, pause, volume)
+			>> loop: Quando presente, especifica que o áudio será reiniciado sempre que for finalizado
+			>> muted: Quando presente, especifica que a saída de áudio deve ser silenciada
+			>> src: Especifica a localização do arquivo
+
+	>> <source>: Usada para especificar vários recursos de mídia para elementos de mídia
+		     Permite que você especifique arquivos alternativos de vídeo/áudio/imagem
+		     O navegador escolherá o primeiro <source> que suportar.
+
+		>> Possui os seguintes atributos:
+			>> src: Especifica a localização do arquivo
+			>> type: Especifica o tipo da midia
+				>> Para videos: video/ogg, video/mp4, video/webm
+				>> Para áudios: audio/ogg, audio/mpeg
+
+	>> <video>: Incorpora conteúdo de vídeo em um documento
+		    Contém uma ou mais tags <source> com diferentes fontes de vídeo
+
+		>> Possui os seguintes atributos:
+			>> autoplay: O áudio começará a ser reproduzido automaticamente assim que puder, sem parar
+			>> controls: Quando presente, especifica que os controles de áudio devem ser exibidos (play, pause, volume)
+			>> loop: Quando presente, especifica que o áudio será reiniciado sempre que for finalizado
+			>> muted: Quando presente, especifica que a saída de áudio deve ser silenciada	
+
+	>> <ul>: Define uma lista não ordenada
+		 Usar em conjunto com a tag <li>
+		 É possível aninhar listas dentro de listas
+		 Os itens são exibidos com marcadores
+		 Para especificar o tipo de marcador a ser renderizado, utilizar o CSS porque possui mais opções do que o atributo HTML
+
+	>> <ol>: Define uma lista ordenada
+		 Usar em conjunto com a tag <li>
+		 Os itens são renderizados com números ou letras
+		 Para especificar o tipo de marcador a ser renderizado, utilizar o CSS porque possui mais opções do que o atributo HTML
+
+		>> Possui os seguintes atributos:
+			>> reversed: Quando presente, especifica que a lista deve ser decrescente
+			>> start: Especifica o valor inicial do primeiro item da lista ordenada
+					
+	>> <li>: Define um item da lista
+
+		>> Possui os seguintes atributos:
+			>> value: Define o valor de um item da lista, os valores dos itens a seguir serão incrementados a partir disso
+
+	>> <dl>: Define uma lista de descrição
+		 É usado em conjunto com as tags <dt> e <dd>
+
+	>> <dt>: Define um nome ou termo para um item da lista
+
+	>> <dd>: Descreve o termo	 
+
+	>> <table>: Define uma tabela
+		    Para compor uma tabela deve possuir os elementos <tr>, <th> e <td>
+
+	>> <caption>: Define uma legenda para a tabela
+		      Deve ser inserida logo após a tag <table>, usar o CSS para especificar o lugar desejado
+
+	>> <tr>: Define uma linha na tabela
+		 Pode conter tags <th> e <td>
+
+	>> <th>: Define um célula de cabeçalho
+		 Por padrão, é renderizado em negrito e centralizado
+
+		>> Possui os seguintes atributos:
+			>> colspan: Define o número de colunas que uma célula da tabela deve abranger
+			>> rowspan: Especifica o número de linhas que uma célula deve abranger
+
+	>> <td>: Define uma célula de dados padrão
+		 Renderizado normal alinhado à esquerda
+
+		>> Possui os seguintes atributos:
+			>> colspan: Define o número de colunas que uma célula da tabela deve abranger
+			>> rowspan: Especifica o número de linhas que uma célula deve abranger
+
+	>> <thead>: Usado para agrupar o conteúdo do cabeçalho da tabela
+
+	>> <tbody>: Usado para agrupar o conteúdo do corpo da tabela
+
+	>> <tfoot>: Usado para agrupar o conteúdo do rodapé da tabela
+
+	>> <col>: Especifica propriedades para cada coluna da tabela
+
+		>> Possui o seguinte atributo:
+			>> span: Define o grupo de colunas abrangidas
+
+	>> <colgroup>: Especifica um grupo de colunas em uma tabela para formatação

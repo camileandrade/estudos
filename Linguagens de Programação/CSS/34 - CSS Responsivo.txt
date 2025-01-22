@@ -1,0 +1,15 @@
+>> CSS Responsivo:
+	>> Faz com que sua página tenha uma boa aparência em todos os dispositivos
+	>> Usa apenas HTML e CSS
+	>> A página da Web deve ter uma boa aparência e ser fácil de usar, independentemente do dispositivo
+		>> Devem adaptar seu conteúdo para caber em qualquer dispositivo
+
+	>> Viewport (Janela de Visualização):
+		>> Área visível do usuário em uma página da web
+		>> Varia de acordo com o dispositivo
+		>> Não usar elementos grandes de largura fixa, isso pode fazer com que a viewport role horizontalmente
+			>> Lembrar de ajustar esse conteúdo para caber na largura da viewport
+
+	>> Grid-View (Visualização em Grade):
+		>> A página é dividida em colunas
+		>> Útil ao projetar páginas da web, pois facilita a colocação de elementos na página

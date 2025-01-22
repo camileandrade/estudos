@@ -1,0 +1,41 @@
+>> Expressões Regulares:
+	>> São padrões utilizados para corresponder e manipular cadeias de caracteres
+	>> Ferramenta para busca, substituição e validação de padrões de texto
+	>> Utilizado em validações de formulário, para verificar se os dados inseridos estão corretos
+	>> Encontra e substitui padrões de texto, formatando números de telefone ou removendo espaços extras
+	>> Extrai informações específicas de grandes blocos de texto
+
+	>> Utiliza os métodos do RegExp
+		>> exec(): Verifica se há correspondência entre a expressão regular e a string, retornando true ou false
+		>> test(): Executa uma busca na string e retorna detalhes sobre a correspondência encontrada
+		 
+	>> Utiliza os métodos match(), matchAll(), replace(), replaceAll(), search() e split() das Strings que aceitam expressões regulares
+
+	>> Podem corresponder exatamente ao texto que foi digitado
+		>> /abc/ -> busca a sequência
+
+	>> O sufixo g faz a busca continuar em toda a string
+	>> O sufixo i torna a busca insensível a maiúsculas e minúsculas
+
+	>> Pode ter caracteres especias com funções específicas
+		>> . -> qualquer caractere
+		>> \d -> qualquer dígito
+		>> \w -> qualquer caractere alfanumérico
+		>> \s -> qualquer espaço em branco
+
+		>> Alguns precisam ser escapados se for preciso usá-los como literais
+
+	>> Pode definir um conjunto de caracteres possíveis
+		>> [aeiou] -> corresponde a qualquer vogal
+
+	>> Pode especificar intervalos de caracteres
+		>> [a-z] -> corresponde a qualquer letra minúscula entre esse intervalo
+
+	>> Pode definir o número de repetições do padrão
+		>> *, +, ?, {n} (extamanete n), {n,} (pelo menos n), {n,m} (entre n e m)
+
+	>> Podem definir a posição padrão na string
+		>> ^ (inicio) ou $ (fim)
+
+	>> Pode agrupar padrões e definir alternativas
+		>> /(abc | def)

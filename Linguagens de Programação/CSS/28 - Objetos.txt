@@ -1,0 +1,19 @@
+>> Objetos:
+	>> Ajuste de Objeto:
+		>> object-fit: Especifica como um <img> ou <video> deve ser redimensionado para caber em seu contêiner
+				>> fill: Padrão, a imagem é redimensionada para preencher a dimensão fornecida
+					>> Se necessário, será esticada ou comprimida para caber
+
+				>> contain: A imagem mantém sua proporção, mas é redimensionada para caber na dimensão fornecida
+
+				>> cover: A imagem mantém sua proporção e preenche a dimensão fornecida
+					>> A imagem será recortada para caber
+
+				>> none: A imagem não é redimensionada
+
+				>> scale-down: a imagem é reduzida para a menor versão none ou contain
+
+	>> Posição do Objeto:
+		>> object-position: Especifica como um <img> ou <video> deve ser posicionado dentro de seu contêiner com 
+			    	    coordenadas x/y dentro de sua "própria caixa de conteúdo"
+				    O valor deve ser fornecido em porcentagem

@@ -1,0 +1,8 @@
+>> Mascaramento:
+	>> Uso de uma máscara para controlar a visibilidade de partes de um elemento
+	>> Funciona como uma camada transparente que revela ou esconde partes do elemento subjacente, dependendo da transparência da máscara
+
+		>> mask-image: Especifica a imagem a ser usada como camada de máscara para um elemento
+			>> Gradientes também podem ser definidos como valor da máscara
+
+		>> mask-repeat: Especifica se ou como uma imagem de máscara será repetida

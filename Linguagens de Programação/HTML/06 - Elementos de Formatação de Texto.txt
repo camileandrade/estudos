@@ -1,0 +1,59 @@
+>> Elementos de Formatação de Texto:
+	>> Usados para estruturar, destacar e estilizar trechos específicos dentro do conteúdo textual, 
+	   conferindo maior clareza e significado
+	>> Podem alterar a aparência do texto e adicionar informações semânticas
+
+	>> <b>: Especifica um texto em negrito sem qualquer importância extra
+
+	>> <strong>: Define textos de grande importância, normalmente é exibido em negrito
+
+	>> <i>: Especifica texto em itálico
+		Usada para definir termos técnicos, frases de outro idioma, pensamentos, etc.
+
+	>> <em>: Define textos enfatizados, normalmente exibido em itálico
+
+	>> <u>: Exibe o texto sublinhado
+
+	>> <abbr>: Define uma abreviatura
+		   Usar em conjunto com o atributo <title> para mostra seu significado ao passar o cursor do mouse por cima
+
+	>> <address>: Exibe informações de contato do autor, normalmente exibido em itálico
+		      Podem ser email, URL, endereço, telefone, midias sociais
+		      Os navegadores adicionam quebra de linha antes e depois da tag
+
+	>> <bdo>: Especifica a direção em que o texto será escrito
+		  Usar em conjunto com o atributo dir
+
+	>> <blockquote>: Especifica citações longas
+
+	>> <q>: Defina citações curtas, normalmente apresentadas com aspas ao redor
+
+	>> <cite>: Define o título de um trabalho criativo como livros, poemas, músicas, filmes, pinturas, etc.
+		   Geralmente é renderizado em itálico
+
+	>> <code>: Define um trecho de código de computador
+		   Exibido em fonte monoespaçada
+
+	>> <del>: Define o texto que foi excluído 
+		  Renderizado com uma linha traçada em cima do texto que foi inserida nesta tag
+
+	>> <ins>: Define um texto que foi inserido 
+		  Renderizado com o texto sublinhado
+
+	>> <dfn>: Especifica um termo que será definido no conteúdo
+		  O próximo elemento deve conter a definição do termo em questão
+				
+	>> <mark>: Usado para marcar/destacar (tipo um marca texto colorido) um texto que foi destacado por algum motivo
+		   Pode incluir resultados de pesquisa, ou um texto marcado pelo próprio usuário
+
+	>> <progress>: Representa o progresso da conclusão de uma tarefa
+		       Utilizar em conjunto com o JavaScript para exibir o andamento
+		       Não é adequada para representar medidor
+
+		>> Possui os seguintes atributos:
+			>> max: Especifica o valor máximo do elemento
+			>> value: Especifica quanto da tarefa foi concluída
+
+	>> <sub>: Define um texto subscrito, aparecendo meio caractere abaixo da linha normal
+
+	>> <sup>: Define um texto sobrescrito, aparecendo meio caractere acima da linha normal

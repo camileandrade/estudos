@@ -1,0 +1,55 @@
+>> Funções:
+	>> São blocos que permitem a reutilização de código
+	>> Encapsulam um conjunto de instruções que podem ser executadas quando a função é chamada
+	>> Se uma função é atribuída à propriedade de um objeto, ela é conhecida como método desse objeto (o que o objeto faz)
+	>> O valor retornado por uma função é especificado usando a palavra-chave return
+		>> Após isso, a função é encerrada e i fluxo continua de onde parou
+
+	>> Parâmetros:
+		>> Parâmetros são variáveis que você passa para a função para que ela possa operar sobre eles
+		>> Dentro da função, atuam como variáveis locais
+
+		>> Não precisam ser obrigatoriamente fornecidos
+			>> Se um parâmetro não for passado, seu valor será undefined
+
+		>> Parâmetros Rest permitem que uma função receba um número indefinido de argumentos
+			>> Definidos usando ... seguido pelo nome do parâmetro
+			>> function somar(...numeros) { codigo }
+
+		>> Ao chamar a função, os argumentos devem ser atribuídos na mesma ordem em que os parâmetros foram definidos
+
+		>> O arguments é um objeto do tipo array que contém os valores dos argumentos passados para essa função
+			>> Não é disponível para funções flecha
+
+	>> Declarando Funções:
+		>> function nomeDaFuncao(param1, param2) {
+  			// bloco de código
+  			return resultado;
+		   }
+
+	>> Chamada:
+		>> nome-da-função(param1, param2);
+
+	>> Funções Anônimas:
+		>> São funções sem nome, frequentemente usadas em expressões e atribuídas a variáveis ou passadas como argumentos 
+		   para outras funções
+			>> let variavel = function(parametro) { codigo };
+			   console.log(variavel(paramentro)
+
+	>> Funções de Flecha:
+		>> É uma sintaxe mais curta para escrever funções
+		>> Não podem ser usadas como construtores
+		>> Podem ter um corpo de expressão ou o corpo de bloco usual
+
+		>> const variável = (parametro1, parametro2) => parametro1 + parametro2;
+
+	>> Funções Imediatamente Invocadas (IIFE):
+		>> É definida e executada imediatamente após sua criação
+
+		>> (function() { console.log("Esta função é invocada imediatamente!"); } )();
+
+	>> Closures:
+		>> É uma função que lembra e acessa variáveis do escopo externo mesmo após o escopo original ter sido finalizado
+
+	>> Funções Construtoras:
+		>> São usadas para criar novos objetos, usando a palavra-chave new

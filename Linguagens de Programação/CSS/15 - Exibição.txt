@@ -1,0 +1,8 @@
+>> Exibição:
+	>> display: Define como um elemento é exibido na página
+		>> block: O elemento ocupa toda a largura disponivel e começa em uma nova linha
+		>> inline: O elemento ocupa apenas o espaço necessário e não quebra a linha
+		>> inline-block: O elemento ocupa apenas o espaço necessário (como inline), mas permite definir altura e largura (como block)
+		>> none: O elemento não é exibido na página e não ocupa espaço.  Usado para esconder elementos
+		>> flex: Define o container flexível
+		>> grid: Define um container de grade

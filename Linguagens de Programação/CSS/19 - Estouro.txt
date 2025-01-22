@@ -1,0 +1,10 @@
+>> Estouro:
+	>> overflow: Controla o que acontece com conteúdo que é muito grande para caber em uma área
+	>> overflow-x: Controla o comportamento do overflow no eixo horizontal
+	>> overflow-y: Controla o comportamento do overflow no eixo vertical
+
+		>> visible (padrão): O conteúdo que excede o contêiner é visível fora do contêiner
+		>> hidden: O conteúdo que excede o contêiner é cortado e não é visível
+		>> scroll: Barras de rolagem são adicionadas ao contêiner, permitindo a rolagem para ver o conteúdo que excede
+			   Adicionará uma barra de rolagem horizontal e verticalmente mesmo que não seja preciso
+		>> auto: Barras de rolagem são adicionadas automaticamente somente se o conteúdo exceder o contêiner

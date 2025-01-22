@@ -1,0 +1,92 @@
+>> Texto:
+	>> Cor:
+		>> color: Define a cor do texto
+
+	>> Alinhamento:
+		>> text-align: Alinha o texto horizontalmente: 
+			>> center (centro), left (esquerda), right (direita) e justify (justificado)
+
+		>> text-align-last: Especifica como alinhar a última linha de um texto
+			>> center (centro), left (esquerda), right (direita), justify (justificado), start (começo) e end (final)
+
+		>> direction: Altera a direção do texto de um elemento
+			>> ltr: Esquerda para direita
+			>> rtl: Direita para esquerda
+		
+		>> unicode-bidi: Controla como o texto de diferentes direções é exibido na página. Usado em conjunto com a propriedade direction
+			>> normal: Padrão
+			>> embed: Cria um novo contexto de direção para o texto dentro do elemento.
+			>> bidi-override: Força todos os caracteres a seguir a direção especificada, ignorando suas direções naturais.
+			>> isolate: Isola o texto dentro do elemento, sem influenciar ou ser influenciado pelo texto fora dele.
+			>> isolate-override: Combina isolate e bidi-override.
+			>> plaintext: Aplica regras bidi a todo o texto dentro do elemento.
+
+		>> vertical-align: Define o alinhamento vertical de um elemento
+			>> baseline: Alinha o elemento à linha de base do elemento pai (valor padrão)
+			>> sub: Alinha o elemento como texto subscrito
+			>> super: Alinha o elemento como texto sobrescrito
+			>> top: Alinha o topo do elemento com o topo da linha mais alta
+			>> text-top: Alinha o topo do elemento com o topo da fonte do pai
+			>> middle: Alinha o meio do elemento com o meio da linha pai
+			>> bottom: Alinha a parte inferior do elemento com a parte inferior da linha mais baixa
+			>> text-bottom: Alinha a parte inferior do elemento com a parte inferior da fonte do pai
+
+	>> Decoração:
+		>> text-decoration-line: Adiciona uma linha de decoração ao texto
+			>> none: Remove qualquer decoração do texto
+			>> underline: Adiciona uma linha abaixo do texto
+			>> overline: Adiciona uma linha acima do texto
+			>> line-through: Adiciona uma linha através do texto (risco)
+
+		>> text-decoration-color: Define a cor da linha de decoração
+
+		>> text-decoration-style: Define o estilo da linha de decoração
+			>> solid: Linha contínua (valor padrão)
+			>> double: Linha dupla
+			>> dotted: Linha pontilhada
+			>> dashed: Linha tracejada
+			>> wavy: Linha ondulada
+
+		>> text-decoration-thickness: Define a espessura da linha de decoração
+
+		>> text-decoration: É uma propriedade abreviada que inclui todas as propriedades anteriores
+
+	>> Transformação:
+		>> text-transform: Especifica letras maiúsculas e minúsculas em um texto
+			>> capitalize: Transforma a primeira letra de cada palavra em maiúscula
+			>> uppercase: Transforma todas as letras em maiúsculas
+			>> lowercase: Transforma todas as letras em minúsculas
+	
+	>> Espaçamento:
+		>> text-indent: Especifica o recuo da primeira linha de um texto
+
+		>> letter-spacing: Especifica o espaço entre os caracteres em um texto
+		
+		>> line-height: Especifica o espaço entre as linhas
+
+		>> word-spacing: Especifica o espaço entre as palavras em um texto
+
+		>> white-space: Especifica como o espaço em branco dentro de um elemento é tratado
+			normal: O espaço em branco é colapsado, e o texto é quebrado conforme necessário para preencher a largura do contêiner
+			nowrap: O espaço em branco é colapsado, mas o texto não é quebrado para preencher a largura do contêiner
+			pre: O espaço em branco é preservado, e o texto é quebrado apenas onde ocorrem caracteres de quebra de linha
+			pre-wrap: O espaço em branco é preservado, e o texto é quebrado conforme necessário para preencher a largura do contêiner
+			pre-line: O espaço em branco é colapsado, mas o texto é quebrado onde ocorrem caracteres de quebra de linha
+
+	>> Sombra:
+		>> text-shadow: Adiciona sombra ao texto
+			>> Especificar a posição horizontal (px), a posição vertical (px), o desfoque (px), e a cor
+			>> Para adicionar mais de uma sobra em um mesmo elemento, separar os conjuntos de valores por vírgulas
+
+	>> Efeitos:
+		>> text-overflow: Especifica como o conteúdo excedente que não é exibido deve ser sinalizado ao usuário
+			>> clip: O texto é recortado
+			>> ellipsis: O texto é renderizado com reticências
+
+		>> word-wrap: Permite que palavras longas sejam quebradas e colocadas na próxima linha
+			>> keep-all: Se uma palavra for muito longa para caber em uma área, ela se expande para fora
+			>> break-all: Força o texto a quebrar, mesmo que isso signifique dividi-lo no meio de uma palavra
+
+		>> writing-mode: Especifica se as linhas de texto são dispostas horizontalmente ou verticalmente
+			>> horizontal-tb
+			>> vertical-rl

@@ -1,0 +1,15 @@
+>> Transições:
+	>> transition: Permite que altere valores de propriedades suavemente, ao longo de um determinado período
+		>> É preciso especificar a propriedade quer quer atribuir o efeito, e o tempo de duração
+
+	>> transition-timing-function: Especifica a curva de velocidade do efeito de transição
+		>> ease: Especifica um efeito de transição com um início lento, depois rápido e, por fim, lento (este é o padrão)
+		>> linear: Especifica um efeito de transição com a mesma velocidade do início ao fim
+		>> ease-in: Especifica um efeito de transição com um início lento
+		>> ease-out: Especifica um efeito de transição com um final lento
+		>> ease-in-out: Especifica um efeito de transição com início e fim lentos
+		>> cubic-bezier(n,n,n,n): Permite que você defina seus próprios valores em uma função cúbica-bezier
+
+	>> transition-delay: Especifica um atraso (em segundos) para o efeito de transição
+
+	>> É possível combinar a transition com a transform

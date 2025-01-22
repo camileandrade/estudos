@@ -1,0 +1,44 @@
+>> Atributos:
+	>> Os elementos podem ter atributos
+	>> Eles fornecem informações extras sobre o elemento
+	>> Não serão exibidos no conteúdo, mas ajudarão a definir como o conteúdo será exibido
+
+	>> Estrutura:
+		>> Deve ter um espaço entre entre ele e o nome do elemento
+		>> Nome do atributo seguido por um sinal de igual (=)
+		>> Um valor de atributo delimitado por aspas ("")
+
+		>> Exemplo:
+			>> <p nome="valor"> conteúdo </p>
+
+	>> Atributos Globais:
+		>> Podem ser usados em todos os elementos
+
+		>> class: Especifica uma ou mais classes para o elemento HTML, ajudando a não repetir códigos.
+			>> "nome": Atribuir um nome para a classe no valor
+
+		>> contenteditable: Especifica se o conteúdo de um elemento é editável ou não
+			>> "true": É editável
+			>> "false": Não é editável
+
+		>> dir: Especifica a direção em que o texto será escrito
+			>> "ltr": Padrão, escreve da esquerda para direita
+			>> "rtl": Escreve da direita para esquerda
+			>> "auto": O navegador decide baseado no conteúdo
+
+		>> hiden: Oculta o conteúdo do elemento até que outra ação seja feita
+
+		>> id: Especifica uma identificação única para o elemento. Não deve ser repetida no mesmo arquivo HTML
+			>> "nome": Atribuir um nome para o id no valor
+
+		>> lang: Especifica o idioma do conteúdo do elemento
+			>> "código do idioma": Usar a abreviação ISO - https://www.w3schools.com/tags/ref_language_codes.asp
+
+		>> popover: Define que um elemento seja invisível (popover) até que seja invocado por outro elemento (popovertarget)
+
+		>> title: Mostra informações extras do elemento quando o cursor do mouse passa por cima
+			>> "texto": Escrever as informações extras aqui	
+
+		>> translate: Define se o conteúdo deve ou não ser traduzido
+			>> "yes": Deve ser traduzido
+			>> "no": Não deve ser traduzido

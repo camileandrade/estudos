@@ -1,0 +1,30 @@
+>> Cores:
+	>> São especificadas usando nomes de cores predefinidas ou com valores RGB, HEX, HSL, RGBA, HSLA
+	
+	>> RGB:
+		>> Vermelho, verde e azul
+		>> Cada parâmetro define a intensidade da cor entre 0 (mais baixo) e 255 (mais alto)
+
+	>> RGBA:
+		>> Extensão dos valores de cores RGB com um canal alfa (especifica a opacidade de uma cor)
+		>> Vermelho, verde, azul e alfa
+		>> O alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente)
+
+	>> HEX:
+		>> Formato rrggbb
+		>> São valores hexadecimais entre 00 (mais baixo) e ff (mais alto)
+
+	>> HSL:
+		>> Matiz, saturação e luminosidade
+
+		>> Matiz é um grau na roda de cores de 0 a 360
+			>> 0 é vermelho, 120 é verde e 240 é azul
+
+		>> Saturação é um valor percentual, descrita como a intensidade da cor
+			>> 0% significa tom de cinza e 100% é a cor completa
+
+		>> Luminosidade é um valor percentual, descrita como a quantidade de luz que deseja dar a cor
+			>>  0% é preto, 50% é neutro e 100% é branco
+
+	>> HSLA:
+		>> Extensão dos valores de cores HSL com um canal alfa que funciona da mesma forma que o RGBA

@@ -1,0 +1,68 @@
+>> Flexbox:
+	>> A ideia principal é dar ao contêiner a capacidade de alterar o tamanho de seus itens para melhor preencher o espaço disponível 
+	   Expande itens para preencher o espaço livre disponível ou os encolhe para evitar transbordamento
+
+	>> Propriedades do Container (pai): 
+		>> É o elemento pai que contém os itens flexíveis, definido por display: flex;
+
+			>> flex-direction: Define a direção dos itens flexíveis dentro do contêiner, e assim o eixo principal
+
+				>> row(padrão): Esquerda para a direita 
+					-> o eixo principal é horizontal, eixo transversal é vertical
+				>> row-reverse: Direita para a esquerda 
+					-> o eixo principal é horizontal, eixo transversal é vertical
+				>> column: Cima para baixo 
+					-> o eixo principal é vertical, eixo transversal é horizontal
+				>> column-reverse: Baixo para cima 
+					-> o eixo principal é vertical, eixo transversal é horizontal
+
+			>> flex-wrap: Define se os itens devem ou não quebrar para uma nova linha
+
+				>> nowrap(padrão):  Todos os itens ficam em uma única linha
+				>> wrap: Os itens quebram para uma nova linha
+				>> wrap-reverse: Os itens quebram para uma nova linha em ordem reversa
+
+			>> flex-flow: Abreviação para as propriedades flex-direction e flex-wrap
+ 
+			>> justify-content: Alinha os itens flexíveis ao longo do eixo principal, ajudando a 
+					    distribuir o espaço restante que não é ocupado pelos itens
+
+				>> flex-start(padrão): Alinha os itens ao início do contêiner
+				>> flex-end: Alinha os itens ao final do contêiner
+				>> center: Centraliza os itens no contêiner
+				>> space-between: Os itens são distribuídos uniformemente na linha
+				>> space-around: Os itens são distribuídos uniformemente na linha com espaço igual ao redor deles.
+						 Visualmente os espaços não são iguais, já que todos os itens têm espaço igual em ambos os lados
+				>> space-evenly: Os itens são distribuídos de modo que o espaçamento entre dois itens 
+						 (e o espaço até as bordas) seja igual
+
+			>> align-items:  Alinha os itens flexíveis ao longo do eixo transversal 
+
+				>> stretch(padrão): Estica os itens para preencher o contêiner
+				>> flex-start: Alinha os itens ao início do contêiner
+				>> flex-end: Alinha os itens ao final do contêiner
+				>> center: Centraliza os itens no contêiner
+				>> baseline: Alinha os itens na linha de base
+
+			>> align-content: Alinha as linhas de um contêiner flexível quando há espaço extra no eixo transversal
+					  Relevante apenas quando o contêiner tem várias linhas de itens flexíveis (flex-wrap)
+
+				>> stretch (padrão): As linhas são esticadas para preencher o contêiner 
+				>> flex-start: As linhas são agrupadas no início do contêiner
+				>> flex-end: As linhas são agrupadas no final do contêiner
+				>> center: As linhas são agrupadas no centro do contêiner 
+				>> space-between: As linhas são distribuídas igualmente, com o primeiro item no início e o último item no final.
+				>> space-around: As linhas são distribuídas com espaço igual ao redor de cada linha
+
+			>> gap: Cria um espaçamento uniforme entre todos os itens filhos
+		
+	>> Propriedades dos Itens (filhos):
+		>> São os elementos filhos diretos do contêiner flexível, cada item se torna um item flexível
+
+			>> order: Define a ordem dos itens flexíveis
+			>> flex-grow: Define a capacidade de um item de crescer para ocupar espaço disponível
+			>> flex-shrink: Define a capacidade de um item de encolher para liberar espaço
+			>> flex-basis: Define o tamanho inicial de um item flexível
+			>> flex: Abreviação das três propriedades anteriores
+			>> align-self: Permite sobrescrever o alinhamento de um único item flexível 
+

@@ -1,0 +1,215 @@
+>> Elementos de Formulário:
+	>> Capturam dados inseridos pelo usuário e os transmitem para o servidor ou os utilizam diretamente na aplicação
+
+	>> <form>: Usado para criar um formulário com campos de entrada de dados
+
+		>> action: Especifica para onde os dados irão quando o formulário for enviado
+			>> "URL": Pode se passar uma URL relativa ou absoluta como valor
+				>> URL Absoluta: Envia para outro web site
+				>> URL Relativa: Envia para um arquivo no próprio web site
+
+		>> autocomplate: Especifica se o formulário deve ter o preenchimento automático 
+			>> "on": Padrão. O navegador irá completar os valores com base nos dados que foram inseridos antes
+			>> "off": O usuário deverá inserir cada valor nos campos em cada uso
+
+		>> method: Especifica o método HTTP usado para enviar os dados do formulário
+			   Serão enviados para a página especificada no action
+
+			>> "get": Padrão. Acrescenta os dados do formulário na URL em pares nome/valor
+				Limitado a 3.000 caracteres
+				Nunca usar para enviar dados confidenciais pois aparece na URL
+				É mais recomendado para consultas
+			>> "post": Acrescenta dados do formulário dentro do corpo da solicitação HTTP
+				   Não tem limitação de tamanho
+
+		>> name: especifica o nome do formulário
+			>> "nome-do-formulário": inserir aqui o nome escolhido
+
+		>> novalidate: Quando presente especifica que os dados do formulário não devem ser validados quando enviado
+
+		>> target: Indica onde exibir a resposta recebida após o envio do formulário
+			>> "_blank": A resposta é exibida em uma nova janela ou guia
+			>> "_self": Padrão. A resposta é exibida no mesmo frame
+			
+	>> <input>: Especifica um campo de entrada onde o usuário pode inserir dados
+		    É o elemento mais importante do formulário
+		    Sempre usar a tag <label> para definir rótulos do <input>
+		    Pode ser exibido de diversas maneiras dependendo do atributo type
+
+		>> type: especifica o tipo de <input> a ser exibido
+			>> "button": Define um botão que pode ser usado para ativar um script JS
+
+				>> Atributo para usar em conjunto:
+					>> value: Define o texto do botão
+
+			>> "checkbox": Define uma caixa de seleção para marcar uma ou mais opções
+
+				>> Atributos para usar em conjunto:
+					>> checked: Deixa a opção pré-selecionada quando a página for carregada
+ 					>> value: Define o valor associado ao campo
+					>> name: Define o nome do campo, para que os dados sejam enviados ao banco
+						 Precisa ser igual em todos os checkbox de um mesmo grupo
+
+			>> "color": Define um seletor de cores
+
+			>> "date": Define um seletor de data, o valor resultante inclui dia, mês e ano
+
+			>> "datetime-local": Define um seletor de data, o valor resultante inclui dia, mês, ano e hora
+
+			>> "email": Define um campo para endereço de email
+				    O valor é validado para garantir que está formatado corretamente
+
+				>> Atributos para usar em conjunto:
+					>> multiple: Usado para garantir que o campo suporte mais de um e-mail
+						     Separar cada e-mail com uma vírgula
+					>> placeholder: Define exibe o valor esperado no campo
+
+			>> "file": Define um campo de seleção um botão para enviar arquivos
+
+				>> Atributo para usar em conjunto:
+					>> multiple: Usado para enviar mais de um arquivos
+						     Apertar a tecla CTRL para selecionar
+
+			>> "number": Campo para inserir números
+
+				>> Atributos para usar em conjunto:
+					>> min: Define o valor máximo permitido, usar em conjunto com max
+					>> max: Define o valor máximo permitido, usar em conjunto com min
+					>> step: Especifica o intervalo 
+					>> value: Especifica um valor padrão para o campo 
+
+			>> "password": Define senhas, com os caracteres mascarados
+
+				>> Atributo para usar em conjunto:
+					>> value: Define o valor inicial do campo
+
+			>> "radio": Define um botão de opção
+				    São apresentados em grupos de opções, e apenas um pode ser selecionado ao mesmo tempo
+				    Para ser um grupo, devem ter o mesmo valor no atributo *name*
+
+				>> Atributos para usar em conjunto:
+					>> checked: Deixa a opção pré-selecionada quando a página for carregada
+					>> value: Define o valor associado ao campo
+					>> name: Define o nome do campo, para que os dados sejam enviados ao banco
+						 Precisa ser igual em todos os radios de um mesmo grupo
+
+			>> "range": Define um controle deslizante, para inserir um número
+				    O intervalo é de 1 a 100
+
+				>> Atributos para usar em conjunto:
+					>> min: Define o valor máximo permitido, usar em conjunto com max
+					>> max: Define o valor máximo permitido, usar em conjunto com min
+					>> step: Especifica o intervalo 
+					>> value: Especifica um valor padrão para o campo 
+
+			>> "reset": Define um botão que redefine todos os valores do formulário para seus valores iniciais
+
+				>> Atributo para usar em conjunto:
+					>> value: Define o texto do botão
+
+			>> "search": Define um campo de texto para inserir string de pesquisa
+				     Deve-se definir um nome para o campo de pesquisa para que os dados sejam enviados
+
+				>> Atributo para usar em conjunto:
+					>> placeholder: Define e exibe o valor esperado no campo
+
+			>> "submit": Botão que envia todos os dados do formulário 
+
+				>> Atributo para usar em conjunto:
+					>> value: Define o texto do botão
+
+			>> "tel": Define um campo para inserir um número de telefone
+
+				>> Atributo para usar em conjunto:
+					>> placeholder: Define e exibe o valor esperado no campo
+
+			>> "text": Define um campo de texto de linha única
+
+				>> Atributos para usar em conjunto:
+					>> placeholder: Define e exibe o valor esperado no campo
+					>> value: Define o valor inicial do campo
+
+			>> "time": Define um campo para inserir o horário
+
+				>> Atributos para usar em conjunto:
+					>> name: Especifica um nome para o campo
+						 Usado para fazer referência no JavaScript
+						 Somente os campos com esse atributo terão os dados enviados
+					>> autocomplate: Especifica se o formulário deve ter o preenchimento automático 
+						>> "on": Padrão. O navegador irá completar os valores com base nos dados que foram inseridos antes
+						>> "off": O usuário deverá inserir cada valor nos campos em cada uso
+					>> autofocus: Quando presente, especifica que um <input> deve receber foco quando a página for carregada
+					>> maxlenght: Define a quantidade máxima de caracteres permitida no campo
+					>> minlenght: Define a quantidade mínima de caracteres permitida no campo
+					>> required: Especifica quais campos devem ser preenchidos antes de enviar os dados
+					>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+			
+		>> <textarea>: Define um campo de texto multilinha
+	    		       Frequentemente usado para obter comentários e avaliações dos usuários
+
+			>> Atributos para usar em conjunto:
+	                        >> name: Necessário para referenciar os dados do formulário no envio
+	    			>> id: Necessário para associar o <textarea> ao <label>, devem possuir o mesmo valor
+				>> autofocus: Especifica que o campo deve ganhar foco quando a página for carregada
+				>> cols: Especifica a largura visivel do campo 
+				>> placeholder: Define e exibe o valor esperado no campo
+				>> required: Especifica que o campo é de preenchimento obrigatório
+				>> rows: Especifica o numero de linhas visiveis do campo 
+				>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+
+		>> <button>: Define um botão clicável
+	  		     Pode ser colocado texto de tag de formatação, o que no input não é possível
+
+			>> Atributos para usar em conjunto:
+				>> popovertargetaction: Define o que acontece quando o botão é clicado
+					>> "show": o popover aparece quando o botão é clicado
+					>> "hide": o popover se oculta quando o botão é clicado
+					>> "toggle": Padrão. O popover alterna entre ocultar e mostrar quando clicado
+				>> popovertarget: O que será mostrado quando o botão for ativado
+				>> name: Especifica o nome para o botão
+				>> type: Especifica o tipo do botão
+					>> "button": Define um botão clicável
+					>> "submit": Envia os dados do formulário
+					>> "reset": Limpa os dados do formulário
+				>> value: Especifica o valor inicial do botão
+				>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+
+		>> <select>: Usado para criar uma lista suspensa
+			     A tag option dentro do select difine as opções disponiveis
+
+			>> Atributos para usar em conjunto:
+	                        >> name: Necessário para referenciar os dados do formulário no envio
+	    			>> id: Necessário para associar o <select> ao <label>, devem possuir o mesmo valor
+				>> autofocus: Especifica que o campo deve ganhar foco quando a página for carregada
+				>> name: Usado para fazer referência a dados de formulário após o envio
+				>> required: Especifica que o campo é de preenchimento obrigatório
+				>> size: Especifica o número de opções visíveis
+					 Se o tamanho for maior que 1 é apresenta como uma barra de rolagem
+				>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+
+		>> <option>: Define uma opção em um <select> ou <optgroup>
+
+			>> Atributos para usar em conjunto:
+				>> selected: a opção deve ser pré-selecionada quando a página for carregada e será exibida primeiro na lista
+				>> value: O valor definido aqui indica o que será enviado ao servidor no envio do formulário
+				>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+
+		>> <optgroup>: Usado para agrupar opções relacionadas em um <select>
+
+			>> Atributos para usar em conjunto:
+				>> label: Especifica o rótulo para o grupo
+				>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+
+		>> <label>: Define rótulos para elementos <input>
+
+			>> Atributo para usar em conjunto:
+				>> for: Especifica o elemento da qual o <label> será vinculado, o elemento deve ter o id com mesmo valor
+
+		>> <fieldset>: Usada para agrupar elementos relacionados em um formulário
+			       A tag desenha uma caixa ao redor dos elementos relacionados
+			       Usar em conjunto com a <legend>
+
+			>> Atributo para usar em conjunto:
+				>> disabled: O campo de entrada é desabilitado e não é possível clicar ou alterar seu conteúdo
+
+		>> <legend>: Usada para definir uma legenda para o <fildset>

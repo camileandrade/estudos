@@ -1,0 +1,13 @@
+>> Introdução a JavaScript:
+	>> É uma linguagem de programação Web
+	>> Orientada a objetos
+
+	>> single-threaded
+		>> Executa um comando por vez
+
+	>> Linguagem de alto nível, interpretada e não tipada
+		* Linguagem de alto nível é projetada para ser fácil de ler e escrever para humanos
+		* Linguagem interpretada executa o código linha por linha
+		* Linguagem não tipada são aquelas em que as variáveis não têm um tipo fixo, sendo determinadas em tempo de execução
+
+	>> A sintaxe é derivada da linguagem Java

@@ -1,0 +1,53 @@
+>> Fontes:
+	>> Famílias de Fontes Genéricas:
+		>> Serif: Têm um pequeno traço nas bordas de cada letra
+		>> Sem-Serif: Têm linhas limpas (sem pequenos traços anexados)
+		>> Monospace: Todas as letras têm a mesma largura fixa
+		>> Cursive: Imitam a caligrafia humana
+		>> Fantasy: Fontes decorativas/lúdicas
+
+	>> font-family: Define a família de fontes a ser usada para um elemento
+		>> Deve adicionar uma lista de "fontes de backup" semelhantes
+
+	>> Fontes Web Seguras:
+		>> São instaladas universalmente em todos os navegadores e dispositivos
+			>> Arial, Verdana, Tahoma, Times New Roman, Geórgia, etc.
+
+	>> font-style: Define a estilização da fonte
+		>> normal: O texto é exibido normalmente
+		>> italic: O texto é mostrado em itálico
+
+	>> font-weight: Especifica o peso da fonte
+		>> normal: O texto é exibido normalmente
+		>> bold: O texto é exibido em negrito
+
+	>> font-variant: Especifica se um texto deve ou não ser exibido em fonte de caixa baixa
+		>> normal: O texto é exibido normalmente
+		>> small-caps: As letras minúsculas são convertidas em letras maiúsculas, mas aparecem em um tamanho de 
+			       fonte menor do que as letras maiúsculas originais
+
+	>> font-size: Define o tamanho do texto
+
+	>> Como usar as fontes do Google?
+		>> Adicionar o link no head do HTML
+			>> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=nome-da-fonte">
+
+	>> font: Propriedade abreviada para font-style, font-variant, font-weight, font-size, font-family
+
+	>> Formatos de fontes: 
+		>> Fontes TrueType (TTF): Formato de fonte mais comum para os sistemas operacionais Mac OS e Microsoft Windows
+		>> Fontes OpenType (OTF): Formato para fontes de computador escaláveis, registrada da Microsoft
+		>> Formato de Fonte Aberta da Web (WOFF): Formato de fonte para uso em páginas da web
+		>> Fontes/Formas SVG: Permitem que SVG seja usado como glifos ao exibir texto
+
+		@font-face: Permite inserir no CSS arquivos de fontes
+			>> Primeiro, deve-se definir um nome para a fonte
+			>> E depois, apontar para o arquivo da fonte
+				@font-face {
+  					font-family: nomear-a-fonte;
+  					src: url(caminho-da-fonte);
+				}
+
+				div {
+  					font-family: fonte-nomeada;
+				}

@@ -1,0 +1,18 @@
+>> Expressões:
+	>> Uma expressão é qualquer unidade de código que o interpretador pode avaliar para produzir um valor
+
+	>> Expressões Primárias:
+		>> São as formas mais simples de expressões, autônomas, que não incluem outras expressões
+			>> Números, strings, palavras-chave, etc.
+
+	>> Expressões de Acesso a Propriedades:
+		>> Forma de acessar o valor da uma propriedade de um objeto ou de um elemento em um array
+
+			>> Notação de Ponto: Acessa uma propriedade pelo seu nome
+				>> objeto.propriedade
+
+			>> Notação de Colchetes: Acessa uma propriedade usando uma chave
+				>> objeto["propriedade"]
+
+	>> Expressão de Invocação:
+		>> Maneira de chamar ou executar uma função

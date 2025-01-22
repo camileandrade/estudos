@@ -1,0 +1,10 @@
+>> Altura e Largura:
+	>> height: Define a altura do elemento
+	>> width: Define a largura do elemento
+
+	>> max-width e min-width: Definem a largura máxima e mínima respectivamente
+	>> max-height e min-height: Definem a altura máxima e mínima respectivamente
+		>> Ideal para manuseio de telas pequenas
+
+	>> Não incluem preenchimentos, bordas e margens
+	>> Se uma largura for especificada, o preenchimento adicionado a esse elemento será adicionado à largura total

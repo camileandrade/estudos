@@ -1,0 +1,11 @@
+>> Margens:
+	>> Usadas para criar espaço ao redor dos elementos, a partir da borda externa
+
+	>> maring: Propriedade abreviada que pode receber de 1 a 4 valores
+		>> 1: Todos os lados receberão o mesmo valor
+		>> 2: top e bottom receberão o primeiro valor, right e left o segundo
+		>> 3: top receberá o primeiro valor, right e left o segundo, bottom o terceiro
+		>> 4: top receberá o primeiro valor, right o segundo, bottom o terceiro, left o quarto
+
+	>> Margens Individuais:	
+		>>  margin-top, margin-bottom, margin-right, margin-left

@@ -1,0 +1,126 @@
+>> DOM (Document Object Model):
+	>> O objeto Document representa a página web
+		>> Principal objeto do DOM
+
+	>> Representação do documento HTML ou XML como uma árvore de nós
+		>> Cada parte do documento é um nó que pode ser manipulado
+		>> Element Nodes: Representam tags HTML
+		>> Text Nodes: Contêm o texto dentro de um elemento
+		>> Attribute Nodes: Representam atributos de elementos HTML
+		>> Comment Nodes: Representam comentários no código
+
+	>> Permite acessar e modificar a estrutura, conteúdo e estilo do documento por meio do JavaScript
+
+	>> Selecionando Elementos:
+		>> Por meio do atributo id:
+			>> Seleciona o elemento com o ID especificado
+			>> const elemento = document.getElementById("nome-do-id")
+
+		>> Por meio do atributo name:
+			>> document.getElementsByName("valor-do-name")
+
+		>> Por meio das tags:
+			>> Retorna uma coleção de elementos que têm o nome da tag especificada
+			>> const elementos = document.getElementsByTagName("elemento")
+		
+		>> Por meio do atributo class:
+			>> Retorna uma coleção de elementos que têm uma ou mais classes especificadas
+			>> const elementos = document.getElementsByClassName("nome-da-classe")
+
+		>> Por meio dos seletores CSS:
+			>> Retorna o primeiro elemento que corresponde a um seletor CSS fornecido
+			>> const elemento = document.querySelector('nome-do-seletor-css')
+
+			>> Retorna todos os elementos que correspondem ao seletor CSS fornecido
+			>> const elementos = document.querySelectorAll('nome-do-seletor-css')
+
+	>> Criar e Inserir Elementos:
+		>> document.createElement('tagName'): Cria um novo elemento
+		>> element.appendChild(child): Adiciona um novo elemento filho ao final de um pai
+		>> element.insertBefore(newElement, referenceElement): Insere um novo elemento antes de outro
+		>> element.removeChild(child): Remove um filho de um elemento
+		>> element.replaceChild(child): Substitui um nó filho por outro nó
+
+	>> Acessando Elementos pelo Document Root:
+		>> document.documentElement: Retorna o elemento raiz (<html>)
+		>> document.body: Retorna o elemento <body>
+		>> document.head: Retorna o elemento <head>
+
+	>> Percorrendo Nós do DOM:
+		>> Cada nó no DOM tem várias propriedades que permitem navegar entre nós pai e nós filhos
+			>> parentNode: Retorna o nó pai de um elemento
+			>> childNodes: Retorna uma lista de nós contendo todos os filhos, incluindo nós de texto e elementos
+			>> firstChild e lastChild: Retorna o primeiro ou último filho de um nó
+			>> nextSibling e previousSibling: Permite navegar entre nós no mesmo nível (irmãos)
+			>> children: Retorna uma coleção de apenas os elementos filhos (ignora nós de texto)
+
+	>> Modificando Conteúdo:
+		>> textContent: Altera o texto dentro de um elemento
+	
+		>> innerHTML: Permite inserir tags HTML dentro de outro elemento
+
+		>> value: Define ou retorna o valor de um campo de formulário
+
+	>> Alterando Atributos:
+		>> setAttribute(): Adiciona ou modifica o valor de um atributo específico em um elemento HTML
+				   Opera sobre os atributos class, id, src, href
+
+		>> removeAttribute(): Remove um atributo específico de um elemento
+
+	>> Manipulando CSS:
+
+	>> Eventos DOM:
+		>> São ações que ocorrem no navegador
+		>> Permite "ouvir" esses eventos e executar funções em resposta a eles
+
+		>> Eventos de Mouse
+			>> click: Ocorre quando um elemento é clicado
+			>> dblclick: Ocorre quando um elemento é clicado duas vezes
+			>> mouseover: Ocorre quando o ponteiro do mouse passa sobre um elemento
+			>> mouseout: Ocorre quando o ponteiro do mouse sai de um elemento
+
+		>> Eventos de Teclado
+			>> keydown: Ocorre quando uma tecla é pressionada
+			>> keyup: Ocorre quando uma tecla é liberada
+			>> keypress: Ocorre quando uma tecla é pressionada (inclui apenas teclas que produzem caracteres)
+
+		>> Eventos de Formulário
+			>> submit: Ocorre quando um formulário é enviado
+			>> input: Ocorre quando um valor de um campo de formulário é alterado
+			>> change: Ocorre quando o valor de um campo de formulário muda (e o campo perde o foco)
+
+		>> Eventos de Janela
+			>> load: Ocorre quando o conteúdo da página foi totalmente carregado
+			>> resize: Ocorre quando a janela do navegador é redimensionada
+			>> scroll: Ocorre quando o usuário rola a página
+
+	>> Ouvintes:
+		>> addEventListener(): adiciona eventos a elementos no DOM
+			elemento.addEventListener(evento, função);
+				>> elemento: O elemento ao qual você quer adicionar o ouvinte de evento.
+				>> evento: O tipo de evento, como 'click', 'keydown', etc.
+				>> funcão: A função de callback a ser executada quando o evento ocorre.
+
+		>> removeEventListener(): remove um ouvinte de evento
+			element.removeEventListener(event, function, useCapture);
+				>> É importante que a função passada para removeEventListener() seja exatamente a mesma utilizada em addEventListener()
+
+	>> Prevenção de Comportamento Padrão:
+		>> preventDefault(): Alguns eventos têm comportamentos padrão e podem ser prevenidos com esse método
+
+	>> Parar a Propagação de Eventos:
+		>> stopPropagation(): impede que um evento se propague para elementos pai 
+		   Útil quando eventos em elementos filhos não devem afetar eventos configurados em elementos pais
+
+		>> Fase de Captura: O evento é propagado de cima (elemento mais externo) para baixo s árvore DOM até atingir o alvo.
+		>> Fase de alvo: O evento atinge o elemento alvo, onde o ouvinte de eventos diretamente ligado a este elemento é executado
+		>> Fase de Bolha:  O evento é propagado de volta do elemento alvo, subindo a árvore DOM passando pelos elementos pais até o mais externo
+
+	>> Resumo das Propriedades de Eventos Comuns:
+		>> event.type: O tipo do evento que ocorreu.
+		>> event.target: O elemento onde o evento ocorreu.
+		>> event.currentTarget: O elemento ao qual o ouvinte de evento está anexado.
+		>> event.preventDefault(): Previne o comportamento padrão de um evento.
+		>> event.stopPropagation(): Impede que o evento se propague para elementos pais.
+		>> event.bubbles: Indica se o evento pode se propagar para os pais.
+		>> event.key: Indica qual tecla foi pressionada em um evento de teclado.

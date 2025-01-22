@@ -1,0 +1,5 @@
+>> Interface de Usuário:
+	>> resize: Especifica se (e como) um elemento deve ser redimensionável pelo usuário
+		>> horizontal: Permite ao usuário apenas aumentar ou diminuir a largura
+		>> vertical: Permite ao usuário apenas aumentar ou diminuir a altura
+		>> both: Permite que o usuário redimensione a altura e a largura de um elemento

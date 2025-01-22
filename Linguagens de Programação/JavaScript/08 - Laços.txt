@@ -1,0 +1,20 @@
+>> Laços:
+	>> Usados para executar repetidamente um bloco de código enquanto uma condição é verdadeira ou para iterar sobre elementos de uma coleção
+
+	>> while:
+		>> Executa o bloco de código enquanto a condição for verdadeira, e ela é avaliada antes de cada iteração
+			while (condição) { código }
+
+	>> do/while:
+		>> Semelhante ao while, mas o bloco de código é executado pelo menos uma vez, pois ele avalia se a condição é verdadeira no final
+			do { código } while (condição)
+
+	>> for:
+		>> Utilizado quando se sabe o número exato de iterações que deseja realizar
+		>> Cada parte é executada em sequência antes de cada iteração
+			for (inicialização; condição; incremento) { código }
+
+	>> for...in:
+		>> Usado para iterar sobre propriedades enumeráveis de um objeto
+		>> Percorre as chaves de um objeto, permitindo acessar os valores das propriedades
+			for (propriedade in objeto) { código }

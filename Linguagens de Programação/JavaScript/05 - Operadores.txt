@@ -1,0 +1,46 @@
+>> Operadores:
+	>> São símbolos que realizam operações sobre operandos
+	>> Usados para combinar valores de expressões e produzir um novo valor
+	>> Convertem o tipo de seus operandos conforme o necessário
+	>> Operadores com precedência mais alta são executados antes dos que tem precedência baixa
+		>> Segue princípios matemáticos
+
+	>> Operadores Aritméticos:
+		>> Usados para realizar operações matemáticas básicas
+		>> + (soma), - (subtração), * (multiplicação), / (divisão), % (módulo), ** (exponenciação)
+
+	>> Operadores Unários:
+		>> Operam em apenas um operando
+			>> typeof (retornar o tipo de dado do operando), ++ (incrementa 1 da variável), --(decrementa 1 da variável)
+
+	>> Operadores Ternários:
+		>> Forma curta de expressar uma condição
+			>> condição ? valor1 : valor2
+
+	>> Operadores de Comparação:
+		>> Comparam dois valores e retornam um valor booleano
+			>> == (igualdade com conversão de tipos), === (igualdade sem conversão de tipos)
+			>> != (diferente com conversão de tipos), !== (diferente sem conversão de tipos)
+			>> > (verifica se o primeiro valor é maior que o segundo), < (verifica de o primeiro valor é menor que o segundo)
+			>> >= e <= (verificam maior ou igual e menor ou igual)
+
+	>> Operadores Lógicos:
+		>> Combinam expressões booleanas
+			>> && (retorna true se ambas as expressões forem verdadeiras)
+			>> || (retorna true se uma das expressões for verdadeira)
+			>> ! (inverte o valor booleano da expressão)
+
+	>> Operador in:
+		>> Usado para verificar se uma propriedade existe em um objeto ou se um índice existe em um array
+		>> É true se o valor do lado esquerdo é o nome de uma propriedade do lado direito
+			>> "nome-da-propriedade" in "nome-do-objeto/array"
+
+	>> Operador instanceof:
+		>> Usado para verificar se um objeto é uma instância de uma classe ou de uma função construtora específica
+			>> "nome-do-objeto" instanceof "nome-do-construtor"
+
+	>> Atribuição com Operação:
+		>> Combina uma operação com atribuição de valor em uma única expressão
+		>> "variável" operador= "outra-variavel/expressão"
+			>> Equivalente a: "variável" = "variável" operador "outra-variável/expressão"
+		>> +=, -+, *+, /+, %=

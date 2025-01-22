@@ -1,0 +1,13 @@
+>> Strict Mode:
+	>> Recurso que permite uma forma mais rigorosa de escrever o código
+	>> Ajuda a identificar e prevenir erros, impondo restrições e comportamentos mais seguros
+
+	>> Para ativar, é necessário adicionar a string "use strict" no inicio do script
+	
+	>> Variáveis devem ser declaradas antes de usar, caso contrário será gerado um erro
+	>> Parâmetro duplicados não são permitidos
+	>> Não é permitido usar o operador delete em variáveis, funções ou argumentos
+	>> A palavra-chave this no contexto global será undefined
+	>> Algumas palavras reservadas não podem ser usadas como identificadores
+	>> Proibe a atribuição a propriedades somente leitura
+	>> Propriedades duplicadas em objetos literais não são permitidas

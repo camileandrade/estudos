@@ -1,0 +1,28 @@
+>> Estrutura Léxica:
+	>> Conjunto de regras elementares que especificam o modo de escrever os programas nessa linguagem
+		>> Nome de variáveis, caracteres delimitadores, etc.
+
+	>> Diferencia maiúsculas de minúsculas 
+
+	>> Ignora os espaços que aparecem entre sinais e as quebras de linha
+
+	>> Aceita dois estilos de comentários
+		>> // é utilizado para comentar apenas uma linha
+		>> /* */ é utilizado para comentar um bloco
+
+	>> Literal é um valor de dados que aparece diretamente em um programa
+
+	>> Identificador é um nome, usado para dar nomes a variáveis e funções.
+		>> Deve começar com uma letra, sublinhado (_) ou cifrão ($)
+		>> Os caracteres seguintes podem ser letras, dígitos, sublinhados ou cifrões
+		>> Dígitos não são permitidos como primeiro caractere
+
+		>> JavaScript reserva identificadores para uso próprio e não podem ser usados como identificadores normais
+			>> São as palavras reservadas ou palavras-chave
+
+	>> Utiliza ponto e vírgula (;) para separar instruções
+		>> Ele pode ser omitido apenas se elas estão em linhas separadas, utilizando a quebra de linha
+			>> Trata as quebras de linha como ; somente quando não consegue analisar o código sem elas
+			>> Mas se a linha seguinte começa com (, [, /, + ou -, existe a possibilidade de ser interpretado 
+			   como continuação da instrução da linha anterior
+

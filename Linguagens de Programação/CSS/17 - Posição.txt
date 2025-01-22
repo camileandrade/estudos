@@ -1,0 +1,17 @@
+>> Posição: 
+	>> position: Define o tipo de método de posicionamento usado para um elemento
+		     São posicionados usando as propriedades de deslocamento top, bottom, left e right
+			>> Não funcionarão a menos que a position propriedade seja definida primeiro
+
+		>> static (padrão):  O elemento segue o fluxo normal do documento e não pode ser posicionado com as propriedades de deslocamento
+
+		>> relative: Posiciona o elemento em relação à sua posição original no fluxo do documento
+				>> As propriedades de deslocamento ajustam a posição do elemento a partir de onde ele estaria normalmente
+
+		>> fixed: Posiciona o elemento em relação à viewport, e ele permanece fixo na posição especificada, mesmo quando a página é rolada
+
+		>> absolute: Posiciona o elemento em relação ao seu contêiner pai mais próximo que tenha uma posição diferente de static 
+				>> Se não houver um contêiner pai posicionado, o elemento será posicionado em relação ao documento
+
+		>> sticky: Alterna entre relative e fixed, dependendo da posição de rolagem
+				>> É tratado como relative até que o atinja um determinado ponto de rolagem, se tornando fixed 

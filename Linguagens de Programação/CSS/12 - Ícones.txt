@@ -1,0 +1,4 @@
+>> Ícones:
+	>> Podem ser facilmente adicionados à sua página HTML usando uma biblioteca
+		>> Adicionar link no head do HTML
+			>> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

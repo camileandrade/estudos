@@ -1,0 +1,39 @@
+>> Animações:
+	>> Permite que um elemento mude gradualmente de um estilo para outro
+	>> @keyframes "nome-da-animação": Especifica os novos estilos que serão atribuido ao elemento que tiver o animatio-name vinculado a essa regra
+		>> Usando as palavras-chave "from" e "to" (que representam 0% (início) e 100% (concluído)).
+
+	>> animation-duration: Define quanto tempo uma animação deve levar para ser concluída
+		>> Se não for especificada, nenhuma animação ocorrerá
+
+	>> animation-delay: Especifica um atraso para o início de uma animação
+
+	>> animation-iteration-count: Especifica o número de vezes que uma animação deve ser executada
+		>> O valor infinite faz a animação continuar para sempre
+
+	>> animation-direction: Especifica como uma animação deve ser reproduzida 
+		>> normal: Para frente, este é o padrão
+		>> reverse: Direção reversa (para trás)
+		>> alternate: Primeiro para a frente e depois para trás
+		>> alternate-reverse: Primeiro para trás e depois para frente
+
+	>> animation-timing-function: Especifica a curva de velocidade da animação
+		>> ease: Especifica um efeito de transição com um início lento, depois rápido e, por fim, lento (este é o padrão)
+		>> linear: Especifica um efeito de transição com a mesma velocidade do início ao fim
+		>> ease-in: Especifica um efeito de transição com um início lento
+		>> ease-out: Especifica um efeito de transição com um final lento
+		>> ease-in-out: Especifica um efeito de transição com início e fim lentos
+		>> cubic-bezier(n,n,n,n): Permite que você defina seus próprios valores em uma função cúbica-bezier
+
+	>> animation-fill-mode: Especifica um estilo para o elemento de destino quando a animação não está sendo reproduzida
+		>> none: A animação não aplicará nenhum estilo ao elemento antes ou depois de sua execução, é o valor padrão
+
+		>> forwards: Manterá os valores de estilo definidos pelo último quadro-chave 
+			>> Depende de animation-direction e animation-iteration-count)
+
+		>> backwards: Obterá os valores de estilo definidos pelo primeiro quadro-chavee os manterá durante o período de atraso da animação
+			>> Depende da direção da animação) 
+
+		>> both: A animação seguirá as regras para frente e para trás, estendendo as propriedades da animação em ambas as direções
+
+	>> animation: Propriedade abreviada que combina todas as propriedades anteriores em uma só

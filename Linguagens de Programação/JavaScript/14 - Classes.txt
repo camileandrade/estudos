@@ -1,0 +1,38 @@
+>> Classes:
+	>> São uma forma sintática de definir funções construtoras e a cadeia de protótipos de uma maneira mais intuitiva
+		>> É um modelo para objetos
+
+	>> Usa-se a palavra-chave class
+		>> Sempre deve ser adicionado o método constructor()
+			>> É chamado automaticamente quando um novo objeto é criado
+			>> É usado para inicializar propriedades de objetos
+
+	>> Herança:
+		>> Classes podem ser aumentadas utilizando a palavra-chave extends
+		>> Permite que uma classe (subclasse) herde métodos e propriedades de outra classe (superclasse), estendendo e 
+		   modificando seu comportamento
+			>>  O método super deve ser chamado antes de usar this no construtor
+			    Ele acessa o construtor ou métodos da superclasse
+
+	>> Polimorfismo:
+		>> Refere-se à capacidade de diferentes classes tratarem os mesmos métodos de maneiras diferentes
+		>> Métodos com o mesmo nome podem ter implementações diferentes em diferentes classes
+
+	>> Encapsulamento:
+		>> Conceito de agrupar propriedades e métodos que operam sobre esses dados em uma única unidade ou classe
+		>> Envolve ocultar detalhes internos da implementação, expondo apenas uma interface pública controlada
+			>> Ajuda a proteger o estado interno do objeto contra alterações externas
+
+		>> Propriedades Públicas:
+			>> Podem ser acessadas e modificadas diretamente de fora da classe
+			>> Qualquer propriedade de um objeto é pública por padrão
+
+		>> Propriedades Privadas:
+			>> São acessíveis apenas dentro da própria classe
+			>> Não podem ser acessadas ou modificadas diretamente fora da classe
+			>> São definidas usando o símbolo # antes do nome da propriedade
+
+		>> Propriedades Protegidas:
+			>> Acessíveis dentro da classe e nas subclasses
+			>> JavaScript não tem suporte para esse tipo, mas existe a convenção de usar um _ antes 
+			   do nome para indicar que ela deve ser tratada dessa forma

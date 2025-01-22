@@ -1,0 +1,17 @@
+>> Introdução ao CSS:
+	>> Cascading Style Sheets
+	>> Linguagem utilizada para estilizar páginas web
+		>> Descreve como os elementos HTML devem ser exibidos 
+	>> Pode controlar o layout de várias páginas de uma vez só
+
+	>> Como inserir CSS?
+		>> CSS Externo
+			>> Utiliza-se apenas um arquivo externo, incluindo uma referência dentro do elemento <link> do head do HTML
+				>> <link rel="stylesheet" href="nome-do-arquivo.css">
+		>> CSS Interno
+			>> Utiliza-se a tag <style> dentro do head do HTML, especificando todas as estilizações ali
+		>> CSS Embutido
+			>> Utiliza-se o atributo style dentro da tag
+
+	>> Comentários
+		>> /* Isso é um comentário de linha única */

@@ -1,0 +1,201 @@
+>> Tipos, Valores e Variáveis:
+	>> Tipo refere-se à categoria de dados que uma variável pode armazenar
+	>> Os tipos podem ser divididos em duas categorias
+		>> Primitivos
+			>> Números, Strings, Boolean, Undefined, Null
+		>> Não Primitivos
+			>> Objeto e Função executável associado
+
+	>> O valor é o dado real atribuído a uma variável
+
+	>> Uma variável é um nome simbólico que aponta para um valor armazenado na memória
+
+	>> Números:
+		>> Não distingue entre valor inteiro e valor flutuante, todos são representados como ponto flutuante
+		>> Literal inteiro representa um número sem parte decimal
+		>> Literal de ponto flutuante representa um número com uma parte decimal
+		>> Usa-se operadores aritméticos
+			>> +, -, *, /
+		>> Para operações matemáticas mais complexas, usa-se as funções do objeto Math já definido no JavaScript
+			* Consultar métodos disponíveis
+	
+	>> Datas e Horas:
+		>> JavaScript tem a construtora Date() para criar objetos que representam datas e horas
+			* Consultar métodos disponíveis
+
+	>> Strings:
+		>> Usada para representar texto
+		>> É uma array de caracteres
+			>> Utilizam indexação com base 0
+			>> Pode utilizar os métodos de arrays
+		>> Para incluir em uma variável, deve-se colocar seus caracteres dentro de aspas simples ou aspas duplas
+		>> Pode-se dividir uma string em várias linhas utilizando (\n)
+		>> Para concatenar string, utiliza-se o operador +
+			>> Em números ele soma, em string ele une
+
+		>> Métodos:
+			>> charAt(): Retorna o caractere em um índice específico
+				>> const caractere = string.charAt(index);
+
+			>> charCodeAt(): Retorna o código Unicode do caractere no índice especificado
+				>> const unicode = string.charCodeAt(index);
+
+			>> split(): Divide a string em um array de substrings com base em um delimitador
+				>> const array = string.split(delimitador, limit);
+
+			>> toLowerCase(): Converte todos os caracteres para minúsculas
+				>> const minuscula = string.toLowerCase();
+
+			>> toUpperCase(): Converte todos os caracteres para maiúsculas
+				>> const maiuscula = string.toUpperCase();
+
+			>> trim(): Remove espaços em branco do início e do final da string
+				>> const remover = string.trim();
+
+				>> trimStart ou trimLeft remove os espaços em branco do inicio da string
+				>> trimEnd ou trimRight remove os espaços em branco do final da string
+
+			>> repeat(): Repete a string o número de vezes especificado
+				>> const repetir = string.repeat(quantidade);
+
+			>> replace(): Substitui parte da string por outra, usando uma substring ou expressão regular
+				>> const resultado = string.replace(procurarValor, substituirValor);
+
+			>> replaceAll(): Substitui todas as ocorrências de uma substring ou expressão regular
+				>> const resultado = string.replaceAll(procurarValor, substituirValor);
+
+			>> match(): Retorna as correspondências de uma expressão regular
+				>> const iguais = string.match(regexp);
+
+			>> matchAll(): Retorna todas as correspondências de uma expressão regular como um iterável
+				>> const iguais = string.matchAll(regexp);
+
+			>> search(): Retorna o índice da primeira correspondência com uma expressão regular
+				>> const index = string.search(regexp);
+
+	>> Booleanos:
+		>> Representa verdadeiro ou falso
+			>> As palavras reservadas são true ou false
+		>> Resultam de comparações e são muitos usados em estruturas de controle
+	
+	>> Null e Undefined:
+		>> São dois valores distintos que são frequentemente usados para indicar a ausência de valor
+
+		>> null representa a ausência intencional de qualquer objeto ou valor, sendo usado explicitamente para 
+		   indicar que uma variável não tem valor e deve estar "vazia"
+
+		>> undefined indica que uma variável foi declarada, mas ainda não foi atribuída a um valor
+
+	>> Objeto Global:
+		>> Refere-se a um objeto que está disponível em todo o ambiente JavaScript, ou seja, ele pode ser acessado de qualquer lugar do 
+		   código
+
+	>> Objeto Wrapper:
+		>> É uma forma de converter valores primitivos (como números, strings, ou booleanos) em objetos temporários para que possam ter 
+		   métodos e propriedades associados a eles.
+		>> Não existem objetos wrapper para null e undefined. 
+		>> Qualquer tentativa de acessar uma propriedade nesses valores resulta em um TypeError
+		>> É possível criar explicitamente objetos wrapper usando new String(), new Number(), ou new Boolean(), mas raramente é 
+		   necessário ou útil
+		>> JavaScript converte quando necessário
+
+		>> == trata um valor primitivo e seu objeto wrapper como iguais.
+		>> === pode diferenciá-los, assim como o operador typeof
+
+	>> Valores primitivos Imutáveis e Referências de Objeto Mutáveis
+		>> Valores de tipos primitivos são imutáveis
+			>> Strings são uma array, mas ela não é modificada quando métodos são aplicados a ela
+				>> É retornado um novo valor
+		>> Dois valores são iguais apenas se tiverem o mesmo valor
+			>> Strings só são iguais se tiverem o mesmo comprimento e os mesmos caracteres em cada índice
+		
+		>> Objetos são mutáveis
+		>> Não são comparados por valor
+			>> Mesmo que tenhas as mesmas propriedades e valores
+			>> São comparados por referência
+				>> Só são iguais se eles se referem ao mesmo objeto básico
+
+	>> Conversões de Tipo:
+		>> Existem duas formas principais de conversão de tipos:
+
+			>> Conversão Explícita: Ocorre quando você converte o tipo de dado de forma intencional, 
+			   utilizando funções ou métodos específicos
+
+				>> Conversão para String:
+					>> String():
+						>> É uma função global que pode ser usada para converter qualquer valor para uma string
+						   incluindo null e undefined.
+						>> Em arrays, converte os elementos em uma string e os separa por vírgulas
+						>> É mais abrangente
+
+					>> .toString():
+						>> É um método que existe na maioria dos objetos, mas não funciona em null e undefined gerando 
+						   um erro
+						>> É mais específico
+
+				>> Conversão para Número:
+					>> Number(): 
+						>> É uma função global que converte um valor para número
+							>> Tenta converter a string inteira em um número considerando números inteiros, 
+							   decimais, e valores especiais como null, true, false, etc
+								>> Não truncar na primeira ocorrência de caracteres inválidos
+						>> Se a conversão não for possível, retorna NaN (Not a Number)
+						>> valor booleano true é convertido em 1 e false em 0
+
+					>> .parseInt(): 
+						>> Converte uma string para um número inteiro
+							>> Analisa a string da esquerda para a direita e para quando encontra um caractere
+							   que não pode ser convertido em um número
+						>> Pode usar uma base numérica específica (radix)
+							>> Usado como segundo argumento
+								>> 2 (sistema binário), 8 (sistema octal), 10 (sistema decimal), 
+							   	   16 (sistema hexadecimal (dígitos 0-9 e letras A-F)
+
+					>> .parseFloat(): 
+						>> Converte uma string para um número de ponto flutuante (número decimal)
+							>> Analisa a string da esquerda para a direita e para quando encontra um caractere
+							   que não pode ser convertido em um número
+
+				>> Booleano:
+					>> Converte qualquer valor para um booleano
+					>> Valores como 0, null, undefined, NaN, "" (string vazia), e false são convertidos para false,
+					   todos os outros valores são convertidos para true
+						
+			>> Conversão Implícita: Ocorre automaticamente pelo JavaScript em certas operações
+
+	>> Declaração de Variável:
+		>> São declaradas com a palavra-chave var
+		>> É possível declarar várias variáveis em uma única linha
+			>> var a, b;
+		>> E também é possível declarar a variável e já inicializá-la com um valor
+			>> var j = "Eu amo JavaScript!";
+
+	>> Escopo de Variável:
+		>> Região do código onde a variável foi definida
+
+			>> A variável global é declarada fora de qualquer função, bloco, ou objeto
+				>> Está disponível em qualquer lugar do código, tanto dentro de funções quanto fora delas
+				>> Pode levar a efeitos colaterais indesejados se não forem usadas com cuidado	
+				>> Usa-se a palavra-chave var
+
+			>> A variável local é declarada dentro de uma função ou bloco de código
+				>> Só está disponível no escopo onde foi declarada
+				>> Evitam poluir o escopo global e ajudam a prevenir conflitos de nomes de variáveis
+				>> São destruídas automaticamente quando a função ou bloco em que foram definidas termina sua execução,
+				   liberando a memória usada
+				>> Usa-se as palavras-chaves let e const
+
+	>> Içamento:
+		>> Declarações de variáveis e funções são "içadas" para o topo do seu escopo
+		   durante a fase de compilação, antes da execução do código
+
+		>> Pode usar variáveis e funções em seu código antes de realmente declará-las
+			>> Comportamento pode variar dependendo de como são definidas
+
+		>> Somente a declaração da variável é içada, não a inicialização
+			>> Içada com undefined
+
+		>> A declaração e a definição da função são içadas para o topo do escopo
+			>> Podem ser chamadas antes de declaradas
+
+		* Declarar variáveis e funções no topo do código para evitar erros

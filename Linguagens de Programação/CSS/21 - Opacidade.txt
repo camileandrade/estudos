@@ -1,0 +1,6 @@
+>> Opacidade: 
+	>> opacity: Especifica a transparência de um elemento
+		    Pode assumir um valor de 0,0 - 1,0 (padrão)
+		    Quanto menor o valor, mais transparente
+		    Todos os seus elementos filhos herdam a mesma transparência
+				>> Utilizar RGBA para isso não acontecer

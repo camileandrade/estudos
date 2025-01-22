@@ -1,0 +1,27 @@
+>> Set:
+	>> Coleção de valores únicos de qualquer tipo
+	>> Não permite valores duplicados
+	>> Não mantém índices
+	>> A ordem de inserção é mantida
+	>> Não usa chaves
+
+	>> Inicializando um set:
+		>> let set = new Set()
+
+	>> Métodos:
+		>> add(valor): Adiciona um valor ao Set (se o valor já existir, ele não será adicionado)
+		>> has(valor): Verifica se um valor está presente no Set
+		>> delete(valor): Remove um valor do Set
+		>> clear(): Remove todos os valores do Set
+		>> size: Retorna o número de elementos no Set
+
+>> Weak Set:
+	>> Coleção de objetos únicos
+	>> Só objetos podem ser adicionados
+	>> Se não houver mais referências a um objeto fora do WeakSet, ele pode ser coletado pelo coletor de lixo
+	>> Não é iterável
+
+	>> Métodos:
+		>> weakSet.add(valor): Adiciona um objeto ao conjunto.
+		>> weakSet.has(valor): Retorna true se o objeto estiver no conjunto, e false caso contrário.
+		>> weakSet.delete(valor): Remove o objeto do conjunto

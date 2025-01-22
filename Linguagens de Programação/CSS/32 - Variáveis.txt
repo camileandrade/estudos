@@ -1,0 +1,11 @@
+>> Variáveis:
+	>> Usada para inserir o valor de uma variável CSS
+	>> Têm acesso ao DOM
+		>> Pode criar variáveis ​​com escopo local ou global, alterá-las com JavaScript e alterá-las com base em consultas de mídia
+			>> Variáveis locais sobreescrevem variáveis globais
+	>> Usar quando se trata das cores do seu design, para não ter que trocar os códigos de todos os lugares quando necessário
+
+	>> Para criar uma variável global, deve-se declarar ela dentro do seletor :root
+		>> --nome-da-variavel: valor
+	
+	>> Quando utilizá-la no elemento seguir a sintaxe: var(nome-da-variável)

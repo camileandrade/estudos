@@ -1,0 +1,41 @@
+>> Backgrounds:
+	>> Adiciona efeitos ao fundo dos elementos
+
+	>> background-color: Especifica a cor de fundo
+		>> background-color: red;
+
+	>> background-image: Especifica uma imagem a ser usada como plano de fundo
+			     É repetida para cobrir todo o elemento
+			     É possível várias imagens, separando-as por vírgulas. Elas serão apresentadas em camadas, na mesma ordem que forem declaradas
+		>> background-image: url("paper.gif");
+
+	>> background-size: Especifica o tamanho das imagens de fundo
+		>> contain: Dimensiona a imagem de fundo para ser a maior possível
+		>> cover:  dimensiona a imagem de fundo para que a área de conteúdo seja completamente coberta pela imagem de fundo
+		>> Também aceita como valores unidades de medidas
+
+	>> background-repeat: Define como uma imagem de fundo será repetida. Por padrão é repetida vertical e horizontalmente 
+		>> repeat: Repetido tanto verticalmente quanto horizontalmente
+		>> repeat-x: Repetido apenas horizontalmente
+		>> repeat-y: Repetido apenas verticalmente
+		>> no-repeat: A imagem não é repetida
+		>> space: A iamgem é repetida tanto quanto possível
+		>> round: A imagem é comprimida ou esticada para caber no espaço
+
+	>> background-attachment: Define se a imagem de fundo deve rolar ou ser fixa 
+		>> scroll: A imagem irá rolar com a página. É a configuração padrão
+		>> fixed: A imagem não irá rolar com a página
+		>> local: Irá rolar com o conteúdo do elemento
+
+	>> background-clip: Define até que ponto o fundo deve se estender dentro do elemento
+		>> border-box: Se estende até a borda. É o valor padrão
+		>> padding-box: Se estende até a borda interna da borda
+		>> content-box: Se estende até o limite do conteúdo em si
+
+	>> background-origin: Especifica a posição de origem de uma imagem de plano de fundo
+		>> border-box: Começa no canto superior esquerdo da borda
+		>> padding-box: Começa no canto superior esquerdo da borda de preenchimento
+		>> content-box: Começa no canto superior esquerdo do conteúdo
+
+	>> background-position: Define a posição inicial de uma imagem de fundo
+		>> left top, left center, left bottom, right top, right center, right bottom, center top, center center, center bottom

@@ -1,0 +1,20 @@
+>> Listas:
+	>> list-style-type: Especifica o tipo de marcador de item da lista
+		>> none: Não exibe marcadores
+		>> disc: Utiliza um círculo sólido como marcador
+		>> circle: Utiliza um círculo vazio como marcador
+		>> square: Utiliza um quadrado como marcador
+		>> decimal: Utiliza numeração decimal (1, 2, 3, ...)
+		>> decimal-leading-zero: Utiliza numeração decimal com zero à esquerda (01, 02, 03, ...)
+		>> upper-roman: Utiliza numeração romana maiúscula (I, II, III, ...)
+		>> lower-alpha: Utiliza numeração alfabética minúscula (a, b, c, ...)
+		>> upper-alpha: Utiliza numeração alfabética maiúscula (A, B, C, ...)
+
+	>> list-style-image: Substitui o marcador do item da lista por uma imagem
+		>> url + caminho da imagem
+
+	>> list-style-position: Especifica a posição dos marcadores de item da lista
+		>> inside: São posicionados dentro da área do bloco de conteúdo, em relação ao texto
+		>> outside: São posicionados fora da área do bloco de conteúdo, no espaço reservado para margem
+
+	>> list-style: Forma abreviada para as propriedades anteriores

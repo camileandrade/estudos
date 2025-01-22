@@ -1,0 +1,39 @@
+>> Introdução ao HTML:
+	>> HyperText Markup Language
+		>> Linguagem de marcação
+	>> Utilizada para estruturar o conteúdo na World Wide Web
+	>> A versão HTML5 é o padrão atual
+	>> Trabalha em conjunto com CSS para estilo e JavaScript para interatividade
+	>> Os elementos HTML são representados por tags, que os navegadores interpretam
+	   para renderizar os elementos visuais e auditivos de uma página
+
+	>> Elementos vs Tags:
+		>> Não são a mesma coisa
+		>> Tag é o conteúdo entre colchetes angulares (< e >)
+
+		>> O elemento é composto por 3 partes:
+			>> Tag de Abertura: Marca o início do elemento
+			>> Conteúdo: O conteúdo que está visível no navegador
+			>> Tag de Fechamento: Marca o final do elemento
+
+			>> Exemplo:
+				>> <p> O meu gato é muito fofo. </p>
+
+	>> Elementos Aninhados:
+		>> Elementos podem ser colocados dentro de outros elementos
+		>> Todos os documentos HTML possuem
+		>> Por mais que seja válido omitir algumas tags de fechamento, não é recomendado
+
+		>> As tags devem ser fechadas na ordem inversa em que foram abertas
+			>> <p> O meu gato é <strong>muito</strong> fofo :3 </p>
+
+		>> Elemento Pai: Contém outros elementos
+		>> Elemento Filho: Está contido em outro elemento
+		>> Nós: Entidade básica na estrutura hierárquica do documento
+			>> Cada elemento, atributo, texto, comentário, etc., é considerado um nó
+
+	>> Elementos Vazios:
+		>> Consistem em uma única tag, que normalmente é usada para inserir algo no documento
+			>> <br>: Define uma quebra de linha
+			>> <hr>: Define uma linha horizontal para separação de conteúdo
+

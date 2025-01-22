@@ -1,0 +1,21 @@
+>> Saltos:
+	>> Instruções que alteram o fluxo de execução do programa, movendo-o para um ponto diferente no código
+
+	>> break: Interrompe a execução de um laço ou de um bloco, encerrando-o
+
+	>> continue: Usado dentro de laços para interromper a iteração atual e passar diretamente para a próxima
+
+	>> return: Usado em funções para interromper a execução ou retornar um valor na chamada
+
+	>> throw: Lança uma exceção manualmente, interrompendo imediatamente a execução normal do programa e passando
+		  o controle para o bloco catch mais próximo
+		  Usado dentro do bloco try
+
+	>> try: Contém o código que pode potencialmente lançar uma exceção, se um erro acontecer a execução é desviada 
+		para o bloco catch mais próximo
+
+	>> catch: Captura e trata a exceção lançada no bloco try
+		  Permite lidar com o erro, em vez de deixar que o programa falhar
+
+	>> finally: Contém o código que será executado após a execução do bloco try e catch
+		    É executado independente de um exceção ter sido lançada ou não 

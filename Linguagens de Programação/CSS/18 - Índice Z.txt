@@ -1,0 +1,5 @@
+>> Índice Z:
+	>> z-index: Especifica qual elemento deve ser colocado na frente ou atrás dos outros, pois quando eles são posicionados podem se sobrepor
+		    Um elemento pode ter uma ordem de pilha positiva ou negativa
+		    Funciona somente em elementos posicionados e itens flexíveis
+		    Um elemento com o maior número na ordem de pilha está sempre acima de um elemento com menor ordem de pilha

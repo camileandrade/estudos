@@ -1,0 +1,19 @@
+>> Box Model:
+	>> Tudo o que é exibido pelo CSS é uma caixa
+	>> São compostas por áreas de modelo de caixas distintas
+
+	>> Podemos fazer uma analogia com quadros pendurados em uma parede:
+		>> A Caixa de Conteúdo seria a pintura
+
+		>> A Caixa de Preenchimento seria o espaço branco entre a pintura e moldura
+			>> É o espaço interno de um elemento
+			>> É definido pela propriedade padding
+
+		>> A Caixa de Borda seria a moldura do quadro
+			>> É definido pela propriedade border
+
+		>> A Caixa de Margem seria o espaçamento entre os quadros
+			>> É o espaço externo de um elemento
+			>> É definido pela propriedade margin
+			>> Quando há diferença de valor entre a margem de dois elementos, prevalece o maior
+				>> Ex: Se um elemento tem margem 20px e outro 100px, a distância entre os dois será 100px

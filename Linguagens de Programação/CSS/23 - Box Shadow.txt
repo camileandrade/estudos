@@ -1,0 +1,5 @@
+>> Box Shadow:
+	>> box-shadow: Aplica uma ou mais sombras a um elemento
+		>> Especificar a posição horizontal (px), a posição vertical (px), o desfoque (px), a cor e a dispersão
+		>> inset: Altera a sombra externa (início) para uma sombra interna
+			>> Para adicionar mais de uma sobra em um mesmo elemento, separar os conjuntos de valores por vírgulas

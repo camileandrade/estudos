@@ -1,0 +1,8 @@
+>> Reflexão de Imagem:
+	>> box-reflect: Cria um reflexo de imagem
+		>> below: Abaixo
+		>> above: Acima
+		>> right: Direita
+		>> left: Esquerda
+
+	>> Para especificar o espaço entre a imagem e o reflexo, adicione o valor junto com a direção

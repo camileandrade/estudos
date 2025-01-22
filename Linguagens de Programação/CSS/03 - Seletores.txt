@@ -1,0 +1,129 @@
+>> Seletores:
+	>> Composto por um:
+		>> Seletor, que aponta para o elemento HTML que será estilizado
+		>> Bloco de Decoração, que define como os elementos selecionados devem ser estilizados
+			>> Cada declaração é composta por um nome da propriedade e o valor
+
+	>> seletor { nome-da-propriedade: valor;}
+
+	>> Tipos de Seletores: 
+		>> Seletor Universal:
+			>> Têm como alvo todos os elementos em um documento HTML
+			>> Representado por um asterisco (*)
+				>> Ex: * {}
+
+		>> Seletor de Tipo:
+			>> Selecionam o elemento com base no nome da tag
+			>> Todos os elementos do documento iguais ao declarado no seletor receberão a mesma estilização
+				>> Ex: p {}
+
+		>> Seletor de Classe:
+			>> Tem como alvo elementos HTML que tenha um atributo de classe específica em comum aplicada a eles
+			>> São indicados por um ponto (.) seguidos do nome da classe
+				>> Ex: .nome-da-classe {}
+
+		>> Seletor de ID:
+			>> Tem como alvo o elemento com atributo único no HTML, o id
+			>> São indicados com um hash (#) seguidos do nome do id
+				>> Ex: #nome-do-id {}
+
+		>> Seletor de Agrupamento:
+			>> Escolhe-se elementos diferentes que receberão a mesma estilização e os agrupam
+			>> São separados por vírgulas (,)
+				>> Ex: a, p, span {}
+
+		>> Seletor de Atributo:
+			>> [atributo]: Seleciona os elementos com um atributo especificado
+			>> [atributo = "valor"]: Seleciona elementos com um atributo e valor especificado
+			>> [attribute~="value"]: Seleciona elementos com um valor de atributo contendo uma palavra especificada
+
+		>> Seletor Descendente:
+			>> Tem como alvo os elementos que estão dentro de outro elemento, abrangendo todos os níveis de aninhamento
+			>> São indicados na declaração com espaços em branco entre os elementos, na ordem em que estão declarados no documento
+				>> Ex: div a {}
+
+		>> Seletor Filho:
+			>> Tem como alvo os elementos que estão dentro de outro elemento, abrangendo apenas o primeiro nível de aninhamento
+			>> São indicados na declaração com um sinal de maior (>) entre os elementos, na ordem em que estão declarados no documento
+				>> Ex: div > a {}
+
+		>> Seletor de Irmãos Adjacentes:
+			>> Tem como alvo o elemento que está diretamente após outro elemento específico
+			>> São indicados na declaração com um sinal de adição (+) entre os elementos
+				>> Ex: div + a {}
+
+		>> Seletor Geral de Irmãos:
+			>> Tem como alvo todos os elementos que estão próximos do especificado
+			>> São indicados na declaração com caractere (~) entre os elementos
+				>> Ex: div ~ a {}
+
+	>> Pseudo-Elementos:
+		>> Usados para especificar partes especificadas de um elemento
+
+		>> seletor::pseudo-elemento { nome-da-propriedade: valor; }
+
+			>> ::after: Insere algo após o conteúdo de cada elemento selecionado
+				>> Usar a propriedade content para especificar o conteúdo a ser inserido
+			
+			>> ::before: Insere algo antes do conteúdo de cada elemento selecionado
+				>> Usar a propriedade content para especificar o conteúdo a ser inserido
+			
+			>> ::first-letter:  Adiciona um estilo à primeira letra do seletor especificado
+				>> Só pode ser aplicado a elementos de nível bloco
+				>> Podem ser usadas propriedades de cor, fonte, fundo, espaçamento, decoração, alinhamento, transformação, altura e luz
+
+			>> ::first-line: Estiliza a primeira linha de um texto
+				>> Só pode ser aplicado a elementos de nível bloco
+				>> Podem ser usadas propriedades de cor, fonte, fundo, margem, preenchimento, fronteira, decoração, alinhamento, 					   transformação, altura, flutuador e luz
+
+			>> ::maker: Seleciona o marcador de um item da lista
+			
+			>> ::selection: Corresponde à parte de um elemento selecionado por um usuário
+				>> Podem ser usadas propriedades de cor, background, cursor e contorno
+
+	>> Pseudo-Classes:
+		>> Define um estado especial de um elemento
+			
+		>> selector:pseudo-class { property: value; } 
+			>> :active: Seleciona um elemento quando é interagido ou clicado
+				    Pode ser usado em todos os elementos
+				    Deve ser colocado depois do :hover no CSS
+	
+			>> :checked: Representa um elemento radio, checkbox ou option que está marcado
+
+			>> :disabled: Seleciona os elementos desabilitados
+
+			>> :empty: Seleciona elementos que não possuem filhos e nós de texto
+
+			>> :enabled: Seleciona qualquer elemento que pode ser selecionado, clicado, digitado, etc.
+
+			>> :first-child: Representa qualquer elemento que seja o primeiro filho de seus pais
+
+			>> :first-of-type: Seleciona o primeiro do seu tipo entre os irmãos
+
+			>> :focus: Seleciona um elemento quando ele é clicado
+
+			>> :hover: Seleciona um elemento quando o usuário passa o mouse sobre ele
+
+			>> :in-range: Seleciona todos os elementos com um valor que esteja dentro de um intervalo especificado
+				      Só funciona se o input tem atributos min/max
+
+			>> :invalid: Seleciona elementos do formulário com um valor inválido de acordo com as configurações do elemento
+
+			>> :last-child: Corresponde a cada elemento que é último filho do seu pai
+
+			>> :last-of-type: Corresponde a cada elemento que é último de seu tipo entre os irmão
+
+			>> :link: Seleciona links não visitados
+
+			>> :optional: Seleciona elementos do formulário que são opcionais
+				>> Não possuem o atributo required
+
+			>> :out-of-range: Seleciona todos os elementos com um valor fora do intervalo especificado
+
+			>> :required: Seleciona os elementos do formulário que são obrigatórios
+				>> Possuem o required
+
+			>> :valid: Seleciona qualquer input cujo o conteúdo foi validado com sucesso
+
+			>> :visited: Usado para selecinar links visitados

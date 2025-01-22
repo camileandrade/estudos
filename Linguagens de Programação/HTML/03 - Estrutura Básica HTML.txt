@@ -1,0 +1,52 @@
+>> Estrutura Básica HTML:
+	>> Todo documento HTML precisa seguir essa estrutura
+
+	>> <!DOCTYPE html>: Representa o tipo de documento e ajuda o navegador a renderizar a página corretamente
+			    Ativa o modo padrão dos navegadores e evitar o modo quirks
+
+	>> <html>: Envolve todo o conteúdo da página, conhecido como elemento raiz
+		   Dentro dela, é prciso declarar as tags <head> e <body>
+
+	>> <head>: Serve como container para metadados e informações sobre o documento
+		   Os dados presentes aqui, não são exibidos na página Web
+
+		>> Inclui os elementos:
+			>> <link>: Define um relacionamento entre o documento atual e um recurso externo
+				   Frequentemente usada para vincular folhas de estilo externas ou adicionar um favicon
+
+				>> Possui os seguintes atributos:
+					>> href: Especifica a localização do elemento vinculado
+					>> rel: Especifica o relacionamento entre o documento atual e o vinculado
+						>> "icon": Importa um icon para colocar na guia do navegador
+						>> "stylesheet": Importa uma folha de estilo
+
+			>> <meta>: Define metadados (informações sobre os dados) sobre o HTML, normalmente especificam
+				   conjuntos de caracteres, descrições da página, palavras-chave, autor e configurações
+				   da janela de visualização. 
+
+				>> Possui os seguintes atributos:
+					>> charset: Especifica a codificação dos caracteres
+						>> "UTF-8": Cobre todos os caracteres do mundo
+
+					>> http-equiv: Também chamada de meta-atualização, serve para controlar ações do navegador
+						>> "content-security-policy": Especifica uma política de conteúdo para o documento
+						>> "content-type": Especifica a codificação de caracteres para o documento
+						>> "default-style": Especifica a estilização de preferência
+						>> "refresh": Define um intervalo de tempo para a página recarregar sozinha
+
+					>> name: Especifica os nomes dos metadados
+						>> "application-name": O nome do aplicativo Web que a página representa
+						>> "author": O nome do autor do documento
+						>> "description": Uma descrição da página, os mecanismos de pesquisa pode apresentar isso ao usuário
+						>> "generator": Um dos pacotes de software a gerar o documento
+						>> "keywords": Uma lista de palavras-chave separada por virgulas, relacionadas com a página
+						>> "viewport": Fornece instruções ao navegador de como ele deve controlar o dimensionamento da página
+
+					>> content: Usado em conjunto com <name> e <http-equiv>, pois possui o valor associado a eles
+						>> "texto": escrever valor aqui
+
+			>> <title>: Define o título da página, que aparece na guia do navegador
+			 	    É agregado apenas por atributos globais
+
+	>> <body>: Contém todo o conteúdo exibido na página
+		   Todos os demais elementos do HTML ficam aqui

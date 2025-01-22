@@ -1,0 +1,2 @@
+>> Tabelas:
+	>> border-collapse: Faz com que as bordas da tabela se fundam em uma única borda

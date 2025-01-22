@@ -1,0 +1,50 @@
+>> Condicionais:
+	>> Permitem que o programa tome decisões e executem diferentes blocos de código com base em determinadas condições
+	>> As expressões são avaliadas como true ou false, determinando qual bloco de código será executado
+	
+	>> if, else e else if:
+		>> A expressão é avaliada, se o valor resultante é verdadeiro a instrução é executada. Caso contrário, nada é executado
+			if (expressão) {
+				instrução
+		 	}
+		
+		>> A instrução executa a instrução1 se a expressão é verdadeira e executa a instrução2 se a expressão é falsa
+			if (expressão) {
+				instrução1
+			} else { 
+				instrução2
+		 	}
+
+		>> Testa múltiplas condições, se todas forem falsas, o else final, se presente, é executado
+			if (n == 1) {
+				Executa o bloco de código #1
+			}
+			else if (n == 2) {
+				Executa o bloco de código #2
+			}
+			else if (n == 3) {
+				Executa o bloco de código #3
+			}
+			else {
+				Se tudo falhar, executa o bloco #4
+			}
+
+	>> switch:
+		>> Quando várias condições dependem do valor de uma única expressão
+		>> Compara a expressão com vários case e executa o código correspondente ao primeiro case que coincidir
+			switch(n) {
+				case 1:  -->  Começa aqui se n === 1
+					Executa o bloco de código #1
+					break; --> Para aqui
+
+				case 2:  -->  Começa aqui se n === 2
+					Executa o bloco de código #2
+					break; --> Para aqui
+
+				default: -->  Se tudo falhar...
+					Executa o bloco de código #3
+					break;   -->  Para aqui
+			}
+		>> Pode ser adicionado quantos case forem necessários
+		>> Se não colocar o break em um case o código continuará a executar os casos subsequentes, 
+		   mesmo que esses casos não correspondam à expressão do switch

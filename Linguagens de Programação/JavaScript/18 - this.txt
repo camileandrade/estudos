@@ -1,0 +1,31 @@
+>> this:
+	>> É uma palavra-chave
+	>> Quando usado em um método de objeto, this refere-se ao objeto
+	>> Quando usado sozinho refere-se ao objeto global (window)
+		>> Também equivale quando usado no modo estrito
+	>> Em funções normais, pode referir-se ao objeto global ou a outro contexto dependendo de como a função é chamada
+	>> Em construtores usam this para referenciar o novo objeto sendo criado
+	>> quando usada em um manipulador de eventos, refere-se ao elemento que recebeu o evento
+	>> quando usada em uma função de seta, refere-se ao objeto pai
+
+	>> Ligação Explícita:
+		>> Processo de definir explicitamente o valor de this dentro de uma função
+
+		>> Usa-se os métodos:
+			>> call(): Invoca a função imediatamente, passando this explicitamente e argumentos como uma lista
+				>> nome-da-função.call(objeto, parametro1, parametro2);
+
+			>> apply(): Invoca a função imediatamente, passando this explicitamente e argumentos como um array
+				>> nome-da-função.apply(objeto, [parametro1, parametro2]);
+
+			>> bind(): Retorna uma nova função com this explicitamente definido, que pode ser chamada mais tarde
+				>> const novo-valor = nome-da-função.bind(objeto);
+				   novo-valor(parametro);
+
+	>> Empréstimo de Função:
+		>> Permite que um objeto use um método de outro objeto sem herdar dele diretamente
+		>> É usado para evitar duplicação de código, onde existem objetos semelhantes que compartilham
+		   funcionalidade mas não quer criar uma hierarquia de herança
+
+		>> É possível utilizando os métodos como call() e apply()
+			>> console.log(objeto1.nome-da-função.call(objeto2));

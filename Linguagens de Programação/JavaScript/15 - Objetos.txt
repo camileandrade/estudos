@@ -1,0 +1,111 @@
+>> Objetos
+	>> É um valor composto
+		>> Agrega diversos valores e permite armazenar e recuperar esses valores pelo nome
+	>> Os nomes de propriedade são strings
+	>> Uma propriedade tem um nome e um valor (qualquer tipo)
+	
+	>> Criando Objetos:
+		>> Objetos Literais:
+			>> Forma mais comum e direta de criar objetos
+			>> Define-se suas propriedades e valores diretamente
+				let objeto = {chave1: valor1, chave2: valor2, chave3: valor3};
+
+		>> Criando objetos com o operador new:
+			>> Cria e inicializa um novo objeto
+			>> Deve ser seguida de uma chamada de função
+				>> Chamada de construtora e serve para iniciar o objeto
+				>> É comum definir as próprias funções construtoras
+			>> Permite criar vários objetos que compartilham a mesma estrutura e comportamento
+			>> Permite criar objetos com propriedades e métodos específicos, usando o operador new 
+			
+			>> Utilizando o Object() (construtor padrão do JavaScript):
+				const nome-do-objeto = new Object();
+				nome-do-objeto.propriedade1 = valor1;
+				nome-do-objeto.propriedade2 = valor2;
+
+			>> Utilizando a função construtora:
+				function Nome-do-Objeto (propriedade1, propriedade2) {
+					this.propriedade1 = propriedade1;
+					this.propriedade2 = propriedade2;
+				}
+		
+				const a = new Nome-do-Objeto(valor1, valor2)
+				const b = new Nome-do-Objeto(valor1, valor2)
+
+		>> Protótipos:
+			>> Cada objeto em JavaScript possui um protótipo, que é outro objeto do qual o primeiro herda propriedades e métodos
+				>> Herança Prototípica
+
+			>> Utiliza-se o método Object.getPrototypeOf() quando deseja saber de qual protótipo ele está sendo herdando 
+
+			>> Todos os objetos herdam métodos e propriedades de Object.prototype
+
+			>> hasOwnProperty() verifica se uma propriedade especifica de um objeto é dele ou se é herdado
+
+			>> prototype é usado em funções construtoras para definir propriedades e métodos compartilhados por todas as instâncias
+
+		>> Utilizando Object.create:
+			>> Cria um novo objeto com base em um objeto previamente especificado (protótipo)
+			>> Permite a criação de objetos que herdam propriedades e métodos de outros objetos (protótipo)
+			>> Não precisa passar uma função construtora
+				const novoObjeto = Object.create(protótipo);
+
+	>> Acessar Propriedade:
+		>> Podem ser acessadas por meio da notação de ponto (objeto.propriedade) ou por notação de colchetes 'objeto["propriedade"]'
+		>> Se uma propriedade não é encontrada, é avaliada como undefined
+
+	>> Modificar Propriedade:
+		>> objeto.propriedade = valor;
+
+	>> Adicionar Propriedade:
+		>> objeto.nome-da-nova-propriedade = valor;
+
+	>> Deletar Propriedade:
+		>> delete objeto.propriedade;
+		>> Exclui apenas as propriedades próprias, não as herdadas
+
+	>> Métodos get e set:
+		>> São propriedades de acesso
+		>> Usados para controlar o acesso e a manipulação de propriedades de objetos
+		>> Permite definir funções que serão chamadas quando uma propriedade for acessada ou modificada
+
+		>> get controla como os valores das propriedades são acessados
+			>> Transformam os dados antes de retorná-los
+		>> set controla como os valores das propriedades são definidos
+			>> Permite realizar validações e operações antes de atribuir um valor
+
+	>> Atributos de Propriedades:
+		>> São configurações que controlam características específicas de cada propriedade do objeto
+		>> Possuem o valor true ou false
+
+		>> Para definir esses atributos, pode usado o método Object.defineProperty() (modifica uma única propriedade de um objeto) ou 
+		   Object.defineProperties() (modifica múltiplas propriedades de uma vez só)
+			>> value: Retorna valor da propriedade
+			>> writable: Se o valor pode ser modificado
+			>> enumerable: Se a propriedade pode aparecer em laços
+			>> configurable: Se a propriedade pode ser deletada ou modificada
+
+	>> Atributos de Objeto:
+		>> Referem-se a características internas dos objetos que definem como eles se comportam e como suas propriedades são manipuladas
+		>> Controlam o comportamento do objeto como um todo
+
+		>> Prototype:
+			>> Referência a outro objeto
+
+		>> Extensible:
+			>> Indica se novas propriedades podem ser adicionadas ao objeto
+			>> É possível verificar se um objeto é extensível usando Object.isExtensible(obj)
+			>> Tornar um objeto não extensível impede a adição de novas propriedades
+				>> Usa-se Object.preventExtensions(obj)
+
+		>> Sealed:
+			>> Indica se as propriedades do objeto não podem ser adicionadas, removidas ou reconfiguradas, mas podem ser 
+			   modificadas se forem graváveis
+			>> Pode verificar se um objeto é selado usando Object.isSealed(obj)
+			>> Não permite adicionar ou remover propriedades, mas permite modificar valores existentes
+				>> Usa-se Object.seal(obj)
+
+		>> Frozen:
+			>> Não pode ser modificado de forma alguma
+				>> Usa-se Object.freeze(obj)
+			>> Verificar se um objeto é congelado usando Object.isFrozen(obj)

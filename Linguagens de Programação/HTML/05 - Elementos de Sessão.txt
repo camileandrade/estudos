@@ -1,0 +1,54 @@
+>> Elementos de Sessão :
+	>> São utilizados para representar o conteúdo de uma página web de forma clara
+	>> Ajudam a estruturar o conteúdo de uma forma lógica e significativa
+	>> Ajudam os mecanismos de busca a entender melhor o conteúdo da página
+	>> Torna o código mais fácil de entender e interpretar
+
+	>> <header>: Usada para marcar a seção superior de uma pagina web
+		     Normalmente onde é incluido o titulo, logo, nav, etc.
+		     Cria-se uma separação clara entre o cabeçalho e o conteúdo principal da página
+		     Não pode ser colocado no footer, address
+
+	>> <nav>: Usada para marcar uma seção que contém os grandes links de navegação da página
+		  Normalmente é colocada aninhado com o header, footer e aside
+
+	>> <main>: Usada para marcar a área do conteúdo principal da página
+		   Não deve haver mais de um elemento desse no documento
+
+	>> <article>: Usada para marcar conteúdo independente e autônomo
+		      Deve fazer sentido sozinho e poder ser ditribuido pelo resto do site
+		      Usado para postagens de blogs, noticias, etc
+
+	>> <section>: Define um agrupamento de conteúdo do mesmo tema, normalmente acompanhado com um título
+		      Usado em capítulos, introduções, novos itens, produtos, etc.
+
+	>> <footer>: Define um rodapé para o documento
+		     Normalmente contém informações de autoria, contato, links, direitos autorais, etc.
+
+	>> <aside>: Define conteúdo indiretamente relacionado ao principal
+		    Também chamado de barra lateral
+		    Como anúncioas, artigos relacionados, filtros.
+
+	>> <details>: Usada para criar um widget interativo que o usuário pode abrir e fechar
+		      Por padrão é fechado, quando aberto ele se expande exibindo o conteúdo contido nele
+		      Qualquer tipo de conteúdo pode ser colocado dentro dele
+		      Usando em conjunto com a <summary>
+
+		>> Possui o seguinte atributo:
+			>> "open": Atributo que deixa o conteúdo aberto por padrão
+
+	>> <summary>: Define um título para o widget do details
+		      Deve ser o primeiro  elemento filho do <details>
+
+	>> <figure>: Usado para marcar ilustrações, fotos, trechos de código, etc.
+
+	>> <figcaption>: Usado para adicionar uma legenda ao <figure>
+
+	>> <div>: Define uma divisão a nível de bloco, e é usada como um contêiner para elementos que são estilizados ou manipulados
+		  Para estilização, adicionar os atributos class ou id
+		  Pode conter qualquer tipo de elemento
+		  Adiciona quebras de linha antes e depois do elemento
+
+	>> <span>: É um contêiner embutido usado para marcar uma parte de um texto
+		   Não começa em uma nova linha e ocupa apenas o espaço necessário
+		   Para estilização, adicionar os atributos class ou id

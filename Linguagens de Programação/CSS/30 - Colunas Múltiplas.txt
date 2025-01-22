@@ -1,0 +1,13 @@
+>> Colunas Múltiplas:
+	>> column-count: Especifica o número de colunas em que um elemento deve ser dividido
+	>> column-gap: Especifica o espaço entre as colunas
+	>> column-rule-style: Especifica o estilo da linha entre colunas
+	>> column-rule-width: Especifica a largura da linha entre colunas
+	>> column-rule-color: Especifica a cor da linha entre colunas
+	>> column-rule: Propriedade abreviada para definir todas as propriedades
+
+	>> column-span: Especifica quantas colunas um elemento deve abranger
+		>> none: O elemento irá abranger uma coluna
+		>> all: O elemento irá abranger todas as colunas
+		
+	>> column-width: Especifica uma largura ideal sugerida para as colunas

@@ -1,0 +1,3 @@
+>> Media Queries:
+	>> Podem ser usadas para verificar a largura e altura da janela de visualização, orientação da janela de visualização e resolução
+	>> @media: Técnica popular para fornecer uma folha de estilo personalizada para desktops, laptops, tablets e celulares

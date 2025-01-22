@@ -1,0 +1,117 @@
+>> Arrays:
+	>> Conjunto ordenado de valores, onde armazena múltiplos valores em uma única variável
+	>> Cada valor é chamado de elemento
+	>> Cada elemento tem uma posição numérica no array
+		>> Índice, onde o primeiro elemento é zero
+	>> Crescem e diminuem conforme necessário (dinâmicos)
+	>> Eles podem armazenar elementos de diferentes tipos de dados
+
+	>> Criando arrays:
+		>> Array Literal:
+			>> var array = []; --> cria uma array vazia
+
+			>> var array = [1, 2, 3]; --> cria uma array com valores
+
+		>> Utilizando o construtor Array():
+			>> var array = new Array();  --> chamada sem argumentos
+
+			>> var array = new Array(10);  --> especifica o comprimento
+	
+			>> var array = new Array (1, 2, 3);  --> passa os valores nos argumentos
+
+	>> Acessando os Elementos:
+		>> Os elementos podem ser acessados pelo índice, por meio do operador []
+			>> array[índice]
+
+	>> Modificando os Elementos:
+		>> Altera o valor de um índice específico
+			>> array[índice] = valor
+
+	>> Comprimento da Array:
+		>> Toda array tem um propriedade que retorna o número de elementos contidos nela
+			>> array.lenght
+		>> A propriedade será atualizada conforme os elementos forem sendo adicionados ou deletados
+		>> Se definir a lenght para um comprimento maior que o existente, os novos elementos serão undefined
+		>> Se definir a lenght para um comprimento menor que o existente, a array será cortada e os elementos excluídos
+
+	>> Métodos de Array:
+		>> forEach(): Executa uma função em cada elemento da array
+			>> array.forEach(callback(elemento, index, array));
+
+		>> map(): Cria um novo array com os resultados de um função que foi aplicada em cada elemento
+			>> const novaArray = array.map(callback(elemento, index, array));
+
+		>> filter(): Cria um novo array com todos os elementos que passam em um teste implementado por uma função
+			>> const arrayFiltrada = array.filter(callback(elemento, index, array));
+
+		>> reduce(): Executa uma função "reduzindo" o array para um único valor
+			>> const resultado = array.reduce(callback(acumulador, elemento, index, array), valorInicial);
+
+		>> find(): Retorna o primeiro elemento do array que satisfaz a função de teste fornecida
+			>> const elementoEncontrado = array.find(callback(elemento, index, array));
+
+		>> findIndex(): Retorna o index elemento do array que satisfaz a função de teste fornecida
+			>> const index = array.findIndex(callback(elemento, index, array));
+
+		>> findLastIndex(): Retorna o índice do último elemento no array que satisfaz a função de teste
+			>> const index = array.findLastIndex(callback(elemento, index, array));
+
+		>> some(): Testa se ao menos um dos elementos do array passa por uma função de teste
+			>> const resultado = array.some(callback(elemento, index, array));
+
+		>> every(): Testa se todos os elementos do array passam por uma função de teste
+			>> const resultado = array.every(callback(elemento, index, array));
+
+		>> concat(): Combina duas ou mais arrays
+			>> Retorna uma nova array, mas não modifica o original
+			>> const novaArray = array.concat(array2, valor, ...);
+
+		>> reverse(): Inverte a ordem dos elementos 
+			>> array.reverse();
+
+		>> sort(): Ordena os elementos 
+			>> array.sort();
+
+		>> slice(): Extrai uma parte da array sem modificar a array original
+			>> array.slice(inicio, fim)
+				>> inicio: index de onde a extração começa
+				>> fim: index de onde a extração termina, e não incluído no retorno. 
+				   Se não for especificado, será extraído até o último index
+
+		>> splice(): Exclui ou insere novos elementos em uma array, modificando a array original
+			>> array.splice(índice, quantidadeRemovida, item)
+				>> índice: onde as mudanças começam
+				>> quantidade removida:  se for zero, não removerá nenhum
+				>> item: elementos que serão adicionados
+
+		>> indexOf(): Procura o index do primeiro elemento encontrado que é igual ao especificado
+			>> const index = array.indexOf(elemento);
+
+		>> lastIndexOf(): Procura o index do último elemento encontrado que é igual ao especificado
+			>> const index = array.lastIndexOf(elemento);
+
+		>> includes(): Determina se um array contém um determinado elemento
+			>> const resultado = array.includes(elemento);
+
+		>> join(): Converte todos os elementos em strings e as concatena
+			>> Pode-se especificar uma string para separar os elementos
+			>> Se nada for especificado, serão utilizados vírgulas
+
+			>> const string = array.join(delimitador);
+
+		>> push(): Adiciona um elemento no final 
+			>> array.push(elemento1, ..., elementoN)
+
+		>> pop(): Remove o último elemento
+			>> array.pop()
+
+		>> shift(): Remove o primeiro elemento
+			>> array.shift()
+
+		>> unshift(): Adiciona um elemento no inicio
+			>> array.unshift(elemento1, ..., elementoN)
+
+		>> fill(): Preenche todos os elementos de um array com um valor estático
+			>> array.fill(valor, inicio, fim)
+				>> Se o inicio e fim for especificado, somente esse intervalo de index serão alterados
+

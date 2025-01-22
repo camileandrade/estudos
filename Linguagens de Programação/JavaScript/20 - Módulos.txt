@@ -1,0 +1,4 @@
+>> Módulos:
+	>> São uma forma de organizar e reutilizar o código
+	>> Cada módulo pode exportar valores que podem ser importados em outros arquivos
+	>> Usa-se export e import para definir e utilizar módulos
