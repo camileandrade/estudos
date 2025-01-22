@@ -1018,7 +1018,15 @@
 
 >> JavaScript Assíncrono
 	>> Quando uma tarefa é executada de forma assíncrona, ela é iniciada e o programa continua 
-	   funcionando sem esperar a conclusão dessa tarefa. Quando a tarefa termina, ela notifica o programa para executar o próximo passo
+	   funcionando sem esperar a conclusão dessa tarefa. Quando a tarefa termina, ela notifica o 
+	   programa para executar o próximo passo
+
+	>> Quando usar JavaScript assíncrono?
+		>> Acessar APIs externas ou servidores
+		>> Carregar arquivos grandes ou imagens
+		>> Executar tarefas demoradas sem bloquear o fluxo principal
+		>> Manter a interface do usuário responsiva, como quando você tem
+		   longas esperas por resultados (carregamento de dados, animações)
 
 	>> Callbacks
 		>> Uma função é passada como argumento para outra função e chamada após a conclusão de uma operação
@@ -1034,22 +1042,200 @@
 			>> Fulfilled (Concluída): A operação foi completada com sucesso
 			>> Rejected (Rejeitada): A operação falhou
 
+		>> Métodos:
+			>> .then(): Lida com o sucesso (fulfilled) de uma Promise 
+				    Retorna uma nova Promise e permite o encadeamento
+
+			>> .catch(): Lida com a falha (rejected) de uma Promise
+				     Retorna uma nova Promise
+
+			>> .finally(): Executa código após uma Promise ser resolvida ou rejeitada
+				       Não modifica o valor ou o motivo de rejeição da Promise
+
+			>> Promise.all(): Aguarda que todas as Promises sejam resolvidas
+					  Rejeita imediatamente se qualquer uma das Promises for rejeitada
+					  Retorna uma Promise que resolve com um array de resultados
+
+			>> Promise.race(): Retorna a primeira Promise que resolver ou rejeitar
+					   Ideal para cenários onde você deseja o resultado mais rápido
+
+			>> Promise.allSettled(): Retorna uma Promise que resolve após todas as Promises terem sido concluídas (resolvidas e rejeitadas)
+						 Não para se uma Promise for rejeitada.
+						 Retorna um array com objetos descrevendo o estado de cada Promise
+
+			>> Promise.any(): Retorna a primeira Promise resolvida (fulfilled)
+					  Rejeita apenas se todas as Promises forem rejeitadas
+					  Ideal para obter um único resultado bem-sucedido entre muitas tentativa
+
+			>> Promise.resolve(): Retorna uma Promise já resolvida com o valor especificado
+
+			>> Promise.reject(): Retorna uma Promise já rejeitada com o motivo especificado
+
 	>> async/await
 		>> Simplificam o uso de Promises, tornando o código mais legível e fácil de manter
 		
 		>> async: Define uma função assíncrona que sempre retorna uma Promise
 		>> await: Pausa a execução até que a Promise seja resolvida
 
-	>> Quando usar JavaScript assíncrono?
-		>> Acessar APIs externas ou servidores
-		>> Carregar arquivos grandes ou imagens
-		>> Executar tarefas demoradas sem bloquear o fluxo principal
-		>> Manter a interface do usuário responsiva, como quando você tem
-		   longas esperas por resultados (carregamento de dados, animações)
- 
+	>> AJAX
+		>> Asynchronous JavaScript and XML
+		>> Técnica de desenvolvimento web que permite que aplicativos ou páginas da web obtenham e enviem dados para 
+		   um servidor de maneira assíncrona, sem a necessidade de recarregar toda a página
 
+		>> Como funciona?
+			>> Requisição: A página da web envia uma solicitação ao servidor
+				>> Normalmente é usado o XMLHttpRequest ou a função fetch()
+			>> Resposta: O servidor processa a solicitação e envia de volta dados em um determinado formato
+			>> Atualização: A página manipula a resposta e atualiza os elementso necessários
 
+		>> XMLHttpRequest
+			>> É uma API em JavaScript que permite interagir com servidores de forma assíncrona, possibilitando 
+	  		   a obtenção e envio de dados sem a necessidade de recarregar a página
 
+			>> Por padrão, opera de forma assíncrona, permitindo que outras partes da aplicação continuem 
+	   		   funcionando enquanto o servidor processa a solicitação
+				>> Tem a opção para operar de forma síncrona, mas não é o recomendado
 
+			>> Pode enviar e receber dados em vários formatos: JSON, XML, HTML, ou texto simples
+			>> Não tem suporte para Promises, tornando-se necessário o uso de callbacks
+			>> Fornece códigos de status HTTP para monitorar o resultado das solicitações
+			>>  Suporta os principais métodos HTTP (GET, POST, PUT, DELETE)
+
+			>> Por que utlizamos ele atualmente?
+				>> Suporte a scripts legados que utilizam XMLHttpRequest
+				>> Compatibilidade com navegadores antigos sem necessidade de polyfills
+				>> Realizar operações que não são suportadas pelo fetch
+
+			>> Limitações	
+				>> Mais verboso que APIs modernas
+				>> Sujeito a restrições de CORS (Cross-Origin Resource Sharing)
+				>> Erros de rede ou CORS nem sempre são detalhados diretamente, dificultando o diagnóstico
+
+			>> Propriedades
+				>> readyState(): Indica o estado atual da solicitação
+					>> 0: Não inicializada (criada, mas open não foi chamado)
+					>> 1: Aberta (método open foi chamado)
+					>> 2: Headers recebidos (requisição enviada e cabeçalhos recebidos)
+					>> 3: Carregando (dados estão sendo recebidos)
+					>> 4: Concluído (requisição finalizada, dados prontos)
+
+				>> status(): Código de status HTTP da resposta - Retorna um número
+					>> 200, 404, 403, 500, etc.
+
+				>> statusText(): Texto do status HTTP correspondente ao código - Retorna uma string
+					>> OK, Not Found, Forbidden, Internal Server Error, etc.
+
+				>> response(): Conteúdo da resposta, no formato determinado pela propriedade responseType()
+
+				>> responseText(): Resposta do servidor como texto
+					>> Disponível quando responseType é "text" ou não foi definido
+
+				>> responseXML(): Resposta como documento XML 
+					>> Válido se o servidor retornar dados XML
+					>> O tipo de resposta esperada deve ser configurado como document em responseType()
+
+				>> responseType(): Tipo da resposta esperada
+					>> "json": Objeto JSON
+					>> "text": Texto simples
+					>> "document": Documento DOM (XML, HTML)
+					>> "blob": Arquivo binário
+					>> "arraybuffer": Array de bytes
+
+				>> timeout(): Tempo (em milissegundos) antes da requisição expirar e gerar um erro
+					>> Seu valor padrão é 0, o que significa que não tem limite de tempo
+
+				>> withCredentials(): Booleano que determina se os cookies e credenciais devem ser incluídos na requisição
+
+				>> upload(): Objeto usado para monitorar o progresso do envio de arquivos
+
+				>> responseURL(): URL completa da resposta após a execução da requisição
+
+			>> Métodos
+				>> open(método, URL, async, usuário, senha): Não abre a conexão, apenas configura a solicitação
+					>> método: Método HTTP a ser usado (GET, POST, PUT, DELETE)
+					>> URL: URL para a requisição (pode ser uma string ou um objeto URL)
+					>> async (opcional): Booleano para indicar se a requisição é assíncrona (true por padrão) ou síncrona (false)
+					>> usuário, senha (opcional): Credenciais para autenticação básica
+
+				>> send(body): Envia a requisição
+					>> body: Dados a serem enviados com a requisição
+						>> Se não houver corpo para enviar, pode ser chamado sem parâmetros
+						>> Em GET e HEAD o body deve ser null pois esses métodos não enviam um corpo na requisição
+
+				>> setRequestHeader(nomeDoCabeçalho, valor): Define os cabeçalhos HTTP personalizados antes de enviar a requisição
+
+				>> getResponseHeader(nomeDoCabeçalho): Retorna o valor de um cabeçalho específico na resposta do servidor
+
+				>> getAllResponseHeaders(): Retorna todos os cabeçalhos da resposta como uma string.
+
+				>> abort(): Interrompe a requisição em andamento
+
+				>> addEventListener(evento, callback): Adiciona um ouvinte de eventos ao objeto XMLHttpRequest
+					>> evento: Nome do evento (consultar os eventos disponíveis)
+					>> callback: Função executada quando o evento ocorre
+
+				>> removeEventListener(evento, callback): Remove um ouvinte de evento previamente registrado
+
+			>> Eventos
+				>> Usados em conjunto com o método addEventListener() em cenários mais complexos ou quando 
+		  		   se torna necessário ter múltiplos ouvintes, para ter maior controle e flexibilidade
+
+					>> readystatechange(): Disparado sempre que o estado de readyState muda
+						>> Útil para monitorar o progresso da requisição
+
+					>> load(): Disparado quando a requisição é concluída com sucesso 
+		
+					>> error(): Disparado quando ocorre um erro na requisição
+
+					>> abort(): Disparado quando a requisição é cancelada com o método abort()
+
+					>> timeout(): Disparado quando o tempo de espera da requisição expira
+
+					>> loadstart(): Disparado no início da requisição
+
+					>> loadend(): Disparado quando a requisição termina, seja com sucesso ou erro
+
+					>> progress(): Disparado periodicamente durante o processo de recebimento dos dados da requisição
+						>> Útil para mostrar a progressão de upload/download
+
+				>> Para cenários mais simplificados e rápidos, ou quando não é necessário de vários ouvintes,
+		  		   pode ser adicionado o prefixo "on" ao nome do evento, sem a utilização do método addEventListener()
+		   		   Basta apenas definir uma função callback diretamente para lidar com o evento específico.
+		
+			>> Para fazer a solicitação é preciso:
+				>> Criar uma instância do XMLHttpRequest (sem argumentos no construtor)
+					>> let xhr = new XMLHttpRequest();
+
+				>>  Inicializá-lo após a instanciação
+					>> xhr.open(metodo, URL, async, usuario, senha)	
+
+				>> Ouvir os eventos do xhr para obter respostas
+
+				>> Enviar
+					>> xhr.send()
+
+		>> Fetch 
+			>> É uma API moderna introduzida para substituir o XMLHttpRequest
+				>> Por ser mais simples e utilizável com Promises e com o async/await,
+				   tornando o código mais limpo e mais fácil de lidar
+
+			>> Trabalha de forma exclusivamente assíncrona
+			>> Oferece suporte nativo para JSON
+			>> É extensível e suporta outros métodos HTTP, cabeçalhos personalizados e CORS (Cross-Origin Resource Sharing)
+			>> Não possui suporte direto para rastrear progresso
+			>> Não é suportado em navegadores muito antigos
+
+			>> Não trata automaticamente erros de resposta HTTP
+				>> Precisam ser tratados manualmente 
+				>> Só rejeita a Promise em casos de falhas de rede ou problemas críticos
+
+			>> Sintaxe
+				>> fetch(url, opções).then(resposta => {...}).catch(erro => {...});
+					>> url: String representando o recurso de destino (obrigatório)
+					>> opções: Objeto com configurações opcionais da requisição
+						>> method: Define o método HTTP 
+							>> Usa GET por padrão se for não especificado o método na configuração
+						>> headers: Configura cabeçalhos HTTP 
+						>> body: Define o corpo da requisição para métodos como POST ou PUT
 
 
